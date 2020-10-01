@@ -54,3 +54,12 @@ plugins:
               - "*.gz"
           regex:
               - '.*\.(tmp|bin|tar)$'
+
+nav:
+    - Home: index.md
+    - Getting Started:
+    - Pirate Hook:
+          - Installation: Pirate-Hook/arduside.md
+    - Pirate Bridge:
+    - Pirate Flag:
+    - Webcam Streaming
