@@ -7,12 +7,6 @@ When integrated into an Arduino project variables can be designated to be sent o
 
 Components:
 
-* something
-* something
-  * deeper
-    * deeper still
-    * here
-
 + Arduino
     + Project
     + Pirate-Ardu-Lib
@@ -23,7 +17,6 @@ Components:
     + Webserver to serve Pirate-Client
 + Server
     + Routing to the different projects but also encapsulation
-
 
 Links:
 
