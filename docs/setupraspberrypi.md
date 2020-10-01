@@ -1,41 +1,137 @@
 # Setup Raspberry Pi
 
-## Flash OS
+1. **[Install Raspberry Pi OS](#Install-Raspberry-Pi-OS)**
+   - Any version of Raspbian OS will probably work.
+   - For max. performance a headless version should be used.
+2. **[Basic Configuration Raspberry Pi](#Basic-Configuration-Raspberry-Pi)**
+   - Change default Password
+   - Activate SSH
+   - Activate WiFi (optional)
+   - Perform Update & upgrade
+3. **[Setup Raspberry Pi for PirAtE](#Setup-Raspberry-Pi-for-PirAtE)**
+   - Activate RPi Camera Interface
+   - Activate Serial Interface
+   - Install Git
+   - Install [Nodejs]
+   - Install [Docker]
 
-Donwload img: https://www.raspberrypi.org/downloads/raspberry-pi-os/
-Choose Lite 
 
-Flash with for instance:
+https://projects.raspberrypi.org/en/projects/raspberry-pi-setting-up
+
+## Install Raspberry Pi OS
+
+https://www.raspberrypi.org/documentation/installation/installing-images/README.md
+
+### Download Image from Raspberry Pi homepage and using an Imager to install it
+
+ Prepare SD Card
+SD Card Formater
+https://www.sdcard.org/downloads/formatter/
+
+Download Image
+Raspberry Pi OS (32-bit) Lite
+from https://www.raspberrypi.org/downloads/raspberry-pi-os/
+
+Flash OS
 https://www.balena.io/etcher/ 
+https://win32diskimager.download/
 
+### Using Downloader and Installer from Raspberry Pi
 
-## Add SSH Access and Wifi 
+Raspberry Pi Imager
+from https://www.raspberrypi.org/downloads/
 
-For headless operation:
+## Configure Pi
+
+### For headless operation activate SSH and WiFi before starting
 https://www.raspberrypi.org/documentation/configuration/wireless/headless.md 
+
 - Enable SSH 
   - Put file with name "ssh" without extension in root folder of boot partition
-- (optional) Enable Wifi otherwise use Ethernet connection
-  - Put "wpa_supplicant.conf" file in root folder
+    https://www.elektronik-kompendium.de/sites/raspberry-pi/1906281.htm
+- Enable Wifi otherwise use Ethernet connection
+  - Put "wpa_supplicant.conf" file in root folder\
+    Content of wpa_supplicant.conf
+    adapt countrycode, ssid and psk:
+    ```
+    ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
+    update_config=1
+    country=<Insert 2 letter ISO 3166-1 country code here e.g. DE> 
 
-Content of wpa_supplicant.conf
-adapt countrycode, ssid and psk:
-```
-ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
-update_config=1
-country=<Insert 2 letter ISO 3166-1 country code here e.g. DE> 
+    network={
+        ssid="<Name of your wireless LAN>"
+        psk="<Password for your wireless LAN>"
+    }
+    ```
+    Replace all ```<...>``` !
 
-network={
-    ssid="<Name of your wireless LAN>"
-    psk="<Password for your wireless LAN>"
-}
-```
 
-## On first boot
+
+## Basic Configuration Raspberry Pi
 - change password with 
   - ```passwd```
 - update upgrade
-  - ````sudo apt update && sudo apt -y upgrade````
+  - ```sudo apt update && sudo apt -y upgrade```
+- When not done before
+  - activate ssh
+  - activate wifi
+  - expand file system (optional, needed in old Pi Versions)
+
+https://www.elektronik-kompendium.de/sites/raspberry-pi/1906291.htm
+
+
+## Setup Raspberry Pi for PirAtE
+### Activate Interfaces
+
+```
+sudo raspi-config
+```
+enable camera Interface, (optional)serial-interface
+
+sudo apt install git -y
+
+[[docker]]
+
+
+
+## Install [[nodejs]]
+
+```
+curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
+```
+
+use correct version number: 14 is current as of 2020-08-28
+
+```
+sudo apt install -y nodejs
+```
+
+## Get Project from Github
+```
+git clone https://github.com/Ch3ri0ur/pirate.git
+cd pirate
+npm install pirate
+npm run start             # For Development
+npm run build             # For Production
+```
+
+if Arduino is flashed from Raspberry Pi
+```
+ git clone https://github.com/Ch3ri0ur/pirate_modules.git
+```
+ cd pirate_modules/janus-gateway-docker/
+
+ docker-compose up
+
+
+docker run -d --restart always --name restreamer -e "RS_USERNAME=fn" -e "RS_PASSWORD=asdfasdf" -e "RS_MODE=RASPICAM" -p 8080:8080 -v /mnt/restreamer/db:/restreamer/db -v /opt/vc:/opt/vc --privileged datarhei/restreamer-armv7l:latest
+major delay
+
+
+
+
+
+
 
 ## passwordless SSH
 add your public ssh key to ~/.ssh/authorized_keys (on the pi) for passwordless ssh connection
@@ -62,43 +158,8 @@ type %USERPROFILE%\\.ssh\\id_rsa.pub | ssh  pi@raspberrypi "mkdir -p ~/.ssh && c
 
 https://docs.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh
 
-## Activate Interfaces
-
-```
-sudo raspi-config
-```
-enable camera Interface, (optional)serial-interface
-
-
-## Install [[nodejs]]
-
-```
-curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
-```
-
-use correct version number: 14 is current as of 2020-08-28
-
-```
-sudo apt install -y nodejs
-```
-
-## Get Project from Github
-```
-git clone https://github.com/Ch3ri0ur/pirate.git
-cd pirate
-npm install pirate
-npm run start             # For Development
-npm run build             # For Production
-```
-
-(optional) if Arduino is flashed from Raspberry Pi
-```
- git clone https://github.com/Ch3ri0ur/pirate_modules.git
-```
-
-docker run -d --restart always --name restreamer -e "RS_USERNAME=fn" -e "RS_PASSWORD=asdfasdf" -e "RS_MODE=RASPICAM" -p 8080:8080 -v /mnt/restreamer/db:/restreamer/db -v /opt/vc:/opt/vc --privileged datarhei/restreamer-armv7l:latest
-major delay
 
 [//begin]: # "Autogenerated link references for markdown compatibility"
+[docker]: docker "Docker"
 [nodejs]: nodejs "Nodejs"
 [//end]: # "Autogenerated link references"
