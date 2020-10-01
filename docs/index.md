@@ -7,15 +7,15 @@ When integrated into an Arduino project variables can be designated to be sent o
 
 Components:
 - Arduino
-    - Project
-    - Pirate-Ardu-Lib
+	- Project
+	- Pirate-Ardu-Lib
 - Raspberry PI
-    - Pirate-Bridge for routing the data
-    - Webcam
-    - Janus-Gateway to serve the WebRTC camera stream
-    - Webserver to serve Pirate-Client
+	- Pirate-Bridge for routing the data
+	- Webcam
+	- Janus-Gateway to serve the WebRTC camera stream
+	- Webserver to serve Pirate-Client
 - Server
-    - Routing to the different projects but also encapsulation
+	- Routing to the different projects but also encapsulation
 
 
 ## The Project is currently hosted on Github
