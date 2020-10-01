@@ -1,4 +1,37 @@
 # Pirate Documentation
+Pirate (short for Pirate implements remote access to experiments) is a remote monitoring solution for Arduino projects.
+
+## Overview
+When integrated into an Arduino project variables can be designated to be sent or received. These then get periodically transmitted via UART to an application on a connected Raspberry PI, the Pirate-Bridge. This Bridge uses the data to provide an SSE-Stream. The Pirate-Client reads this stream and displays the data. It can in turn sent requests to the Pirate-Bridge to change variables on the Arduino. Parallel to this the Raspberry PI can also provide a live view of the project, via a Raspberry PI Camera and WebRTC.
+
+
+Components:
+- Arduino
+  - Project
+  - Pirate-Ardu-Lib
+- Raspberry PI
+  - Pirate-Bridge for routing the data
+  - Webcam
+  - Janus-Gateway to serve the WebRTC camera stream
+  - Webserver to serve Pirate-Client
+- Server
+  - Routing to the different projects but also encapsulation
+
+
+## The Project is currently hosted on Github
+The documentation can be found on: https://ch3ri0ur.github.io/piratedocs/
+
+The source code on:
+- https://github.com/Ch3ri0ur/pirate_modules
+- https://github.com/Ch3ri0ur/pirate
+- https://github.com/Ch3ri0ur/piratedocs
+
+
+
+## Currently developed by:
+- Maximilian Koch
+- Christian Wappler
+
 
 [[project]]
 
