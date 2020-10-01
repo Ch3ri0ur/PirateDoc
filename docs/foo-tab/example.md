@@ -1,4 +1,4 @@
 # An example Page
 
-* [[tutorial]]
-* [[index]]
+* [[project]]
+* [[firstrun]]
