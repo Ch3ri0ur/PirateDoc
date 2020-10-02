@@ -29,5 +29,6 @@
     "cSpell.words": [
         "Raspbian",
         "usermod"
-    ]
+    ],
+    "python.pythonPath": "C:\\tools\\Anaconda3\\envs\\math\\python.exe"
 }
