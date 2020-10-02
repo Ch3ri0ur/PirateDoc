@@ -1,4 +1,4 @@
-# Pirate Documentation
+# Pirate Overview
 Pirate (short for Pirate implements remote access to experiments) is a remote monitoring solution for Arduino projects.
 
 ## Overview
