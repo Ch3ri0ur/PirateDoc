@@ -1,14 +1,14 @@
 # Setup Raspberry Pi
 
-1. **[Install Raspberry Pi OS](#Install-Raspberry-Pi-OS)**
+1. **[Install Raspberry Pi OS](#1.-Install-Raspberry-Pi-OS)**
    - Any version of Raspbian OS will probably work.
    - For max. performance a none Desktop version should be used.
-2. **[Basic Configuration Raspberry Pi](#Basic-Configuration-Raspberry-Pi)**
+2. **[Basic Configuration Raspberry Pi](#2.-Basic-Configuration-Raspberry-Pi)**
    - Change default Password
    - Activate SSH
    - Activate WiFi (optional)
    - Perform Update & upgrade
-3. **[Setup Raspberry Pi for PirAtE](#Setup-Raspberry-Pi-for-PirAtE)**
+3. **[Setup Raspberry Pi for PirAtE](#3.-Setup-Raspberry-Pi-for-PirAtE)**
    - Activate RPi Camera Interface
    - Activate Serial Interface
    - Install Git
@@ -18,7 +18,7 @@
 
 https://projects.raspberrypi.org/en/projects/raspberry-pi-setting-up
 
-## Install Raspberry Pi OS
+## 1. Install Raspberry Pi OS
 
 https://www.raspberrypi.org/documentation/installation/installing-images/README.md
 
@@ -69,7 +69,7 @@ The SSH (and WiFi) need to be Setup before the First boot
 
 
 
-## Basic Configuration Raspberry Pi
+## 2. Basic Configuration Raspberry Pi
 - change password with 
   - ```passwd```
 - update upgrade
@@ -82,7 +82,7 @@ The SSH (and WiFi) need to be Setup before the First boot
 https://www.elektronik-kompendium.de/sites/raspberry-pi/1906291.htm
 
 
-## Setup Raspberry Pi for PirAtE
+## 3. Setup Raspberry Pi for PirAtE
 ### Activate Interfaces
 
 ```
