@@ -2,15 +2,17 @@
 
 ## Install Instructions
 
+### Load source path for newest node Version in bash
+Use correct version number: 14 is current as of 2020-08-28
 ```
 curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
 ```
 
-use correct version number: 14 is current as of 2020-08-28
-
+### Install the added nodejs version
 ```
 sudo apt install -y nodejs
 ```
+This needs to Happen right after loading the source path and in the same CMD Session!
 
 
 

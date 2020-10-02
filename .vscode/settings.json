@@ -25,5 +25,9 @@
         "latex",
         "markdown",
         "plaintext"
+    ],
+    "cSpell.words": [
+        "Raspbian",
+        "usermod"
     ]
 }
