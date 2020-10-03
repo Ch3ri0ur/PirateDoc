@@ -5,7 +5,10 @@ Pirate (short for Pirate implements remote access to experiments) is a remote mo
 When integrated into an Arduino project variables can be designated to be sent or received. These then get periodically transmitted via UART to an application on a connected Raspberry PI, the Pirate-Bridge. This Bridge uses the data to provide an SSE-Stream. The Pirate-Client reads this stream and displays the data. It can in turn sent requests to the Pirate-Bridge to change variables on the Arduino. Parallel to this the Raspberry PI can also provide a live view of the project, via a Raspberry PI Camera and WebRTC.
 
 
-Components:
+Architecture:
+
+![Architecture](./attachment/pirate_architecture.png)
+
 
 + Arduino
     + Project
