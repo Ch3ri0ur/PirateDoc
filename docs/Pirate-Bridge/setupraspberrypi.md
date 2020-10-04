@@ -15,7 +15,7 @@
    - Install [Nodejs]
    - Install [Docker]
 
-
+Setup instructions for a Desktop Version can be found here:
 https://projects.raspberrypi.org/en/projects/raspberry-pi-setting-up
 
 ## 1. Install Raspberry Pi OS
@@ -24,7 +24,7 @@ https://www.raspberrypi.org/documentation/installation/installing-images/README.
 
 ### Download Image from Raspberry Pi homepage and using an Imager to install it
 
- Prepare SD Card
+Prepare SD Card
 SD Card Formater
 https://www.sdcard.org/downloads/formatter/
 

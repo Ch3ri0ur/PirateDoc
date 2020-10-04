@@ -20,26 +20,29 @@ from diagrams.programming.language import NodeJS
 
 
 with Diagram(name="Pirate Architecture", show=False):
-    with Cluster("Raspberry PI"):
-        with Cluster("Docker"):
-            nodeJs = NodeJS("Pirate-Bridge")
+    with Cluster("Pirate Module"):
+        with Cluster("Raspberry PI"):
+            with Cluster("Docker"):
+                nodeJs = NodeJS("Pirate-Bridge")
 
-        with Cluster("Docker2"):
-            Janus = Custom("Janus", "./customImages/janus-logo.png")
+            with Cluster("Docker2"):
+                Janus = Custom("Janus", "./customImages/janus-logo.png")
 
-        with Cluster("Docker3"):
-            Gstreamer = Custom("Gstreamer", "./customImages/gstreamer-logo.png")
-            
-        Janus << Edge(label="RTSP Stream",color="firebrick") << Gstreamer
-        react = React("Pirate-Flag")
-        caddy = Caddy("Reverse Proxy")
-        caddy << Edge(color="firebrick") >> Janus
-        caddy << Edge(color="firebrick") >> react
-        caddy << Edge(color="firebrick") >> nodeJs
+            with Cluster("Docker3"):
+                Gstreamer = Custom("Gstreamer", "./customImages/gstreamer-logo.png")
+                
+            Janus << Edge(label="RTSP Stream",color="firebrick") << Gstreamer
+            react = React("Pirate-Flag")
+            caddy = Caddy("Reverse Proxy")
+            caddy << Edge(color="firebrick") >> Janus
+            caddy << Edge(color="firebrick") >> react
+            caddy << Edge(color="firebrick") >> nodeJs
 
-
-    piCamera = IotCamera("Camera")
-    arduino = Custom("Pirate-Hook", "./customImages/720px-Arduino_Logo.png")
+        with Cluster("RS Project"):
+            piCamera = IotCamera("Camera")
+            with Cluster("Arduino"):
+                arduino = Custom("Pirate-Hook", "./customImages/720px-Arduino_Logo.png")
+                pid = Custom("PID Controller", "./customImages/720px-Arduino_Logo.png")
 
     # Data from Arduino to Pi
     nodeJs << Edge(label="Pirate Serial",color="firebrick") >> arduino
