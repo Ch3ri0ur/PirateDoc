@@ -86,8 +86,7 @@ https://www.raspberrypi.org/documentation/installation/installing-images/README.
 3. First steps
    - change Password with 
      - ```
-        passwd
-        ```
+       passwd
    - When not done before use Raspberry Config Manager to enable:
      - ```
         sudo raspi-config
@@ -206,6 +205,7 @@ type %USERPROFILE%\\.ssh\\id_rsa.pub | ssh  pi@raspberrypi "mkdir -p ~/.ssh && c
 ## (optional) create ssh key on pi and connect it with github
 
 https://docs.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh
+
 
 
 
