@@ -84,10 +84,8 @@ https://www.raspberrypi.org/documentation/installation/installing-images/README.
    -  Default User is "```pi```" and its Password is "```raspberry```"
 
 3. First steps
-   - change Password without
-   ```
-    passwd
-   ```
+   - Change Password with
+     -  `passwd`
    - When not done before use Raspberry Config Manager to enable:
      - ```
         sudo raspi-config
