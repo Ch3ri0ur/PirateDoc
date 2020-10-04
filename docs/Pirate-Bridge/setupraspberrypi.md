@@ -57,7 +57,7 @@ For the Full Headless mode (no attached Screen) the SSH (and WiFi) need to be Se
 
 Enable SSH:
 - Put file with name "ssh" without extension in root folder of boot partition
-  https://www.elektronik-kompendium.de/sites/raspberry-pi/1906281.htm
+    https://www.elektronik-kompendium.de/sites/raspberry-pi/1906281.htm
 
 
 Enable Wifi otherwise use Ethernet connection:
