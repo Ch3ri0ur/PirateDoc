@@ -103,26 +103,26 @@ For the Full Headless mode (no attached Screen) the SSH (and WiFi) need to be Se
           sudo apt update && sudo apt -y upgrade
           ```
 4. Other useful Commands/Knowledge
-- Multi terminals
-    - More than One SSH-Connection or Terminal can be open at once
-- Shutdown
-    - ```
-      sudo shutdown -h 0
-      ```
-- Reboot
-    - ```
-      sudo shutdown -r 0
-      ```
-    - ```
-      sudo reboot -h 0
-      ```
-- Display performance
-    - ```
-      htop
-      ```
-- Other Tip and Tricks for Basic Config
-    - https://www.raspberrypi.org/documentation/configuration/raspi-config.md
-    - https://www.elektronik-kompendium.de/sites/raspberry-pi/1906291.htm
+    - Multi terminals
+        - More than One SSH-Connection or Terminal can be open at once
+    - Shutdown
+        - ```
+          sudo shutdown -h 0
+          ```
+    - Reboot
+        - ```
+          sudo shutdown -r 0
+          ```
+        - ```
+          sudo reboot -h 0
+          ```
+    - Display performance
+        - ```
+          htop
+          ```
+    - Other Tip and Tricks for Basic Config
+        - https://www.raspberrypi.org/documentation/configuration/raspi-config.md
+        - https://www.elektronik-kompendium.de/sites/raspberry-pi/1906291.htm
 
 
 
