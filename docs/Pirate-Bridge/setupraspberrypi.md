@@ -1,26 +1,38 @@
 # Setup Raspberry Pi
 
-1. **[Install Raspberry Pi OS](#1.-Install-Raspberry-Pi-OS)**
+1. **[Install Raspberry Pi OS](#install)**
    - Any version of Raspbian OS will probably work.
    - For max. performance a none Desktop version should be used.
-2. **[Basic Configuration Raspberry Pi](#2.-Basic-Configuration-Raspberry-Pi)**
+2. **[Basic Configuration Raspberry Pi](#config)**
    - Change default Password
    - Activate SSH
    - Activate WiFi (optional)
    - Perform Update & upgrade
-3. **[Setup Raspberry Pi for PirAtE](#3.-Setup-Raspberry-Pi-for-PirAtE)**
+3. **[Setup Raspberry Pi for PirAtE](#setup)**
    - Activate RPi Camera Interface
    - Activate Serial Interface
    - Install Git
    - Install [Nodejs]
    - Install [Docker]
 
-Setup instructions for a Desktop Version can be found here:
+More detailed setup instructions for a Raspberry Pi Desktop can be found here:
 https://projects.raspberrypi.org/en/projects/raspberry-pi-setting-up
 
-## 1. Install Raspberry Pi OS
+## 1. Install Raspberry Pi OS on an SD Card<a id="install"></a>
+The Installation can be done in two ways.
+- Using the official Installer from Raspberry Pi
+- Using another Imager and download the Image manually
 
+Both methods are shown on the Raspberry Pi Homepage
 https://www.raspberrypi.org/documentation/installation/installing-images/README.md
+
+
+### Using Downloader and Installer from Raspberry Pi
+
+Raspberry Pi Imager can be downloaded from the Raspberry Homepage.
+https://www.raspberrypi.org/downloads/ \
+After Starting the Imager it will let you select 
+
 
 ### Download Image from Raspberry Pi homepage and using an Imager to install it
 
@@ -36,13 +48,9 @@ Flash OS
 https://www.balena.io/etcher/ 
 https://win32diskimager.download/
 
-### Using Downloader and Installer from Raspberry Pi
 
-Raspberry Pi Imager
-from https://www.raspberrypi.org/downloads/
 
-## Configure Pi
-
+## Configure Pi<a id="config"></a>
 ### For remote Access, SSH and WiFi should be activated before starting
 https://www.raspberrypi.org/documentation/configuration/wireless/headless.md 
 
@@ -82,7 +90,7 @@ The SSH (and WiFi) need to be Setup before the First boot
 https://www.elektronik-kompendium.de/sites/raspberry-pi/1906291.htm
 
 
-## 3. Setup Raspberry Pi for PirAtE
+## 3. Setup Raspberry Pi for PirAtE<a id="setup"></a>
 ### Activate Interfaces
 
 ```
