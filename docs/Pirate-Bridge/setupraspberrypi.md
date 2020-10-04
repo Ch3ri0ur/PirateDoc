@@ -84,44 +84,44 @@ https://www.raspberrypi.org/documentation/installation/installing-images/README.
    -  Default User is "```pi```" and its Password is "```raspberry```"
 
 3. First steps
-   - Change Password with
-     -  `passwd`
-   - When not done before use Raspberry Config Manager to enable:
-     - ```
-        sudo raspi-config
-        ```
+- Change Password with
+  -  `passwd`
+- When not done before use Raspberry Config Manager to enable:
+  - ```
+     sudo raspi-config
+     ```
 
-     - SSH
-       - ```Interfaces``` -> ```SSH``` -> Select "Yes"
-     - WiFi
-       - ```Localisation Options``` -> ```Change wireless country``` -> Select "DE"
-       - ```Network Options``` -> ```WiFi``` -> Enter WiFi Name and Password
-       - Later you can display the connection state with ```ifconfig```
-   - Update Package Library and Upgrade Software
-     - ```
-       sudo apt update && sudo apt -y upgrade
-       ```
-4. Other useful Commands/Knowledge
-   - Multi terminals
-     - More than One SSH-Connection or Terminal can be open at once
-   - Shutdown
-     - ```
-        sudo shutdown -h 0
-        ```
-   - Reboot
-     - ```
-        sudo shutdown -r 0
-        ```
-     - ```
-        sudo reboot -h 0
-        ```
-   - Display performance
-     - ```
-        htop
-        ```
-   - Other Tip and Tricks for Basic Config
-     - https://www.raspberrypi.org/documentation/configuration/raspi-config.md
-     - https://www.elektronik-kompendium.de/sites/raspberry-pi/1906291.htm
+  - SSH
+    - ```Interfaces``` -> ```SSH``` -> Select "Yes"
+  - WiFi
+    - ```Localisation Options``` -> ```Change wireless country``` -> Select "DE"
+    - ```Network Options``` -> ```WiFi``` -> Enter WiFi Name and Password
+    - Later you can display the connection state with ```ifconfig```
+- Update Package Library and Upgrade Software
+  - ```
+    sudo apt update && sudo apt -y upgrade
+    ```
+1. Other useful Commands/Knowledge
+- Multi terminals
+  - More than One SSH-Connection or Terminal can be open at once
+- Shutdown
+  - ```
+     sudo shutdown -h 0
+     ```
+- Reboot
+  - ```
+     sudo shutdown -r 0
+     ```
+  - ```
+     sudo reboot -h 0
+     ```
+- Display performance
+  - ```
+     htop
+     ```
+- Other Tip and Tricks for Basic Config
+  - https://www.raspberrypi.org/documentation/configuration/raspi-config.md
+  - https://www.elektronik-kompendium.de/sites/raspberry-pi/1906291.htm
 
 
 
