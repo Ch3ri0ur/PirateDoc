@@ -19,7 +19,7 @@ from diagrams.programming.framework import React
 from diagrams.programming.language import NodeJS
 
 
-with Diagram(name="Pirate Architecture", show=False):
+with Diagram(filename="pirate_architecture", show=False):
     with Cluster("Pirate Module"):
         with Cluster("Raspberry PI"):
             with Cluster("Docker"):
@@ -32,7 +32,8 @@ with Diagram(name="Pirate Architecture", show=False):
                 Gstreamer = Custom("Gstreamer", "./customImages/gstreamer-logo.png")
                 
             Janus << Edge(label="RTSP Stream",color="firebrick") << Gstreamer
-            react = React("Pirate-Flag")
+            with Cluster("ReactJs"):
+                react = React("Pirate-Flag")
             caddy = Caddy("Reverse Proxy")
             caddy << Edge(color="firebrick") >> Janus
             caddy << Edge(color="firebrick") >> react
@@ -52,25 +53,25 @@ with Diagram(name="Pirate Architecture", show=False):
     client = Client("User")
     client << Edge(color="firebrick") >> caddy
     
-with Diagram(name="Pirate Overview", show=False):
-    with Cluster("Pirate Modul"):
-        pi = Custom("Module Pi", "./customImages/RPi-Logo-SCREEN.png")
+with Diagram(filename="pirate_overview", show=False):
+    with Cluster("Pirate Module"):
+        pi = Custom("Pirate Flag", "./customImages/RPi-Logo-SCREEN.png")
             
             
         
 
         with Cluster("RS Project"):
             piCamera = IotCamera("Camera")
-            arduino = Custom("Arduino", "./customImages/720px-Arduino_Logo.png")
+            arduino = Custom("Pirate Hook", "./customImages/720px-Arduino_Logo.png")
 
 
 
     # Data from Arduino to Pi
-    pi << Edge(label="Pirate Serial",color="firebrick") >> arduino
+    pi << Edge(label="Pirate Bridge",color="firebrick") >> arduino
 
 
     pi << Edge(color="firebrick") << piCamera
 
     client = Client("User")
-    client << Edge(color="firebrick") >> pi
+    client << Edge(label="Webpage\n + \nWebRTC Stream",color="firebrick") >> pi
     
