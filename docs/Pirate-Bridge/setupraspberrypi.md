@@ -85,8 +85,9 @@ https://www.raspberrypi.org/documentation/installation/installing-images/README.
 
 3. First steps
    - change Password with 
-     - ```
-       passwd
+       - ```
+         passwd
+         ```
    - When not done before use Raspberry Config Manager to enable:
      - ```
         sudo raspi-config
