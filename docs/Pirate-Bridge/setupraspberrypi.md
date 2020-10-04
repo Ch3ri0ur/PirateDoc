@@ -53,26 +53,28 @@ https://www.raspberrypi.org/documentation/installation/installing-images/README.
 **For complete remote Access, the SSH and WiFi need to be activated before starting**<a id="headlessSSH"></a>
 https://www.raspberrypi.org/documentation/configuration/wireless/headless.md 
 
-
 For the Full Headless mode (no attached Screen) the SSH (and WiFi) need to be Setup before the First boot
-- Enable SSH 
-    - Put file with name "ssh" without extension in root folder of boot partition
-        https://www.elektronik-kompendium.de/sites/raspberry-pi/1906281.htm
-- Enable Wifi otherwise use Ethernet connection
-    - Put "wpa_supplicant.conf" file in root folder
-        Content of wpa_supplicant.conf
-        adapt countrycode, ssid and psk:
-        ```
-        ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
-        update_config=1
-        country=<Insert 2 letter ISO 3166-1 country code here e.g. DE> 
-        
-        network={
-            ssid="<Name of your wireless LAN>"
-            psk="<Password for your wireless LAN>"
-        }
-        ```
-        Replace all ```<...>``` !
+
+Enable SSH:
+- Put file with name "ssh" without extension in root folder of boot partition
+  https://www.elektronik-kompendium.de/sites/raspberry-pi/1906281.htm
+
+
+Enable Wifi otherwise use Ethernet connection:
+- Put "wpa_supplicant.conf" file in root folder
+    Content of wpa_supplicant.conf
+    adapt countrycode, ssid and psk:
+    ```
+    ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
+    update_config=1
+    country=<Insert 2 letter ISO 3166-1 country code here e.g. DE> 
+    
+    network={
+        ssid="<Name of your wireless LAN>"
+        psk="<Password for your wireless LAN>"
+    }
+    ```
+    Replace all ```<...>``` !
 
 
 1. Starting Pi
