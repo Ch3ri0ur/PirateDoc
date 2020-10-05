@@ -23,6 +23,7 @@ https://projects.raspberrypi.org/en/projects/raspberry-pi-setting-up
 
 ## 1. Install Raspberry Pi OS on an SD Card<a id="install"></a>
 The Installation can be done in two ways.
+
     - Using the official Installer from Raspberry Pi
     - Using another Imager and download the Image manually
 
@@ -56,11 +57,13 @@ https://www.raspberrypi.org/documentation/configuration/wireless/headless.md
 For the Full Headless mode (no attached Screen) the SSH (and WiFi) need to be Setup before the First boot
 
 Enable SSH:
+
 - Put file with name "ssh" without extension in root folder of boot partition
     https://www.elektronik-kompendium.de/sites/raspberry-pi/1906281.htm
 
 
 Enable Wifi otherwise use Ethernet connection:
+
 - Put "wpa_supplicant.conf" file in root folder
     Content of wpa_supplicant.conf
     adapt countrycode, ssid and psk:
