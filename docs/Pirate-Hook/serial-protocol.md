@@ -1,8 +1,22 @@
-# SerialProtokol
+# Pirate Serial Protocol
 
+The Pirate Serial Protocol uses the Serial UART/USB from the Arduino to transmit data from it to the Website and also allows to send information back.
 
+The Arduino Side of this Communication needed to be simple to use and less intensive in computing time. It also shouldn't block the loop of the Arduino to much or other needed calculations and action could be delayed. For this the Arduino side of the Protocol will use the data in its byte format directly from the Memory and will not perform any parsings. This also benefits the amount of bytes to send in the Serial Communication and generates fixed size Messages.
 
-All Strings need to End with an '\0'
+The other Side needs to do some extra Work, what is not so problematic, because this side has an OS to manage tasks and cannot block itself. Also they can perform much more calculations because have a much higher Clock frequency than the Arduino (16MHz) and also own more Cores to do it.
+
+To allow different Arduino Boards to use the Protocol even if the byte size of some datatypes are different, the Arduino sends at the start the information of the byte size of each datatype. This way the parser on the other side can handle it and prepare data for the way back.
+
+To make the Website as dynamic as possible and to reduce the effort of creating one, the Arduino also sends information about each generated Send and Receive variable. This way the Website generates from this Data directly a basic Layout with all Components. The Informations Contain Name, Type and Some more Parameter that will be Listed below. 
+
+## General 
+
+All Messages from the Arduino have to Start with a Unique Symbol to show its content
+
+All Messages from the Arduino have to End with a Delimiter so the Messages can be 
+
+All Strings End with an '\0'
 
 PirAtE_NO_DATA 0x29
 
@@ -19,7 +33,7 @@ The Arduino Side is kept small, means the Node side hast to Convert the Data in 
 |  Symbol  |    Msgtype    |       Style        |                    Content                    |
 | :------: | :-----------: | :----------------: | :-------------------------------------------: |
 |   0x29   |    No Data    |        0x29        | Informs the Arduino that no Data is available |
-| 0x30-... | Data Transfer | [ID][ValueInBytes] |              Transfer of a Value              |
+| >=0x30 | Data Transfer | [ID][ValueInBytes] |              Transfer of a Value              |
 
 
 
