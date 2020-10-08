@@ -1,6 +1,16 @@
 # Client API
 
-The Pirate-Bridge provides a set of endpoints
+The Pirate-Bridge provides a set of endpoints:
+
+| Endpoint       | Request type | Function                    |
+| -------------- | ------------ | --------------------------- |
+| /              | GET          | serves website              |
+| /stream        | GET          | stream of variable data     |
+| /getconfig     | GET          | variable meta data          |
+| /conf          | POST         | updates a variable          |
+| /configupdates | GET          | stream of changes via /conf |
+
+In the following sections these endpoints are further explained.
 
 
 ## Datastream
