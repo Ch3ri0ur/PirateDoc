@@ -26,7 +26,7 @@ with Diagram(filename="pirate_architecture", show=False):
                 nodeJs = NodeJS("Pirate-Bridge")
 
             with Cluster("Docker2"):
-                Janus = Custom("Janus", "./customImages/janus-logo.png")
+                Janus = Custom("Pirate-Spyglass", "./customImages/janus-logo.png")
 
             with Cluster("Docker3"):
                 Gstreamer = Custom("Gstreamer", "./customImages/gstreamer-logo.png")
@@ -70,7 +70,7 @@ with Diagram(filename="pirate_overview", show=False):
     pi << Edge(label="Pirate Bridge",color="firebrick") >> arduino
 
 
-    pi << Edge(color="firebrick") << piCamera
+    pi << Edge(label="Pirate-Spyglass",color="firebrick") << piCamera
 
     client = Client("User")
     client << Edge(label="Webpage\n + \nWebRTC Stream",color="firebrick") >> pi
