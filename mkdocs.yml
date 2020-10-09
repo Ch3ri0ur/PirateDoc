@@ -9,7 +9,8 @@ theme:
     language: en
     features:
         - navigation.expand
-        - tabs
+        - navigation.tabs
+        - navigation.instant
 markdown_extensions:
     - abbr
     - sane_lists
