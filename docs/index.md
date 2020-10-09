@@ -1,6 +1,10 @@
 # Pirate Overview
 Pirate (short for "Pirate Implements Remote Access to Experiments") is a remote monitoring solution for Arduino projects.
 
+<!-- perhaps add image with project ->arduino -> raspi -> website -->
+
+<!-- logo? -->
+
 ## Motivation
 
 When using an Arduino there are a lot of pain points. Pirate looks to solve a few of them:
@@ -13,15 +17,15 @@ When using an Arduino there are a lot of pain points. Pirate looks to solve a fe
 * Changing parameters 
     * often entails changing them in the source, recompiling and flashing again.
     * Alternatively additional hardware can be used to do that manually.
-* Extracting data is a hassle
-* Monitoring a project from a distance.
+* Extracting data
+* Monitoring the project from a distance.
 
 Pirate looks to be a solution to provide an realtime Interface where the variables and parameters can be monitored and changed on the fly. While doing that it also strives to have as little impact on cycle performance as possible.
 
 ## Overview
 When integrated into an Arduino project via the [Pirate Hook](Pirate-Hook/00-hook.md) variables can be designated to be sent or received. These then get periodically transmitted via UART to the [Pirate Bridge](Pirate-Bridge/00-bridge.md) on a connected Raspberry PI. The Bridge uses the data to provide an [interface](Pirate-Bridge/client-facing-interface.md) for the clients. The standard client is called [Pirate Flag](Pirate-Flag/00-flag.md). It reads data streams from the interface and displays the data in a webpage. It can in turn send requests to the [Pirate Bridge](Pirate-Bridge/00-bridge.md) to change parameters on the Arduino. Parallel to this the Raspberry PI can also provide a live view of the project with [Pirate Spyglass](Pirate-Spyglass/00-spyglass.md).
 
-## Get Started:
+## Getting Started:
 
 To get started a set of setup instructions are provided:
 
