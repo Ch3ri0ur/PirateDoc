@@ -6,6 +6,6 @@
 
 ## Implementation
 
-## Requirements fulfillment
+## Requirements Fulfillment
 
-## Future steps
+## Future Steps
