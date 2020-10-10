@@ -1,6 +1,25 @@
 # Arduino
 
-## Boards
+
+
+
+
+## Serial
+- Serial buffer
+    - Size: 64 byte
+    - Source: https://www.arduino.cc/reference/en/language/functions/communication/serial/available/
+- UART Protocol Default Setting is "SERIAL_8N1"
+    - No Parity
+    - 1 Stop Bit
+    - Source: https://www.arduino.cc/reference/en/language/functions/communication/serial/begin/
+- Baudrates (Some Standards)
+    - 9600
+    - ...
+    - 115200
+    - Source: https://de.wikipedia.org/wiki/Universal_Asynchronous_Receiver_Transmitter
+        
+
+## Boards Specific
 Some parameter are different from Board to Board. To keep the Pirate Hook optimal designed they ahd to be analysed.
 
 In further development, aspects like SPI and I2C need to be inspected to, currently only the basic Serial USB UART Communication is supported.
@@ -49,17 +68,3 @@ Source: https://store.arduino.cc/arduino-micro-without-headers
     - 0(RX), 1(TX) + (USB)
 
 
-## Serial
-- Serial buffer
-    - Size: 64 byte
-    - Source: https://www.arduino.cc/reference/en/language/functions/communication/serial/available/
-- UART Protocol Default Setting is "SERIAL_8N1"
-    - No Parity
-    - 1 Stop Bit
-    - Source: https://www.arduino.cc/reference/en/language/functions/communication/serial/begin/
-- Baudrates (Some Standards)
-    - 9600
-    - ...
-    - 115200
-    - Source: https://de.wikipedia.org/wiki/Universal_Asynchronous_Receiver_Transmitter
-        
