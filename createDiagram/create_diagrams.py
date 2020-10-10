@@ -22,7 +22,7 @@ from diagrams.programming.language import NodeJS
 with Diagram(filename="pirate_architecture", show=False):
     with Cluster("Pirate Module"):
         with Cluster("Raspberry PI"):
-            with Cluster("Docker"):
+            with Cluster("Docker1"):
                 nodeJs = NodeJS("Pirate-Bridge")
 
             with Cluster("Docker2"):
@@ -39,7 +39,7 @@ with Diagram(filename="pirate_architecture", show=False):
             caddy << Edge(color="firebrick") >> react
             caddy << Edge(color="firebrick") >> nodeJs
 
-        with Cluster("RS Project"):
+        with Cluster("Arduino Project"):
             piCamera = IotCamera("Camera")
             with Cluster("Arduino"):
                 arduino = Custom("Pirate-Hook", "./customImages/720px-Arduino_Logo.png")
@@ -60,7 +60,7 @@ with Diagram(filename="pirate_overview", show=False):
             
         
 
-        with Cluster("RS Project"):
+        with Cluster("Arduino Project"):
             piCamera = IotCamera("Camera")
             arduino = Custom("Pirate Hook", "./customImages/720px-Arduino_Logo.png")
 
