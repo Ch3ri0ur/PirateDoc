@@ -3,7 +3,6 @@
 As already stated in the overview Pirate tries to create a solution for monitoring Arduino projects.
 The primary use case is sending and receiving of data. In addition the remote Monitoring 
 
-
 The overall Goals are defined below. Further and more specific requirements can be found in each components section.
 
 ## User Stories
