@@ -12,10 +12,12 @@ To make the Website [[Pirate Flag]]as dynamic as possible and to reduce the effo
 
 ## General Aspects
 
-All symbols used in the protocol are based on ASCII values (see http://www.asciitable.com/).
-The message type symbols often are connected to the content. Means a Integer Message will be signed with an 'I'. This makes it easier to read the stream from the arduino in console and allows investigation without the [[Pirate Bridge]]
-Index of Receive and Send messages have an offset of 0x30 (48) that is the char '0' in ASCII. This way a user can destingtisch 
+All symbols used by the protocol on the [[Pirate Hook]] site are based on ASCII values (see http://www.asciitable.com/).
+The message type symbols are often a repräsentation of the content. Means an Integer Message will be signed with an 'I'. This makes it easier to read the stream from the Arduino in the console and allows investigation and tests without the [[Pirate Bridge]].
+ID's of receive and send messages have an offset of 0x30 (48), so that the Index 0 is a  char '0' in ASCII. This way when observing a the arduino output and input the ID is a printable char character and Index 0-9 can be directly read.
 
+
+## [[Pirate Hook]] to [[Pirate Bridge]]
 All Messages from the Arduino have to Start with a Unique Symbol to show its content
 
 All Messages from the Arduino have to End with a Delimiter so the Messages can be 
