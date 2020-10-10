@@ -4,7 +4,7 @@
 
 
 
-## Serial
+## Serial USB (RX/TX)
 - Serial buffer
     - Size: 64 byte
     - Source: https://www.arduino.cc/reference/en/language/functions/communication/serial/available/
@@ -17,6 +17,7 @@
     - ...
     - 115200
     - Source: https://de.wikipedia.org/wiki/Universal_Asynchronous_Receiver_Transmitter
+- Auto Restart on establishing
         
 
 ## Boards Specific
