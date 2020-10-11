@@ -16,6 +16,10 @@ The rough requirements of the Client are:
 
 ## Implementation
 
+The React app is based on a [[CRA]] template with typescript enabled. 
+
+Seperate components were created for the Graph, the controls and the live feed.
+
 [Further details on Implementation](30-flag-implementation.md){: .md-button}
 
 ## Requirements Fulfillment and Future Steps
