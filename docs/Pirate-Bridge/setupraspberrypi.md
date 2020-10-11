@@ -82,11 +82,14 @@ Enable Wifi otherwise use Ethernet connection:
 
 1. Starting Pi
 
-2. Open Terminal
-    -  Using ssh (Requiers that ssh is active and pi is connect to network see [Headless SSH Setup](#headlessSSH)
-        - ssh tools #TODO
+2. Access Terminal Shell on Raspberry PI
+    -  Using ssh (Requires that ssh is active and pi is connect to network see [Headless SSH Setup](#headlessSSH)
+        - type ```ssh pi@raspberrypi``` to connect to "a" Raspberry PI on the network. If this does not work replace "raspberrypi" with its IP adress. 
+        -  Default User is "```pi```" and its Password is "```raspberry```"
     -  Using Monitor and Keyboard (not headless Methode)
-    -  Default User is "```pi```" and its Password is "```raspberry```"
+        -  Login
+        -  Default User is "```pi```" and its Password is "```raspberry```"
+        -  Open a Terminal
 
 3. First steps
     - Change Password with
@@ -173,10 +176,6 @@ Enable Wifi otherwise use Ethernet connection:
         npm run start             # For Development
         npm run build             # For Production
         ```
-
-if Arduino is flashed from Raspberry Pi
-
-
 
 
 

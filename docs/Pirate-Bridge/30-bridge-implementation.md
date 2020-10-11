@@ -38,6 +38,10 @@ To help debugging the Hook provides the functionality to send strings designated
 
 To enable communication the Hook aggregates all the necessary information about the variables to be sent or received for instance: index, name, datatype etc. and sends it to the Bridge. There it is stored for later use by the callbacks. Primarily this information is used to to correctly interpret and encode the serial buffer content and to forward the information to the Flag. Another benefit is, that the message sizes can be matched against the configuration data.
 
+Before these config messages are sent at boot a start sequence is sent by the hook: 0xEE,P,i,r,A,tE,\n 
+
+Any bytes sent before this start sequence are discarded. This is necessary because on start old values in the serial buffer may disturb correct config messaging.
+
 ### Request for Data
 
 When data is requested by the Hook a Buffer ("Arduino Send Buffer") is checked for outstanding variables to be sent to the Arduino. These are then batched together with their index into packages as big as the input Buffer on the Arduino allows. Naturally sent variables get removed from the buffer. In case a variable is to long to be sent, a long string, in that particular package the rest of the buffer is checked for variables that fit. In the subsequent request the variables that where skipped have a higher priority and are sent. The "Arduino Send Buffer" is implemented as a dictionary with the indexes as keys. This is done, so that only the most recent version of a variable is sent and no index is sent twice.
