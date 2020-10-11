@@ -1,4 +1,4 @@
-# 20 Hook Requirements
+# Hook Requirements
 
 - low memory usage
     - dynamic variables
@@ -19,3 +19,5 @@
 
 consistent
 now breaks (auto restart)
+debug ability
+enable normal printout for debug

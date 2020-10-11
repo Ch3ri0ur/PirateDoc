@@ -1,14 +1,16 @@
-# 40 Hook Validation
+# Hook Validation
 
-## Future Steps
-
-other systems
-other com types
-
+## tests
 test ino
 testbandwidth
 simulated pid
+serial monitor
 
-plans
+
+
+## Future Steps
+other systems
+other com types
 serial
-spi i2c ..
+spi i2c rxtx ..
+adding data security/checks parity ..
