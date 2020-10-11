@@ -1,4 +1,4 @@
-# 40 Hook Validation
+# Hook Validation
 
 ## tests
 test ino
