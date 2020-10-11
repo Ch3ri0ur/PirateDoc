@@ -157,11 +157,8 @@ Enable Wifi otherwise use Ethernet connection:
     cd pirate_modules/janus-gateway-docker/
     ```
     ```
-    docker-compose up
+    docker-compose up -d
     ```
-docker run -d --restart always --name restreamer -e "RS_USERNAME=fn" -e "RS_PASSWORD=asdfasdf" -e "RS_MODE=RASPICAM" -p 8080:8080 -v /mnt/restreamer/db:/restreamer/db -v /opt/vc:/opt/vc --privileged datarhei/restreamer-armv7l:latest
-major delay
-
 
 
 ### Webpage / PirateFlag
