@@ -22,7 +22,7 @@ disable debug define
 
 
 ### Strings
-strings länge begrenzt serial buffer full
+strings länge begrenzt serial buffer full \0 fehler verhalten
 
 ## More Infos
 more defines
@@ -33,3 +33,4 @@ serialbuffersize
 
 ## good to know
 bugs issues features
+baudrate datarate

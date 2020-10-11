@@ -19,3 +19,5 @@
 
 consistent
 now breaks (auto restart)
+debug ability
+enable normal printout for debug
