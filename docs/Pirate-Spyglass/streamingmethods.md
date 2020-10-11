@@ -82,6 +82,12 @@ lag 1-3 sec
 good setup/maintenance 
 fallback to mjpeg needs flag in chrome/firefox -> rly bad
 
+
+restreamer
+docker run -d --restart always --name restreamer -e "RS_USERNAME=fn" -e "RS_PASSWORD=pwd" -e "RS_MODE=RASPICAM" -p 8080:8080 -v /mnt/restreamer/db:/restreamer/db -v /opt/vc:/opt/vc --privileged datarhei/restreamer-armv7l:latest
+major delay
+
+
 Gstreamer complexity of multiplexers
 [Matthew Waters - GStreamer WebRTC.pdf](https://gstreamer.freedesktop.org/data/events/gstreamer-conference/2017/Matthew%20Waters%20-%20GStreamer%20WebRTC.pdf)
 
