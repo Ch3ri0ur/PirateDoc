@@ -22,6 +22,7 @@ The following requirements are derived from the accepted overarching requirement
 
 * The Bridge must run stably for at least 3 hours of continuos use
 * The connection should be available 24/7
+* The Bridge must be usable with a LTE connection
 * The latency of the whole chain may not exceed 2 seconds
     * For the Bridge communication to the client 300 ms are allocated
 * The Bridge must implement the Serial Protocol defined in: [Serial Protocol](../Pirate-Hook/pirate-serial-protocol.md)

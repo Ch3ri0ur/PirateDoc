@@ -26,6 +26,8 @@ The functional requirements are matched by the implementation.
     * In stress tests the Bridge ran stably for more than 72 hours.
 * The connection should be available 24/7
     * In stress tests the Bridge ran stably for more than 72 hours.
+* The Bridge must be usable with a LTE connection
+    * The data volume can be limited by the hook.
 * The latency of the whole chain may not exceed 2 seconds
     * For the Bridge communication to the client 300 ms are allocated
         * The latency has not yet been measured but in preliminary tests the Bridge can operate at speeds above 25 variables sent per 16 ms interval. With an estimate of 10 bytes per message and a serial send buffer size of 64 bytes the buffer is cycled through multiple times per 16 ms interval placing the latency well below the targeted 300 ms.

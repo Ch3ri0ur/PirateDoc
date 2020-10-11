@@ -1,6 +1,6 @@
 # Pirate Chart Overview
 
-The Chart is the umbrella term for the signaling and route finding of this project. It encompasses:
+The Chart is the umbrella term for the signaling and finding of a secure route to the project. 
 
 [Getting Started](10-chart-getting-started.md){: .md-button .md-button--primary }
 
@@ -8,8 +8,7 @@ The Chart is the umbrella term for the signaling and route finding of this proje
 
 * A reverse proxy to unify the endpoints of the pirate module.
     * ensuring secure connection via HTTPS
-        * This necessitates a domain and certificate.
-        * The domain needs to be registered via DNS.
+        * This necessitates a domain, DNS and certificate.
 * A method to point users to the possible projects and route the queries above the reverse proxies of the individual moduls.
 
 [Requirements](20-chart-requirements.md){: .md-button  }
@@ -20,7 +19,7 @@ For the reverse proxy, needed to unify the endpoints, a server implementation ca
 
 [Further details on Implementation](30-chart-implementation.md){: .md-button}
 
-## Requirements Fulfillment
+## Requirements Fulfillment and Future Steps
 
 In this section the requirements are compared with the current state of the project and future steps outlined.
 
