@@ -7,22 +7,24 @@ The communication to the [Pirate Bridge](../Pirate-Bridge/00-bridge.md) uses the
 Pirate Hook uses a serial connection of the [Arduino's](Theory/arduino.md) to transmit and receive data by the protocol. In the current implementation only Serial communication over UART/USB is supported.
 
 
-## Getting Started
+## [Getting Started](10-hook-getting-started.md)
 
 In the [Getting Started](10-hook-getting-started.md) all needed steps to get it running on the Arduino are listed. Also some more modification that can be done by Defines can found there. 
 
 
-## Requirements
+## [Requirements](20-hook-requirements.md)
 
-The Requirements have been created from the first wishes and got extended by needed features and aspects, that occurred during the development. Some of them are currently very focused on the initial setup of Raspberry Pi and Arduino. This will maybe in further Steps change.
+The [Requirements](20-hook-requirements.md) have been created from the first wishes and got extended by needed features and aspects, that occurred during the development. Some of them are currently very focused on the initial setup of Raspberry Pi and Arduino. This will maybe in further Steps change.
 
 ## Theory
 
 In the Theory Folder some knowledge can be found, that influenced the decisions of the specifications. Also it includes data sheets and other research material.
 
-## Implementation
+## [Implementation](30-hook-implementation.md)
 
-## Requirements Fulfillment
+In the [Implementation](30-hook-implementation.md) Section all function descriptions and their requirements to function probably can be found here. Also the possible user modifications and the normal and special behavior in situations are described. This includes the wanted features and known bugs or tradeoffs.
+
+## Validation & Test
 
 
 
