@@ -42,7 +42,9 @@ This requirement is not met. As there is not yet a way to target multiple projec
 
 ## Future Steps
 
-The original goal of integration this solution into a more complex network and enabling access to multiple projects needs to be implemented. 
+* The original goal of integrating this solution into a more complex network and enabling access to multiple projects needs to be implemented. 
+* Encapsulating the server into a Docker container for easier management.
+
 
 
 
