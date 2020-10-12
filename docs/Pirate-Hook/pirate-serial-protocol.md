@@ -10,6 +10,10 @@ To allow different [Arduino](Theory/arduino.md) Boards as Master, even if the by
 
 To make the Website [Pirate Flag](../Pirate-Flag/00-flag.md) as dynamic as possible and to reduce the effort of creating one, the Master also sends information about each generated Send and Receive variable. This way the website generates from this data directly a basic layout with all Components. The informations contain Name, Type and some more parameter that will be listed in a section below. 
 
+All Symbols used in the Protocol are based on ASCII values and are only one character long and Strings are only char arrays with an '\0' at the end.
+
+<a id="IDOffset"></a>
+ID's of Messages have an offset of '0x30', what represents a '0' in ASCII. This is to make the first 10 Messages better readable in the Terminal. 
 
 ## Master to Slave
 
@@ -21,8 +25,6 @@ The length of the Delimiter is chosen to never get mixups with data. The Newline
 
 <a id="Datatypes"></a>
 Data containing messages get signed with a Datatype Symbol, these Symbols are listed in the table below.
-
-
 
 |   Datatype    | Symbol |
 | :-----------: | :----: |
@@ -38,6 +40,7 @@ Data containing messages get signed with a Datatype Symbol, these Symbols are li
 |     char      |   C    |
 |    char[]     |   S    |
 
+
 The Master to Slave Communication can be separated in 3 different Categories
 - Initial Informations
 - Sending of Informations
@@ -47,19 +50,48 @@ The Master to Slave Communication can be separated in 3 different Categories
 
 ### Initial Communication
 
-To allow the Website auto generation and inform the Slave what data can be Received or Send and what bytesize is used for the different messagetypes
+To allow the Website auto generation and inform the Slave, what data can be Received or Send and what bytesize is used for the different [Message Datatypes](#Datatypes) the Master has to send this informations at the start.
 
+1. Synced Start
 
+    To Sync the Communications and to ignore all Data send before the Communication starts with a Start Sequence:
+    ```
+    0xee, 'P', 'i', 'r', 'A', 't', 'E', '\n'
+    ```
+    It has no Delimiter at the end
 
-byte PirAtE_SERIAL_START[PirAtE_SERIAL_START_LENGTH] = {0xee, 'P', 'i', 'r', 'A', 't', 'E', '\n'};
+2. Datatypes info 'P'
 
-PirAtE_DATATYPE_INFO 'P'
+    To inform the Slave about the Bytesize of the different Datatypes an information about each Datatype and its size gets send at the start. This Message starts with a 'P' and contains each [Message Datatype Symbol](#Datatypes) followed with its bytesize as number. All the Types are separated by a Separator '$'.
 
-PirAtE_TRANSMIT_SEPERATOR '$'
+3. Send Message info 'T'
 
+    For the Website generation a list of all incoming data is needed. For this Reason an information of all Send messages need to be send at the start. This type of Message is signed with an 'T' and gets repeated for each Send Message index.
 
-[Datatype Symbol](#Datatypes)
-### Msg Types 
+    The content of this Message is ID (with [Offset](#IDOffset)), Name, [Datatype](#Datatypes) and Scale separated by a Separator '$':
+    ```
+    T<ID>$<Name>$<Type>$<Scale>
+    ```
+    For Example:
+    "T0\$X1\0\$I\$Y"
+
+    Is the Information about the Send Message with ID = 0 that has the Name = X1, Datatype = Int and gets displayed in the Scale 'Y'.
+
+4. Receive Message info 't'
+
+    All Values that can be controlled by the Website need also be listed. This information get also be send at the start and is signed with a 't'. It gets repeated for each Message ID
+
+    The content of this Message is ID (with [Offset](#IDOffset)), Name, [Datatype](#Datatypes), DefaultValue, MaxValue and MinValue separated by a Separator '$':
+    ```
+    t<ID>$<Name>$<Type>$<Default>$<Max>$<Min>
+    ```
+    For Example:
+    "T0\$X1\0\$I\$0$100$-100"
+
+    Is the Information about the Receive Message with ID = 0 that has the Name = X1, Datatype = Int, that starts with a default value = 0 and can be set to values between -100 and 100.
+
+### Sending of Informations
+ 
 | Symbol |               Msgtype                |                       Style                       |                   Content                   |
 | :----: | :----------------------------------: | :-----------------------------------------------: | :-----------------------------------------: |
 |   P    |            Datatype Sizes            |                P[Type][Bytes]\$..                 | All datatypes with Size in Bytes get Listed |
