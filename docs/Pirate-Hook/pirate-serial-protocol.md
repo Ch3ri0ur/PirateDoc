@@ -12,8 +12,12 @@ To make the Website [Pirate Flag](../Pirate-Flag/00-flag.md) as dynamic as possi
 
 All Symbols used in the Protocol are based on ASCII (http://www.asciitable.com/) values and are only one character long and Strings are only char arrays with an '\0' at the end.
 
-<a id="IDOffset"></a>
+<a id="idoffset"></a>
 ID's of Messages have an offset of '0x30', what represents a '0' in ASCII. This is to make the first 10 Messages better readable in the Terminal. 
+
+<a id="byteformat"></a>
+When something refers to Value in "byteformat", than it means that the value of any Datatype is split in bytes that are order in LSB (least significant Byte first). Strings are unaffected by this.
+
 
 ## Master to Slave
 
@@ -23,7 +27,7 @@ All Messages from the Master to the Slave End with a Delimiter, so that the Slav
 ```
 The length of the Delimiter is chosen to never get mixups with data. The Newline and the choice of readable symbol's was chosen to allow reading of the data Stream in Serial Terminal from the Arduino IDE.
 
-<a id="Datatypes"></a>
+<a id="datatypes"></a>
 Data containing messages get signed with a Datatype Symbol, these Symbols are listed in the table below.
 
 |   Datatype    | Symbol |
@@ -50,7 +54,7 @@ The Master to Slave Communication can be separated in 3 different Categories
 
 ### Initial Communication
 
-To allow the Website auto generation and inform the Slave, what data can be Received or Send and what bytesize is used for the different [Message Datatypes](#Datatypes) the Master has to send this informations at the start.
+To allow the Website auto generation and inform the Slave, what data can be Received or Send and what bytesize is used for the different [Message Datatypes](#datatypes) the Master has to send this informations at the start.
 
 1. Synced Start
 
@@ -59,18 +63,18 @@ To allow the Website auto generation and inform the Slave, what data can be Rece
     ```
     0xee, 'P', 'i', 'r', 'A', 't', 'E', '\n'
     ```
-    
+
     It has no Delimiter at the end
 
 2. Datatypes info 'P'
 
-    To inform the Slave about the Bytesize of the different Datatypes an information about each Datatype and its size gets send at the start. This Message starts with a 'P' and contains each [Message Datatype Symbol](#Datatypes) followed with its bytesize as number. All the Types are separated by a Separator '$'.
+    To inform the Slave about the Bytesize of the different Datatypes an information about each Datatype and its size gets send at the start. This Message starts with a 'P' and contains each [Message Datatype Symbol](#datatypes) followed with its bytesize as number. All the Types are separated by a Separator '$'.
 
 3. Send Message info 'T'
 
     For the Website generation a list of all incoming data is needed. For this Reason an information of all Send messages need to be send at the start. This type of Message is signed with an 'T' and gets repeated for each Send Message index.
 
-    The content of this Message is ID (with [Offset](#IDOffset)), Name, [Datatype](#Datatypes) and Scale separated by a Separator '$':
+    The content of this Message is ID (with [Offset](#idoffset)), Name, [Datatype](#datatypes) and Scale separated by a Separator '$':
 
     ```
     T<ID>$<Name>$<Type>$<Scale>
@@ -87,7 +91,7 @@ To allow the Website auto generation and inform the Slave, what data can be Rece
 
     All Values that can be controlled by the Website need also be listed. This information get also be send at the start and is signed with a 't'. It gets repeated for each Message ID
 
-    The content of this Message is ID (with [Offset](#IDOffset)), Name, [Datatype](#Datatypes), DefaultValue, MaxValue and MinValue separated by a Separator '$':
+    The content of this Message is ID (with [Offset](#idoffset)), Name, [Datatype](#datatypes), DefaultValue, MaxValue and MinValue separated by a Separator '$':
 
     ```
     t<ID>$<Name>$<Type>$<Default>$<Max>$<Min>
@@ -100,9 +104,11 @@ To allow the Website auto generation and inform the Slave, what data can be Rece
 
         Is the Information about the Receive Message with ID = 0 that has the Name = X1, Datatype = Int, that starts with a default value = 0 and can be set to values between -100 and 100.
 
+    In case of [Datatype](#datatypes) String the Max Value is the max length of the String without the '\0'.
+
 ### Sending of Informations
 
-All Informations that get send to the Slave start with a [Datatype Symbol](#Datatypes) followed by the Message ID (with [Offset](#IDOffset)) and the Datavalue in raw Bytes:
+All Informations that get send to the Slave start with a [Datatype Symbol](#datatypes) followed by the Message ID (with [Offset](#idoffset)) and the Datavalue in [raw Bytes](#byteformat):
 
 ```
 <Type><ID><ValueAsBytes>
@@ -113,37 +119,47 @@ All Informations that get send to the Slave start with a [Datatype Symbol](#Data
     C0A
     ```
 
-    A 'C' Char Message that is for Message Index 0 contains the Value 'A'.
+    A 'C' Char Message that is for Data with the Index = 0 contains the Value 'A'.
 
-### Requesting of Informations
+### Requesting of Informations <a id="request"></a>
 
-*MaxLength depends on buffer size and Overhead
-PirAtE_RECEIVE_DATATYPE_STRING_MAXLENGTH = PirAtE_Serial_Buffer_Size - PirAtE_CHARARRAY_END_LENGTH - PirAtE_MSG_DATAID_LENGTH
-PirAtE_MSG_DATATYPE_STRING_MAXLENGTH = PirAtE_MSG_DATA_MAXLENGTH - PirAtE_CHARARRAY_END_LENGTH
+When the Master can receive new Informations and no Data is available in the Buffer, than the Master can Request new Data by Sending out an Request. This is signed by an 'R' and contains no other informations.
 
+```
+R
+```
 
-//Offset of actual Data to DataMsg Start
-PirAtE_MSG_DATA_OVERHEAD (PirAtE_MSG_DATAID_LENGTH + PirAtE_MSG_DATATYPE_LENGTH)
-//MaxData Length
-PirAtE_MSG_DATA_MAXLENGTH (PirAtE_Serial_Buffer_Size - PirAtE_MSG_DATA_OVERHEAD - PirAtE_MSG_DELIMITER_LENGTH)
-
+It should be only send after all Received Data is read and no [NoData](#nodata) from the Slave was received. After an Intervall of not receiving any Data or [NoData](#nodata) the Master can request again to keep the Communication running.
 
 ## Slave to Master
 
-eventbased
-The Arduino Side is kept small, means the Node side hast to Convert the Data in bytes before sending
+Slave can only Answer on the Master [Request](#request), but the Master has to restart the Communication, when the Serial Connection is established and send all the Initial informations again.
 
-|  Symbol  |    Msgtype    |       Style        |                    Content                    |
-| :------: | :-----------: | :----------------: | :-------------------------------------------: |
-|   0x29   |    No Data    |        0x29        | Informs the Arduino that no Data is available |
-| >=0x30 | Data Transfer | [ID][ValueInBytes] |              Transfer of a Value              |
+On the [Request](#request) the Slave can answer with a Data Transfer or a No Data.
 
+### Data Transfer
 
-arduino hook master low computing time slave bridge event triggered
+When a [Request](#request) is received the Slave can send Data till the buffer size is reached or end it with a [NoData](#nodata). The Sending of multiple Values for one Message Index in one Message shouldn't be done. The Values could get ignored or could slowly be readout and cause unpredictable changes.
 
-rewrite to hook and bridge ignore arduino in protocol just that master slow low computing time and cannot manage tasks and bridge faster more time can manage task event driven
+All Data that gets transmitted has to start with the Message ID followed by the Value in [Byteformat](#byteformat) and bytesize that got defined in the start.
 
-simplyfy master sends type info msg info recv and send 
-send happens asynchronus  and compacted
+```
+<ID><ValueAsBytes>
+```
 
-recive after request, request can be repeated immedatly except "no data" was reviced  else send new request after interval after last request to not spam events. data is send compacted in buffer size because request only when empty
+!!! note "For Example:"
+    ```
+    00
+    ```
+
+    A Message for the Data with Index = 0 and it contains an one Byte long data with the value 0x30.
+
+### No Data <a id="nodata"></a>
+
+When on a Request no Data available is, the Slave can send a "No Data" '0x29' to the Master, to inform it to not ask for more Data till the next intervall.
+
+```
+0x29
+```
+
+0x29 is used because the Indexes start with the [Offset](#idoffset) 0x30.
