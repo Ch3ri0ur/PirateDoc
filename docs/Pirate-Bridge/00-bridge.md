@@ -1,14 +1,13 @@
 # Overview Pirate Bridge
 
-The Bridge components major concern is providing the user with all the resources he/she needs and connecting the user with Arduino. 
+The Bridge component translates the serial communication with the Arduino and provides an API for the clients.
 
 [Getting Started](10-bridge-getting-started.md){: .md-button .md-button--primary }
 
 ## Requirements
-In this section an overview of the necessary functions are provided.
 
 * Managing the connection with the Pirate Hook on the connected Arduino
-* Serving the API 
+* Serving an API for
     * Sending the project data 
     * Receiving and forwarding control commands
 * Serving the client website 
@@ -17,13 +16,11 @@ In this section an overview of the necessary functions are provided.
 
 ## Implementation
 
-The Bridge is foremost a [[nodejs]] application which reads the serial port on the Raspberry PI and broadcasts the information to all connected clients. (more about this interface here: [HTTP Interface](client-facing-interface.md)). 
+The Bridge is a [[nodejs]] application which reads the serial port on the Raspberry PI and broadcasts the information to all connected clients. (more about this interface here: [client facing API](client-facing-interface.md)). 
 
 When polled the Bridge will supply the Arduino with the values the clients sent to it. 
 
-It also serves the static content of the Pirate Flag.
-
-
+It also serves the client website, the Pirate Flag.
 
 [Implementation](30-bridge-implementation.md){: .md-button}
 

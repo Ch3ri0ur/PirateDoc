@@ -12,7 +12,6 @@ The Pirate-Bridge provides a set of endpoints:
 
 In the following sections these endpoints are further explained.
 
-
 ## Datastream
 GET /stream
 

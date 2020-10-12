@@ -1,2 +1,2 @@
-# 20 Flag Requirements
+# Flag Requirements
 
