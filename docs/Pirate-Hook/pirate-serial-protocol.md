@@ -55,9 +55,11 @@ To allow the Website auto generation and inform the Slave, what data can be Rece
 1. Synced Start
 
     To Sync the Communications and to ignore all Data send before the Communication starts with a Start Sequence:
+
     ```
     0xee, 'P', 'i', 'r', 'A', 't', 'E', '\n'
     ```
+    
     It has no Delimiter at the end
 
 2. Datatypes info 'P'
@@ -69,9 +71,11 @@ To allow the Website auto generation and inform the Slave, what data can be Rece
     For the Website generation a list of all incoming data is needed. For this Reason an information of all Send messages need to be send at the start. This type of Message is signed with an 'T' and gets repeated for each Send Message index.
 
     The content of this Message is ID (with [Offset](#IDOffset)), Name, [Datatype](#Datatypes) and Scale separated by a Separator '$':
+
     ```
     T<ID>$<Name>$<Type>$<Scale>
     ```
+
     !!! note "For Example:"
         ```
         T0\$X1\0\$I\$Y
@@ -84,9 +88,11 @@ To allow the Website auto generation and inform the Slave, what data can be Rece
     All Values that can be controlled by the Website need also be listed. This information get also be send at the start and is signed with a 't'. It gets repeated for each Message ID
 
     The content of this Message is ID (with [Offset](#IDOffset)), Name, [Datatype](#Datatypes), DefaultValue, MaxValue and MinValue separated by a Separator '$':
+
     ```
     t<ID>$<Name>$<Type>$<Default>$<Max>$<Min>
     ```
+
     !!! note "For Example:"
         ```
         t0\$X1\0\$I\$0$100$-100
@@ -97,9 +103,11 @@ To allow the Website auto generation and inform the Slave, what data can be Rece
 ### Sending of Informations
 
 All Informations that get send to the Slave start with a [Datatype Symbol](#Datatypes) followed by the Message ID (with [Offset](#IDOffset)) and the Datavalue in raw Bytes:
+
 ```
 <Type><ID><ValueAsBytes>
 ```
+
 !!! note "For Example:"
     ```
     C0A
