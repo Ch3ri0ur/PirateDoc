@@ -4,7 +4,10 @@ The low memory and time usage aspect are partly the reason, why many functions a
 
 overview
 
-
+    - only 3 needed Stages
+        1. Start Communication (Setup)
+        2. Define variables (Setup)
+        3. Perform Send & Receive (Main Loop)
 
 mainfunctions
 
@@ -12,7 +15,7 @@ start
 
 define vars
 receive
-send
+send overloaded
 
 
 send

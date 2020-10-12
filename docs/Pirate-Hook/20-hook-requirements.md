@@ -1,5 +1,9 @@
 # Requirements
 
+The Requirements for the [Pirate Hook](00-hook.md) have mostly a relation to the controller project that they should be used in. This includes time management and memory usage.
+
+This set Goals for the Implementation are listed below:
+
 - low memory usage
     - dynamic variables
     - global variables
@@ -7,17 +11,14 @@
 - low time usage
     - almost no blocking
     - max time of actions can be defined
-    - no parsing, just raw data
+    - low processing time
 - simple to use
     - just a few functions
-    - only 3 needed Stages
-        1. Start Communication (Setup)
-        2. Define variables (Setup)
-        3. Perform Send & Receive (Main Loop)
-    - website is automatically generated
-
-
-consistent
-now breaks (auto restart)
-debug ability
-enable normal printout for debug
+    - basic configuration available
+    - website generates automatically from code
+- consistent
+    - stable, no breaks
+    - mostly data lost free
+    - predictable behavior
+    - self fixing, restart
+- debug via Serial Terminal still possible
