@@ -1,4 +1,4 @@
-# Chart Getting Started
+# Getting Started
 
 Not all steps are transferable so it is assumed that a domain is available and Let's Encrypt or a certificate is available.
 

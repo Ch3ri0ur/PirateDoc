@@ -22,7 +22,7 @@ Seperate components were created for the Graph, the controls and the live feed.
 
 [Further details on Implementation](30-flag-implementation.md){: .md-button}
 
-## Requirements Fulfillment and Future Steps
+## Validation and Future Steps
 
 [Validation](40-flag-validation.md){: .md-button}
 
