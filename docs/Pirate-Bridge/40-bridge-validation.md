@@ -38,6 +38,7 @@ The functional requirements are matched by the implementation.
 
 ## Future Steps
 
-* to improve performance the data sending protocol will be adapted to send the delimiter not every variable but but batch multiple messages.
-* to improve security the types and indexes should be checked before sending in either direction.
-* a suit of tests is needed to further prove the stability of the Bridge.
+* To improve performance the data sending protocol will be adapted to send the delimiter not every variable but but batch multiple messages.
+* To improve security the types and indexes should be checked before sending in either direction.
+* A suit of tests is needed to further prove the stability of the Bridge.
+* Encapsulate the Bridge in a Docker container for easy installation and management.
