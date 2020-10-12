@@ -1,4 +1,4 @@
-# Hook Requirements
+# Requirements
 
 - low memory usage
     - dynamic variables

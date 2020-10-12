@@ -25,7 +25,9 @@ In the Theory Folder some knowledge can be found, that influenced the decisions 
 
 In the [Implementation](30-hook-implementation.md) Section all function descriptions and their requirements to function probably can be found here. Also the possible user modifications and the normal and special behavior in situations are described. This includes the wanted features and known bugs or tradeoffs.
 
-## Validation & Test
+## [Validation](40-hook-validation.md)
+
+The [Validation](40-hook-validation.md) contains a overview of the requirement fulfillment of the created Hook implementation. Used concepts get rated and further needed and planned steps get introduced.
 
 
 
