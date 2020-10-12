@@ -1,6 +1,12 @@
 # Implementation
-The flag is a website written in [[React]] a library for creating dynamic websites. This [[React]] client is based on a [[CRA]] template for [[Typescript]]. A React project is structured into components which can be placed into each other. This helps encapsulating the different tasks. These components can communicate with their children by passing variables called properties and their parents by passing callbacks as properties a method called "hoisting". With only these methods it would be quite tedious to pass variables to a neighboring component branch, requiring hoisting and subsequent "prop drilling" a pattern in which properties are passed on from child to child in order to reach the destination. To streamline this process it is possible to use either a state management library or   It is also 
+The flag is a website written in [[React]] a library for creating dynamic websites. This [[React]] client is based on a [[CRA]] template for [[Typescript]]. A React project is structured into components which can be placed into each other. This helps encapsulating the different tasks. These components can communicate with their children by passing variables called properties and their parents by passing callbacks as properties a method called "hoisting". With only these methods it would be quite tedious to pass variables to a neighboring component branch, requiring hoisting and subsequent "prop drilling" a pattern in which properties are passed on from child to child in order to reach the destination. To streamline this process it is possible to use either a state management library or implement this functionality. In this project the library [react-hookstore](https://github.com/jhonnymichel/react-hookstore) was used which is based on Reacts useState-hook. 
 
+!!! note "useState"
+    The useState-hook is a new state management method in React. When calling ```[state,setState] = useState(initialValue)``` the value and a setState function are created. If this function is called the component in which the useState was used is notified of the new state and rerenders.
+
+With this library the same "useState" hook can be used in multiple components without needing to pipe the values through the parents. 
+
+On creation of the Website the 
 The website is structured into:
 
 * Header
@@ -22,9 +28,9 @@ This component itself also has a set of tasks:
 
 ### Sourcing the data
 
-When this component is created and when the config options from the change
+When this component is created or when the configuration changes  when the config options from the change
 
-Instead of a centralized component sourcing all the necessary data for all components here the graph component itself registers for the SSE-Stream on "/stream". 
+Instead of a centralized component sourcing all the necessary data for all components, here the graph component itself registers for the SSE-Stream on "/stream". 
     generate dynamic data structure based on config
     Strings/char not implemented.
 put in queue
