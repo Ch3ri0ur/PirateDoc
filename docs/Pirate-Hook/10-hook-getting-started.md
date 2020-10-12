@@ -1,4 +1,4 @@
-# Hook Getting Started
+# Getting Started
 
 ## Include Library
 pirate.h
