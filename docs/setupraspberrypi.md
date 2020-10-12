@@ -40,11 +40,9 @@ https://www.raspberrypi.org/documentation/installation/installing-images/README.
 
 
 2. Download Image from Raspberry Pi homepage and using an Imager to install it
-    1. Prepare SD Card by Clearing it with
-        - SD Card Formater https://www.sdcard.org/downloads/formatter/
-    2. Download Image
+    1. Download Image
         - "Raspberry Pi OS (32-bit) Lite" from https://www.raspberrypi.org/downloads/raspberry-pi-os/
-    3. Flash OS on SD Card
+    2. Flash OS on SD Card
         - https://www.balena.io/etcher/ 
         - or https://win32diskimager.download/
 
