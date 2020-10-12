@@ -1,4 +1,4 @@
-# Bridge Getting Started
+# Getting Started
 
 To set up the Bridge with all its components the following steps need to be taken:
 

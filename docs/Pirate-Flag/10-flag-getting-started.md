@@ -1,4 +1,4 @@
-# Flag Getting Started
+# Getting Started
 
 The assumption is that the Raspberry PI was correctly set up and [[NodeJS]] was installed.
 

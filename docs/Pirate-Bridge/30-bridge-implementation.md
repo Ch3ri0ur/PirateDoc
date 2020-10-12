@@ -7,7 +7,7 @@ The Bridge primarily has two components:
 
 In addition it serves the Pirate Flag.
 
-# Primary Components
+## Primary Components
 
 As already stated the Bridge primarily has two components, one facing the serial port and one implementing a HTTP API. The components communicate internally by writing into shared buffers for data to be sent / received. 
 

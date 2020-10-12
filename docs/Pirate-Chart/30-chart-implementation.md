@@ -1,4 +1,4 @@
-# Chart Implementation
+# Implementation
 
 This is currently a small component, because only one project is supported and the project is not yet integrated in the targeted network. 
 

@@ -1,4 +1,4 @@
-# Bridge Requirements
+# Requirements
 
 The Bridge component has a set of functional and non functional Requirements.
 

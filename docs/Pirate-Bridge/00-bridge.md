@@ -24,7 +24,7 @@ It also serves the client website, the Pirate Flag.
 
 [Implementation](30-bridge-implementation.md){: .md-button}
 
-## Requirements Fulfillment
+## Validation
 
 In this section the requirements are compared with the current state of the project and future steps outlined.
 

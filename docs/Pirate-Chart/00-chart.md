@@ -19,7 +19,7 @@ For the reverse proxy, needed to unify the endpoints, a server implementation ca
 
 [Further details on Implementation](30-chart-implementation.md){: .md-button}
 
-## Requirements Fulfillment and Future Steps
+## Validation and Future Steps
 
 In this section the requirements are compared with the current state of the project and future steps outlined.
 

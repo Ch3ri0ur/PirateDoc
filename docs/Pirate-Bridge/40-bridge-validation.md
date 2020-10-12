@@ -1,4 +1,4 @@
-# Bridge Validation and Future Steps
+# Validation and Future Steps
 
 In this section the initial requirements are measured against the current implementation.
 
