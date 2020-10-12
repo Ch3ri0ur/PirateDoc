@@ -10,7 +10,7 @@ To allow different [Arduino](Theory/arduino.md) Boards as Master, even if the by
 
 To make the Website [Pirate Flag](../Pirate-Flag/00-flag.md) as dynamic as possible and to reduce the effort of creating one, the Master also sends information about each generated Send and Receive variable. This way the website generates from this data directly a basic layout with all Components. The informations contain Name, Type and some more parameter that will be listed in a section below. 
 
-All Symbols used in the Protocol are based on ASCII values and are only one character long and Strings are only char arrays with an '\0' at the end.
+All Symbols used in the Protocol are based on ASCII (http://www.asciitable.com/) values and are only one character long and Strings are only char arrays with an '\0' at the end.
 
 <a id="IDOffset"></a>
 ID's of Messages have an offset of '0x30', what represents a '0' in ASCII. This is to make the first 10 Messages better readable in the Terminal. 
@@ -21,7 +21,7 @@ All Messages from the Master to the Slave End with a Delimiter, so that the Slav
 ```
 0xff, 'P', 'i', 'r', 'A', 't', 'E', '\n'
 ```
-The length of the Delimiter is chosen to never get mixups with data. The Newline and the choice of readable simples was chosen to allow reading of the data Stream in Serial Terminal from the Arduino IDE.
+The length of the Delimiter is chosen to never get mixups with data. The Newline and the choice of readable symbol's was chosen to allow reading of the data Stream in Serial Terminal from the Arduino IDE.
 
 <a id="Datatypes"></a>
 Data containing messages get signed with a Datatype Symbol, these Symbols are listed in the table below.
@@ -72,10 +72,12 @@ To allow the Website auto generation and inform the Slave, what data can be Rece
     ```
     T<ID>$<Name>$<Type>$<Scale>
     ```
-    For Example:
-    "T0\$X1\0\$I\$Y"
+    !!! note "For Example:"
+        ```
+        T0\$X1\0\$I\$Y
+        ```
 
-    Is the Information about the Send Message with ID = 0 that has the Name = X1, Datatype = Int and gets displayed in the Scale 'Y'.
+        Is the Information about the Send Message with ID = 0 that has the Name = X1, Datatype = Int and gets displayed in the Scale 'Y'.
 
 4. Receive Message info 't'
 
@@ -85,36 +87,27 @@ To allow the Website auto generation and inform the Slave, what data can be Rece
     ```
     t<ID>$<Name>$<Type>$<Default>$<Max>$<Min>
     ```
-    For Example:
-    "T0\$X1\0\$I\$0$100$-100"
+    !!! note "For Example:"
+        ```
+        t0\$X1\0\$I\$0$100$-100
+        ```
 
-    Is the Information about the Receive Message with ID = 0 that has the Name = X1, Datatype = Int, that starts with a default value = 0 and can be set to values between -100 and 100.
+        Is the Information about the Receive Message with ID = 0 that has the Name = X1, Datatype = Int, that starts with a default value = 0 and can be set to values between -100 and 100.
 
 ### Sending of Informations
- 
-| Symbol |               Msgtype                |                       Style                       |                   Content                   |
-| :----: | :----------------------------------: | :-----------------------------------------------: | :-----------------------------------------: |
-|   P    |            Datatype Sizes            |                P[Type][Bytes]\$..                 | All datatypes with Size in Bytes get Listed |
-|   T    |     Configuration of one SendMsg     | T[ID]\$[Name]\$[Type]\$[DefaultV]\$[MaxV]\$[MinV] |  Every Definition of a Send Msg gets Send   |
-|   t    |   Configuration of one ReceiveMsg    |         t[ID]\$[Name]\$[Type]\$[DefaultV]         | Every Definition of a Receive Msg gets Send |
-|   R    |         Request for new Data         |                         R                         |        Request to Node for more Data        |
-|   I    |      Data Msg containing an int      |                I[ID][ValueInBytes]                |                 sizeof(int)                 |
-|   U    | Data Msg containing an unsigned int  |                U[ID][ValueInBytes]                |            sizeof(unsigned int)             |
-|   L    |     Data Msg containing an long      |                L[ID][ValueInBytes]                |                sizeof(long)                 |
-|   u    | Data Msg containing an unsigned long |                u[ID][ValueInBytes]                |            sizeof(unsigned long)            |
-|   F    |     Data Msg containing an float     |                F[ID][ValueInBytes]                |                sizeof(float)                |
-|   D    |    Data Msg containing an double     |                D[ID][ValueInBytes]                |               sizeof(double)                |
-|   B    |     Data Msg containing an byte      |                   B[ID][1Byte]                    |                sizeof(byte)                 |
-|   W    |     Data Msg containing an word      |                   W[ID][2Bytes]                   |                sizeof(word)                 |
-|   b    |     Data Msg containing an bool      |                   b[ID][1Byte]                    |                sizeof(bool)                 |
-|   C    |     Data Msg containing an char      |                    C[ID][Char]                    |                sizeof(char)                 |
-|   S    |    Data Msg containing an char[]     |                   S[ID][String]                   |                      *                      |
 
-[*1]
+All Informations that get send to the Slave start with a [Datatype Symbol](#Datatypes) followed by the Message ID (with [Offset](#IDOffset)) and the Datavalue in raw Bytes:
 ```
-hallo ich bin code
+<Type><ID><ValueAsBytes>
 ```
+!!! note "For Example:"
+    ```
+    C0A
+    ```
 
+    A 'C' Char Message that is for Message Index 0 contains the Value 'A'.
+
+### Requesting of Informations
 
 *MaxLength depends on buffer size and Overhead
 PirAtE_RECEIVE_DATATYPE_STRING_MAXLENGTH = PirAtE_Serial_Buffer_Size - PirAtE_CHARARRAY_END_LENGTH - PirAtE_MSG_DATAID_LENGTH
@@ -129,6 +122,14 @@ PirAtE_MSG_DATA_MAXLENGTH (PirAtE_Serial_Buffer_Size - PirAtE_MSG_DATA_OVERHEAD 
 
 ## Slave to Master
 
+eventbased
+The Arduino Side is kept small, means the Node side hast to Convert the Data in bytes before sending
+
+|  Symbol  |    Msgtype    |       Style        |                    Content                    |
+| :------: | :-----------: | :----------------: | :-------------------------------------------: |
+|   0x29   |    No Data    |        0x29        | Informs the Arduino that no Data is available |
+| >=0x30 | Data Transfer | [ID][ValueInBytes] |              Transfer of a Value              |
+
 
 arduino hook master low computing time slave bridge event triggered
 
@@ -138,46 +139,3 @@ simplyfy master sends type info msg info recv and send
 send happens asynchronus  and compacted
 
 recive after request, request can be repeated immedatly except "no data" was reviced  else send new request after interval after last request to not spam events. data is send compacted in buffer size because request only when empty
-
-
-
-
-
-
-
-## General Aspects
-
-All symbols used by the protocol on the [Pirate Hook](00-hook.md) site are based on ASCII values (see http://www.asciitable.com/).
-The message type symbols are often a repräsentation of the content. Means an Integer Message will be signed with an 'I'. This makes it easier to read the stream from the Arduino in the console and allows investigation and tests without the [Pirate Bridge](../Pirate-Bridge/00-bridge.md).
-ID's of receive and send messages have an offset of 0x30 (48), so that the Index 0 is a  char '0' in ASCII. This way when observing a the arduino output and input the ID is a printable char character and Index 0-9 can be directly read.
-
-
-## [Pirate Hook](00-hook.md) to [Pirate Bridge](../Pirate-Bridge/00-bridge.md)
-All Messages from the Arduino have to Start with a Unique Symbol to show its content
-
-All Messages from the Arduino have to End with a Delimiter so the Messages can be 
-
-All Strings End with an '\0'
-
-PirAtE_NO_DATA 0x29
-
-//Value Offset 0x30
-PirAtE_MSG_DATAID_OFFSET ((byte)'0')
-
-
-
-
-## Node to Arduino
-
-The Arduino Side is kept small, means the Node side hast to Convert the Data in bytes before sending
-
-|  Symbol  |    Msgtype    |       Style        |                    Content                    |
-| :------: | :-----------: | :----------------: | :-------------------------------------------: |
-|   0x29   |    No Data    |        0x29        | Informs the Arduino that no Data is available |
-| >=0x30 | Data Transfer | [ID][ValueInBytes] |              Transfer of a Value              |
-
-
-
-
-
-
