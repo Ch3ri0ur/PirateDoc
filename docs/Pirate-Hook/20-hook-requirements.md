@@ -2,14 +2,14 @@
 
 The Requirements for the [Pirate Hook](00-hook.md) have mostly a relation to the controller project that they should be used in. This includes time management and memory usage.
 
-This set Goals for the Implementation are listed below:
+This and more Requirements for the Implementation are listed below:
 
 - low memory usage
     - dynamic variables
     - global variables
     - program code
 - low time usage
-    - almost no blocking
+    - almost no blocking / active waiting
     - max time of actions can be defined
     - low processing time
 - simple to use

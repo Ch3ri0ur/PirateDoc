@@ -18,8 +18,9 @@ from diagrams.aws.iot import IotCamera
 from diagrams.programming.framework import React
 from diagrams.programming.language import NodeJS
 
+graph_attr = {"fontsize": "45", "bgcolor": "transparent", "pad": "0.0"}
 
-with Diagram(filename="pirate_architecture", show=False):
+with Diagram(filename="pirate_architecture", show=False, graph_attr=graph_attr):
     with Cluster("Pirate Module"):
         with Cluster("Raspberry PI"):
             with Cluster("Docker1"):
@@ -53,9 +54,9 @@ with Diagram(filename="pirate_architecture", show=False):
     client = Client("User")
     client << Edge(color="firebrick") >> caddy
     
-with Diagram(filename="pirate_overview", show=False):
+with Diagram(filename="pirate_overview", show=False, graph_attr=graph_attr):
     with Cluster("Pirate Module"):
-        pi = Custom("Pirate Flag", "./customImages/RPi-Logo-SCREEN.png")
+        pi = Custom("Raspberry Pi", "./customImages/RPi-Logo-SCREEN.png")
             
             
         
@@ -64,13 +65,8 @@ with Diagram(filename="pirate_overview", show=False):
             piCamera = IotCamera("Camera")
             arduino = Custom("Pirate Hook", "./customImages/720px-Arduino_Logo.png")
 
-
-
-    # Data from Arduino to Pi
-    pi << Edge(label="Pirate Bridge",color="firebrick") >> arduino
-
-
-    pi << Edge(label="Pirate-Spyglass",color="firebrick") << piCamera
+    pi << Edge(label="",color="firebrick") << piCamera
+    pi << Edge(label="Serial",color="firebrick") >> arduino
 
     client = Client("User")
     client << Edge(label="Webpage\n + \nWebRTC Stream",color="firebrick") >> pi

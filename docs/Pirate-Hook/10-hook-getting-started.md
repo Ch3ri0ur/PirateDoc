@@ -1,5 +1,10 @@
 # Getting Started
 
+!!! note "Warning!"
+    The function names have changed over the versions and can be different in old ones.
+
+
+
 ## 1. Include Library
 
 The Pirate Library needs to be inserted in the Arduino Project folder. After ```pirate.h``` and ```pirate_config.h``` are in the Folder the Programm/Arduino IDE can be opened again and the Code can be included in the Programm with:
@@ -24,7 +29,9 @@ The defined amount needs to be equal or higher the amount used. It will cause Il
 
 ## 3. Usage
 
-1. Start
+### 3.1. Start<a id=start></a>
+
+The Serial communication with the Host needs to be started, this means at the start of the Setup the Start Function needs to be called. It also sends out the System (Arduino) Based Informations.
 
     ```
     PirAtE_START();
@@ -32,24 +39,27 @@ The defined amount needs to be equal or higher the amount used. It will cause Il
 
 
 
-2. Add Variables
-    - send
+### 3.2. Add Variables
 
-        ```
-        key = PirAtE_ADD_SEND_VAR(Data_Name, Global_VariableAddress, PirAtE_MSG_DATATYPE);
+This needs to happen in the Setup once for each Variable that should be send or received (both at once will work but the sliders in the Website will not adjust with it). It needs to happen after the [Pirate Start](#start)
 
-        key = PirAtE_ADD_SEND_VAR(Data_Name, Global_VariableAddress, PirAtE_MSG_DATATYPE, PirAtE_Scale);
+- Add Variables to Send
 
-        key = PirAtE_ADD_SEND_VAR(Data_Name, Global_VariableAddress, PirAtE_MSG_DATATYPE, PirAtE_Scale, PirAtE_MSG_SENDMODE);
-        ```
+    ```
+    key = PirAtE_ADD_SEND_VAR(Data_Name, Global_VariableAddress, PirAtE_MSG_DATATYPE);
+
+    key = PirAtE_ADD_SEND_VAR(Data_Name, Global_VariableAddress, PirAtE_MSG_DATATYPE, PirAtE_Scale);
+
+    key = PirAtE_ADD_SEND_VAR(Data_Name, Global_VariableAddress, PirAtE_MSG_DATATYPE, PirAtE_Scale, PirAtE_MSG_SENDMODE);
+    ```
 
 
 
-    - recv
+- Add Variables to Receive
 
-        ```
-        // key = PirAtE_ADD_RECV_VAR(Data_Name, Global_VariableAddress, PirAtE_MSG_DATATYPE, Default_Value, Max_Value, Min_Value);
-        ```
+    ```
+    // key = PirAtE_ADD_RECV_VAR(Data_Name, Global_VariableAddress, PirAtE_MSG_DATATYPE, Default_Value, Max_Value, Min_Value);
+    ```
 
 
 
