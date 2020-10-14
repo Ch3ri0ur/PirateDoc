@@ -59,6 +59,8 @@ Datatypes:<a id="datatypes"></a>
 |     char      |  PirAtE_MSG_DATATYPE_CHAR  |
 |    char[]     | PirAtE_MSG_DATATYPE_STRING |
 
+Strings have some limitations and are handelt different this can be found [here](#strings) or in the [Implementation](30-hook-implementation.md)!
+
 - Add Variables to Send
 
     All Variables that the user wants to be send and displayed on the website, need to be defined in the Arduino Setup with one of the following functions:
@@ -125,7 +127,7 @@ buffer always full no working
 disable debug define
 
 
-### Strings
+### Strings<a id="strings"></a>
 ```
 // key = PirAtE_ADD_SEND_STRING(Data_Name, Global_VariableAddress);
 // key = PirAtE_ADD_SEND_STRING(Data_Name, Global_VariableAddress, PirAtE_MSG_SENDMODE);
