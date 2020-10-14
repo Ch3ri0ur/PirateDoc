@@ -1,10 +1,13 @@
 # Implementation
 
+!!! note "Warning!"
+    The function names have changed over the versions and can be different in old ones.
+
 The low memory and time usage aspect are partly the reason, why many functions are just macros, that get optimized by the compiler.
 
 overview
 
-    - only 3 needed Stages
+    - Only 3 needed Stages for the User
         1. Start Communication (Setup)
         2. Define variables (Setup)
         3. Perform Send & Receive (Main Loop)
