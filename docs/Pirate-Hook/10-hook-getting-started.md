@@ -41,9 +41,27 @@ The Serial communication with the Host needs to be started, this means at the st
 
 ### 3.2. Add Variables
 
-This needs to happen in the Setup once for each Variable that should be send or received (both at once will work but the sliders in the Website will not adjust with it). It needs to happen after the [Pirate Start](#start)
+This needs to happen in the Arduino ```void setup()``` once for each Variable that should be send or received (both at once will work but the sliders in the Website will not adjust with it). It needs to happen after the [Pirate Start](#start) or the information can not be send out!
+
+Datatypes:<a id="datatypes"></a>
+
+|   Datatype    |        Defined Name        |
+| :-----------: | :------------------------: |
+|      int      |  PirAtE_MSG_DATATYPE_INT   |
+| unsigned int  |  PirAtE_MSG_DATATYPE_UINT  |
+|     long      |  PirAtE_MSG_DATATYPE_LONG  |
+| unsigned long | PirAtE_MSG_DATATYPE_ULONG  |
+|     float     | PirAtE_MSG_DATATYPE_FLOAT  |
+|    double     | PirAtE_MSG_DATATYPE_DOUBLE |
+|     byte      |  PirAtE_MSG_DATATYPE_BYTE  |
+|     word      |  PirAtE_MSG_DATATYPE_WORD  |
+|     bool      |  PirAtE_MSG_DATATYPE_BOOL  |
+|     char      |  PirAtE_MSG_DATATYPE_CHAR  |
+|    char[]     | PirAtE_MSG_DATATYPE_STRING |
 
 - Add Variables to Send
+
+    All Variables that the user wants to be send and displayed on the website, need to be defined in the Arduino Setup with one of the following functions:
 
     ```
     key = PirAtE_ADD_SEND_VAR(Data_Name, Global_VariableAddress, PirAtE_MSG_DATATYPE);
@@ -53,13 +71,51 @@ This needs to happen in the Setup once for each Variable that should be send or 
     key = PirAtE_ADD_SEND_VAR(Data_Name, Global_VariableAddress, PirAtE_MSG_DATATYPE, PirAtE_Scale, PirAtE_MSG_SENDMODE);
     ```
 
+    The Function uses these arguments:
+    - key: byte
+        - Returns a ID that can be used for Flag management
+    - Data_Name: String
+        - Name of the Variable on the Website. ```E.g. "Var1"```
+        - Should be short
+    - Global_VariableAdress: *any
+        - Pointer to any supported [Datatype](#datatypes)
+    - PirAtE_MSG_DATATYPE: [PirAtE_MSG_DATATYPE](#datatypes)
+    - PirAtE_Scale: String
+        - Scale Name in which the Variable should be displayed. ```E.g. "Distance"```
+        - Units can be defined in Square Brackets and will. ```E.g. "Distance in [m]"```
+        - Default is "y" with no unit
+        - Should be short
+    - PirAtE_MSG_SENDMODE
+        - PirAtE_MSG_SENDMODE_AUTO
+            - Send automatically each time it can
+        - PirAtE_MSG_SENDMODE_MANUEL
+            - Flag needs to be set each time it should be send
+        - Default is PirAtE_MSG_SENDMODE_AUTO
+
 
 
 - Add Variables to Receive
 
+    All Variables that the user wants to be controllable on the website, need to be defined in the Arduino Setup with the following function:
     ```
     // key = PirAtE_ADD_RECV_VAR(Data_Name, Global_VariableAddress, PirAtE_MSG_DATATYPE, Default_Value, Max_Value, Min_Value);
     ```
+
+    The Function uses these arguments:
+    - key: byte
+        - Returns a ID that can be used for Flag management
+    - Data_Name: String
+        - Name of the Variable on the Website. ```E.g. "Var1"```
+        - Should be short
+    - Global_VariableAdress: *any
+        - Pointer to any supported [Datatype](#datatypes)
+    - PirAtE_MSG_DATATYPE: [PirAtE_MSG_DATATYPE](#datatypes)
+    - Default_Value: any
+        - Initial Value
+    - Max_Value: any
+        - Max Value for the Control
+    - Min_Value: any
+        - Min Value for the Control
 
 
 
