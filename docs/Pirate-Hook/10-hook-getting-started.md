@@ -8,6 +8,7 @@
 ## 1. Include Library
 
 The Pirate Library needs to be inserted in the Arduino Project folder. After ```pirate.h``` and ```pirate_config.h``` are in the Folder the Programm/Arduino IDE can be opened again and the Code can be included in the Programm with:
+
 ```
 #include "pirate.h"
 ```
@@ -74,6 +75,7 @@ Strings have some limitations and are handelt different this can be found [here]
     ```
 
     The Function uses these arguments:
+
     - key: byte
         - Returns a ID that can be used for Flag management
     - Data_Name: String
@@ -104,6 +106,7 @@ Strings have some limitations and are handelt different this can be found [here]
     ```
 
     The Function uses these arguments:
+
     - key: byte
         - Returns a ID that can be used for Flag management
     - Data_Name: String
@@ -120,14 +123,59 @@ Strings have some limitations and are handelt different this can be found [here]
         - Min Value for the Control
 
 
+### 3.3. Send and Receive
 
+To be able to Receive and Send the registered variables the Functions for ```Send``` and ```Receive``` need to be performed. They will try to Send and Receive, while trying to not exceed defined maximum Blocktimes, that can be defined.
 
-### debug
-buffer always full no working
-disable debug define
+```
+PirAtE_SEND();
+PirAtE_RECV();
+```
 
+They need to be used in the Arduino ```void loop()``` and can be used multiple time, but this will increase the code size. Directly in the main loop, where it is very often called, is the best way to include it. The other code in the Loop should be nonen Blocking, so try to not use any ```delay(ms);```, this way the sending and receiving happens frequently.
 
-### Strings<a id="strings"></a>
+## Debug
+
+All Messages need to be Send in the correct format, see [Pirate Serial Protocol](pirate-serial-protocol.md). For Debug the [Pirate Hook](00-hook.md) provides a Function to send Debug message. It can be used like the [Serial.println()](https://www.arduino.cc/reference/de/language/functions/communication/serial/println/).
+
+```
+PirAtE_DEBUG(content)
+PirAtE_DEBUG(content, format)
+```
+
+The Function uses these arguments:
+
+    - content: any
+    - format: a format modifier of Serial.println()
+
+Keep in Mind that this will fill the send buffer of the Arduino, especially intensive usage of Debug messages. When used before the Send Methode a full Buffer could cause a skip of the sending. When intensive debugging a [disabling of the Pirate Communication](#disablepirate) and using the serial monitor is recommended.
+
+For better performance in the final application the [Debug Messages can also be turned off](#disabledebug).
+
+### Disable Pirate Protocol<a id="disablepirate"></a>
+
+All Message use the [Pirate Serial Protocol](pirate-serial-protocol.md), this means also all Debug Messages start with an ```M``` and end with the Pirate Delimiter. Also all Send Variables get send all the time.
+
+To make Debugging in the Serial Monitor of the Arduino IDE easier, all Pirate related communication can be disabled with a Define. All Debug Message will than appear like a basic ```Serial.println()``` and the normal Sending gets Disabled. 
+
+```
+#define PirAtE_COM_OFF
+```
+
+The Code size gets reduced dramatically by this, so keep in mind when turning it back on it will turn normal again.
+
+**This can only be used when not connected to the [Pirate Bridge](../attachment/pirate_bridge.png)!**
+
+### Disable Debug<a id="disabledebug"></a>
+
+When this is defined all Debug messages will be deactivated completely.
+
+```
+#define PirAtE_DEBUG_DISABLED
+```
+
+## Strings<a id="strings"></a>
+
 ```
 // key = PirAtE_ADD_SEND_STRING(Data_Name, Global_VariableAddress);
 // key = PirAtE_ADD_SEND_STRING(Data_Name, Global_VariableAddress, PirAtE_MSG_SENDMODE);
