@@ -3,6 +3,7 @@
 !!! note "Warning!"
     The function names have changed over the versions and can be different in old ones.
 
+In this [Code Example](code-example.md) a really basic Setup can be found and can be extended easily.
 
 
 ## 1. Include Library
@@ -77,7 +78,7 @@ Strings have some limitations and are handelt different this can be found [here]
     The Function uses these arguments:
 
     - key: byte
-        - Returns a ID that can be used for Flag management
+        - Returns a ID that can be used for [Flag management](#flags)
     - Data_Name: String
         - Name of the Variable on the Website. ```E.g. "Var1"```
         - Should be short
@@ -108,7 +109,7 @@ Strings have some limitations and are handelt different this can be found [here]
     The Function uses these arguments:
 
     - key: byte
-        - Returns a ID that can be used for Flag management
+        - Returns a ID that can be used for [Flag management](#flags)
     - Data_Name: String
         - Name of the Variable on the Website. ```E.g. "Var1"```
         - Should be short
@@ -176,17 +177,73 @@ When this is defined all Debug messages will be deactivated completely.
 
 ## Strings<a id="strings"></a>
 
-```
-// key = PirAtE_ADD_SEND_STRING(Data_Name, Global_VariableAddress);
-// key = PirAtE_ADD_SEND_STRING(Data_Name, Global_VariableAddress, PirAtE_MSG_SENDMODE);
-// key = PirAtE_ADD_SEND_STRING(Data_Name, Global_VariableAddress, PirAtE_MSG_SENDMODE, StringBufferLength);
-```
+Strings have some special properties, that are different from normal vars. The Send and Receive Var can be added with the basic Add methode, but in these cases the size of the String is set to the maximum possible length, which is depending on the Serial buffersize.
 
-```
-// key = PirAtE_ADD_RECV_STRING(Data_Name, Global_VariableAddress, StringBufferLength);
-```
+- In case of Sending its defined as ```PirAtE_DATATYPE_STRING_MAXLENGTH```
+- In case of Receiving it is ```PirAtE_RECEIVE_DATATYPE_STRING_MAXLENGTH```
 
-strings länge begrenzt serial buffer full \0 fehler verhalten
+This is the char symbol count without the String endsymbole ```\0```.
+Long Strings can Influence the behavior of Send and Receive.
+
+- Send String
+
+    For adding Custom length Strings the following functions need to be used.
+    ```
+    // key = PirAtE_ADD_SEND_STRING(Data_Name, Global_VariableAddress);
+    // key = PirAtE_ADD_SEND_STRING(Data_Name, Global_VariableAddress, PirAtE_MSG_SENDMODE);
+    // key = PirAtE_ADD_SEND_STRING(Data_Name, Global_VariableAddress, PirAtE_MSG_SENDMODE, StringBufferLength);
+    ```
+
+    - key: byte
+        - Returns a ID that can be used for [Flag management](#flags)
+    - Data_Name: String
+        - Name of the Variable on the Website. ```E.g. "Var1"```
+        - Should be short
+    - Global_VariableAdress: *any
+        - Pointer to any supported [Datatype](#datatypes)
+    - PirAtE_MSG_DATATYPE: [PirAtE_MSG_DATATYPE](#datatypes)
+    - PirAtE_MSG_SENDMODE
+        - PirAtE_MSG_SENDMODE_AUTO
+            - Send automatically each time it can
+        - PirAtE_MSG_SENDMODE_MANUEL
+            - Flag needs to be set each time it should be send
+        - Default is PirAtE_MSG_SENDMODE_AUTO
+    - StringBufferLength: int
+        - Needs to be the Size of the allocated String Buffer (including ```\0```)
+        - Needs to be Smaller or Equal to ```PirAtE_DATATYPE_STRING_MAXLENGTH + 1```
+
+
+- Receive String
+
+    - Default_Value: any
+        - Initial Value
+    - Max_Value: any
+        - Max Value for the Control
+    - Min_Value: any
+        - Min Value for the Control
+
+
+    ```
+    // key = PirAtE_ADD_RECV_STRING(Data_Name, Global_VariableAddress, StringBufferLength);
+    ```
+
+    - key: byte
+        - Returns a ID that can be used for [Flag management](#flags)
+    - Data_Name: String
+        - Name of the Variable on the Website. ```E.g. "Var1"```
+        - Should be short
+    - Global_VariableAdress: *any
+        - Pointer to any supported [Datatype](#datatypes)
+    - PirAtE_MSG_DATATYPE: [PirAtE_MSG_DATATYPE](#datatypes)
+    - StringBufferLength: int
+        - Needs to be the Size of the allocated String Buffer (including ```\0```)
+        - Needs to be Smaller or Equal to ```PirAtE_DATATYPE_STRING_MAXLENGTH + 1```
+
+    strings länge begrenzt serial buffer full \0 fehler verhalten
+
+
+## Flags<a id="flags"></a>
+
 
 ## More Infos
 more defines
@@ -198,3 +255,4 @@ serialbuffersize
 ## good to know
 bugs issues features
 baudrate datarate
+
