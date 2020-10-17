@@ -35,9 +35,9 @@ The defined amount needs to be equal or higher the amount used. It will cause Il
 
 The Serial communication with the Host needs to be started, this means at the start of the Setup the Start Function needs to be called. It also sends out the System (Arduino) Based Informations.
 
-    ```c++
-    PirAtE_START();
-    ```
+```c++
+PirAtE_START();
+```
 
 
 
@@ -63,65 +63,65 @@ Datatypes:<a id="datatypes"></a>
 
 Strings have some limitations and are handelt different this can be found [here](#strings) or in the [Implementation](30-hook-implementation.md)!
 
-- Add Variables to Send
+#### Add Variables to Send
 
-    All Variables that the user wants to be send and displayed on the website, need to be defined in the Arduino Setup with one of the following functions:
+All Variables that the user wants to be send and displayed on the website, need to be defined in the Arduino Setup with one of the following functions:
 
-    ```c++
-    byte key = PirAtE_ADD_SEND_VAR(Data_Name, Global_VariableAddress, PirAtE_MSG_DATATYPE);
+```c++
+byte key = PirAtE_ADD_SEND_VAR(Data_Name, Global_VariableAddress, PirAtE_MSG_DATATYPE);
 
-    byte key = PirAtE_ADD_SEND_VAR(Data_Name, Global_VariableAddress, PirAtE_MSG_DATATYPE, PirAtE_Scale);
+byte key = PirAtE_ADD_SEND_VAR(Data_Name, Global_VariableAddress, PirAtE_MSG_DATATYPE, PirAtE_Scale);
 
-    byte key = PirAtE_ADD_SEND_VAR(Data_Name, Global_VariableAddress, PirAtE_MSG_DATATYPE, PirAtE_Scale, PirAtE_MSG_SENDMODE);
-    ```
+byte key = PirAtE_ADD_SEND_VAR(Data_Name, Global_VariableAddress, PirAtE_MSG_DATATYPE, PirAtE_Scale, PirAtE_MSG_SENDMODE);
+```
 
-    The Function uses these arguments:
+The Function uses these arguments:
 
-    - key: byte
-        - Returns a ID that can be used for [Flag management](#flags)
-    - Data_Name: String
-        - Name of the Variable on the Website. ```E.g. "Var1"```
-        - Should be short
-    - Global_VariableAdress: *any
-        - Pointer to any supported [Datatype](#datatypes)
-    - PirAtE_MSG_DATATYPE: [PirAtE_MSG_DATATYPE](#datatypes)
-    - PirAtE_Scale: String
-        - Scale Name in which the Variable should be displayed. ```E.g. "Distance"```
-        - Units can be defined in Square Brackets and will. ```E.g. "Distance in [m]"```
-        - Default is "y" with no unit
-        - Should be short
-    - PirAtE_MSG_SENDMODE
-        - PirAtE_MSG_SENDMODE_AUTO
-            - Send automatically each time it can
-        - PirAtE_MSG_SENDMODE_MANUEL
-            - Flag needs to be set each time it should be send
-        - Default is PirAtE_MSG_SENDMODE_AUTO
+- key: byte
+    - Returns a ID that can be used for [Flag management](#flags)
+- Data_Name: String
+    - Name of the Variable on the Website. ```E.g. "Var1"```
+    - Should be short
+- Global_VariableAdress: *any
+    - Pointer to any supported [Datatype](#datatypes)
+- PirAtE_MSG_DATATYPE: [PirAtE_MSG_DATATYPE](#datatypes)
+- PirAtE_Scale: String
+    - Scale Name in which the Variable should be displayed. ```E.g. "Distance"```
+    - Units can be defined in Square Brackets and will. ```E.g. "Distance in [m]"```
+    - Default is "y" with no unit
+    - Should be short
+- PirAtE_MSG_SENDMODE
+    - PirAtE_MSG_SENDMODE_AUTO
+        - Send automatically each time it can
+    - PirAtE_MSG_SENDMODE_MANUEL
+        - Flag needs to be set each time it should be send
+    - Default is PirAtE_MSG_SENDMODE_AUTO
 
 
 
-- Add Variables to Receive
+#### Add Variables to Receive
 
-    All Variables that the user wants to be controllable on the website, need to be defined in the Arduino Setup with the following function:
-    ```c++
-    byte key = PirAtE_ADD_RECV_VAR(Data_Name, Global_VariableAddress, PirAtE_MSG_DATATYPE, Default_Value, Max_Value, Min_Value);
-    ```
+All Variables that the user wants to be controllable on the website, need to be defined in the Arduino Setup with the following function:
+```c++
+byte key = PirAtE_ADD_RECV_VAR(Data_Name, Global_VariableAddress, PirAtE_MSG_DATATYPE, Default_Value, Max_Value, Min_Value);
+```
 
-    The Function uses these arguments:
+The Function uses these arguments:
 
-    - key: byte
-        - Returns a ID that can be used for [Flag management](#flags)
-    - Data_Name: String
-        - Name of the Variable on the Website. ```E.g. "Var1"```
-        - Should be short
-    - Global_VariableAdress: *any
-        - Pointer to any supported [Datatype](#datatypes)
-    - PirAtE_MSG_DATATYPE: [PirAtE_MSG_DATATYPE](#datatypes)
-    - Default_Value: any
-        - Initial Value
-    - Max_Value: any
-        - Max Value for the Control
-    - Min_Value: any
-        - Min Value for the Control
+- key: byte
+    - Returns a ID that can be used for [Flag management](#flags)
+- Data_Name: String
+    - Name of the Variable on the Website. ```E.g. "Var1"```
+    - Should be short
+- Global_VariableAdress: *any
+    - Pointer to any supported [Datatype](#datatypes)
+- PirAtE_MSG_DATATYPE: [PirAtE_MSG_DATATYPE](#datatypes)
+- Default_Value: any
+    - Initial Value
+- Max_Value: any
+    - Max Value for the Control
+- Min_Value: any
+    - Min Value for the Control
 
 
 ### 3.3. Send and Receive
@@ -185,69 +185,69 @@ Strings have some special properties, that are different from normal vars. The S
 This is the char symbol count without the String endsymbole ```\0```.
 Long Strings can Influence the behavior of Send and Receive.
 
-- Send String
+### Send String
 
-    For adding Strings to the Send-register the following functions need to be used.
-    ```c++
-    byte key = PirAtE_ADD_SEND_STRING(Data_Name, Global_VariableAddress);
-    byte key = PirAtE_ADD_SEND_STRING(Data_Name, Global_VariableAddress, PirAtE_MSG_SENDMODE);
-    byte key = PirAtE_ADD_SEND_STRING(Data_Name, Global_VariableAddress, PirAtE_MSG_SENDMODE, StringBufferLength);
-    ```
+For adding Strings to the Send-register the following functions need to be used.
+```c++
+byte key = PirAtE_ADD_SEND_STRING(Data_Name, Global_VariableAddress);
+byte key = PirAtE_ADD_SEND_STRING(Data_Name, Global_VariableAddress, PirAtE_MSG_SENDMODE);
+byte key = PirAtE_ADD_SEND_STRING(Data_Name, Global_VariableAddress, PirAtE_MSG_SENDMODE, StringBufferLength);
+```
 
-    - key: byte
-        - Returns a ID that can be used for [Flag management](#flags)
-    - Data_Name: String
-        - Name of the Variable on the Website. ```E.g. "Var1"```
-        - Should be short
-    - Global_VariableAdress: *any
-        - Pointer to any supported [Datatype](#datatypes)
-    - PirAtE_MSG_DATATYPE: [PirAtE_MSG_DATATYPE](#datatypes)
-    - PirAtE_MSG_SENDMODE
-        - PirAtE_MSG_SENDMODE_AUTO
-            - Send automatically each time it can
-        - PirAtE_MSG_SENDMODE_MANUEL
-            - Flag needs to be set each time it should be send
-        - Default is PirAtE_MSG_SENDMODE_AUTO
-    - StringBufferLength: int
-        - Needs to be the Size of the allocated String Buffer (including ```\0``` space)
-        - Needs to be Smaller or Equal to ```PirAtE_DATATYPE_STRING_MAXLENGTH + 1```
+- key: byte
+    - Returns a ID that can be used for [Flag management](#flags)
+- Data_Name: String
+    - Name of the Variable on the Website. ```E.g. "Var1"```
+    - Should be short
+- Global_VariableAdress: *any
+    - Pointer to any supported [Datatype](#datatypes)
+- PirAtE_MSG_DATATYPE: [PirAtE_MSG_DATATYPE](#datatypes)
+- PirAtE_MSG_SENDMODE
+    - PirAtE_MSG_SENDMODE_AUTO
+        - Send automatically each time it can
+    - PirAtE_MSG_SENDMODE_MANUEL
+        - Flag needs to be set each time it should be send
+    - Default is PirAtE_MSG_SENDMODE_AUTO
+- StringBufferLength: int
+    - Needs to be the Size of the allocated String Buffer (including ```\0``` space)
+    - Needs to be Smaller or Equal to ```PirAtE_DATATYPE_STRING_MAXLENGTH + 1```
 
-    **When a String isn't ended correctly it will be replaced with just a ```\0```!**
+**When a String isn't ended correctly it will be replaced with just a ```\0```!**
 
-    **When long strings are used, no Debug messages should be used, because the Buffer could be to full for sending and it will always skip. By Enabling ```PirAtE_AllowActiveWaitingOnSend``` and a long enough blocktime it can be fixed, but cycle time will increase.**
+**When long strings are used, no Debug messages should be used, because the Buffer could be to full for sending and it will always skip. By Enabling ```PirAtE_AllowActiveWaitingOnSend``` and a long enough blocktime it can be fixed, but cycle time will increase.**
 
-- Receive String
+### Receive String
 
-    For adding Strings to the Recv-register the following function needs to be used.
+For adding Strings to the Recv-register the following function needs to be used.
 
-    ```c++
-    byte key = PirAtE_ADD_RECV_STRING(Data_Name, Global_VariableAddress, StringBufferLength);
-    ```
+```c++
+byte key = PirAtE_ADD_RECV_STRING(Data_Name, Global_VariableAddress, StringBufferLength);
+```
 
-    - key: byte
-        - Returns a ID that can be used for [Flag management](#flags)
-    - Data_Name: String
-        - Name of the Variable on the Website. ```E.g. "Var1"```
-        - Should be short
-    - Global_VariableAdress: *any
-        - Pointer to any supported [Datatype](#datatypes)
-    - PirAtE_MSG_DATATYPE: [PirAtE_MSG_DATATYPE](#datatypes)
-    - StringBufferLength: int
-        - Needs to be the Size of the allocated String Buffer (including ```\0``` space)
-        - Needs to be Smaller or Equal to ```PirAtE_DATATYPE_STRING_MAXLENGTH + 1```
+- key: byte
+    - Returns a ID that can be used for [Flag management](#flags)
+- Data_Name: String
+    - Name of the Variable on the Website. ```E.g. "Var1"```
+    - Should be short
+- Global_VariableAdress: *any
+    - Pointer to any supported [Datatype](#datatypes)
+- PirAtE_MSG_DATATYPE: [PirAtE_MSG_DATATYPE](#datatypes)
+- StringBufferLength: int
+    - Needs to be the Size of the allocated String Buffer (including ```\0``` space)
+    - Needs to be Smaller or Equal to ```PirAtE_DATATYPE_STRING_MAXLENGTH + 1```
 
-    **When a String isn't ended correctly it will try to read as much character as it finds and end it with a ```\0```! This means some messages could become a part of the string.**
+**When a String isn't ended correctly it will try to read as much character as it finds and end it with a ```\0```! This means some messages could become a part of the string.**
 
-    When using the Default Add Variable Function, these Parameters are handelt different.
+When using the Default Add Variable Function, these Parameters are handelt different.
 
-    - Default_Value: any
-        - No effect
-    - Max_Value: any
-        - Limits the Size that can be created on the [Pirate Bridge](../Pirate-Bridge/00-bridge.md) side
-    - Min_Value: any
-        - No effect
+- Default_Value: any
+    - No effect
+- Max_Value: any
+    - Limits the Size that can be created on the [Pirate Bridge](../Pirate-Bridge/00-bridge.md) side
+- Min_Value: any
+    - No effect
 
-     It shouldn't be used to prevent unpredictable and unwanted behavior.
+    It shouldn't be used to prevent unpredictable and unwanted behavior.
 
 ## Flags<a id="flags"></a>
 
