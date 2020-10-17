@@ -9,7 +9,7 @@ Pirate Hook uses a serial connection of the [Arduino's](Theory/arduino.md) to tr
 
 ## [Getting Started](10-hook-getting-started.md)
 
-In the [Getting Started](10-hook-getting-started.md) all needed steps to get it running on the Arduino are listed. Also some more modification that can be done by Defines can found there. 
+In the [Getting Started](10-hook-getting-started.md) you find all needed steps to get it running on the Arduino. Also some more modification that can be done by Defines can found there. 
 [Getting Started](10-hook-getting-started.md){: .md-button .md-button--primary }
 
 

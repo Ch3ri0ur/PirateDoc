@@ -21,7 +21,7 @@ Config and Help can be found in the ```pirate_config.h```. It Provides the main 
 
 With the Defines, the amount of possible Send and Receive Variables can be adjusted.
 
-```
+```c++
 #define PirAtE_SendVar_Amount 2
 #define PirAtE_RecvVar_Amount 2
 ```
@@ -35,7 +35,7 @@ The defined amount needs to be equal or higher the amount used. It will cause Il
 
 The Serial communication with the Host needs to be started, this means at the start of the Setup the Start Function needs to be called. It also sends out the System (Arduino) Based Informations.
 
-    ```
+    ```c++
     PirAtE_START();
     ```
 
@@ -67,12 +67,12 @@ Strings have some limitations and are handelt different this can be found [here]
 
     All Variables that the user wants to be send and displayed on the website, need to be defined in the Arduino Setup with one of the following functions:
 
-    ```
-    key = PirAtE_ADD_SEND_VAR(Data_Name, Global_VariableAddress, PirAtE_MSG_DATATYPE);
+    ```c++
+    byte key = PirAtE_ADD_SEND_VAR(Data_Name, Global_VariableAddress, PirAtE_MSG_DATATYPE);
 
-    key = PirAtE_ADD_SEND_VAR(Data_Name, Global_VariableAddress, PirAtE_MSG_DATATYPE, PirAtE_Scale);
+    byte key = PirAtE_ADD_SEND_VAR(Data_Name, Global_VariableAddress, PirAtE_MSG_DATATYPE, PirAtE_Scale);
 
-    key = PirAtE_ADD_SEND_VAR(Data_Name, Global_VariableAddress, PirAtE_MSG_DATATYPE, PirAtE_Scale, PirAtE_MSG_SENDMODE);
+    byte key = PirAtE_ADD_SEND_VAR(Data_Name, Global_VariableAddress, PirAtE_MSG_DATATYPE, PirAtE_Scale, PirAtE_MSG_SENDMODE);
     ```
 
     The Function uses these arguments:
@@ -102,8 +102,8 @@ Strings have some limitations and are handelt different this can be found [here]
 - Add Variables to Receive
 
     All Variables that the user wants to be controllable on the website, need to be defined in the Arduino Setup with the following function:
-    ```
-    // key = PirAtE_ADD_RECV_VAR(Data_Name, Global_VariableAddress, PirAtE_MSG_DATATYPE, Default_Value, Max_Value, Min_Value);
+    ```c++
+    byte key = PirAtE_ADD_RECV_VAR(Data_Name, Global_VariableAddress, PirAtE_MSG_DATATYPE, Default_Value, Max_Value, Min_Value);
     ```
 
     The Function uses these arguments:
@@ -128,7 +128,7 @@ Strings have some limitations and are handelt different this can be found [here]
 
 To be able to Receive and Send the registered variables the Functions for ```Send``` and ```Receive``` need to be performed. They will try to Send and Receive, while trying to not exceed defined maximum Blocktimes, that can be defined.
 
-```
+```c++
 PirAtE_SEND();
 PirAtE_RECV();
 ```
@@ -139,15 +139,15 @@ They need to be used in the Arduino ```void loop()``` and can be used multiple t
 
 All Messages need to be Send in the correct format, see [Pirate Serial Protocol](pirate-serial-protocol.md). For Debug the [Pirate Hook](00-hook.md) provides a Function to send Debug message. It can be used like the [Serial.println()](https://www.arduino.cc/reference/de/language/functions/communication/serial/println/).
 
-```
-PirAtE_DEBUG(content)
-PirAtE_DEBUG(content, format)
+```c++
+PirAtE_DEBUG(content);
+PirAtE_DEBUG(content, format);
 ```
 
 The Function uses these arguments:
 
-    - content: any
-    - format: a format modifier of Serial.println()
+- content: any
+- format: a format modifier of Serial.println()
 
 Keep in Mind that this will fill the send buffer of the Arduino, especially intensive usage of Debug messages. When used before the Send Methode a full Buffer could cause a skip of the sending. When intensive debugging a [disabling of the Pirate Communication](#disablepirate) and using the serial monitor is recommended.
 
@@ -159,7 +159,7 @@ All Message use the [Pirate Serial Protocol](pirate-serial-protocol.md), this me
 
 To make Debugging in the Serial Monitor of the Arduino IDE easier, all Pirate related communication can be disabled with a Define. All Debug Message will than appear like a basic ```Serial.println()``` and the normal Sending gets Disabled. 
 
-```
+```c++
 #define PirAtE_COM_OFF
 ```
 
@@ -171,7 +171,7 @@ The Code size gets reduced dramatically by this, so keep in mind when turning it
 
 When this is defined all Debug messages will be deactivated completely.
 
-```
+```c++
 #define PirAtE_DEBUG_DISABLED
 ```
 
@@ -187,11 +187,11 @@ Long Strings can Influence the behavior of Send and Receive.
 
 - Send String
 
-    For adding Custom length Strings the following functions need to be used.
-    ```
-    // key = PirAtE_ADD_SEND_STRING(Data_Name, Global_VariableAddress);
-    // key = PirAtE_ADD_SEND_STRING(Data_Name, Global_VariableAddress, PirAtE_MSG_SENDMODE);
-    // key = PirAtE_ADD_SEND_STRING(Data_Name, Global_VariableAddress, PirAtE_MSG_SENDMODE, StringBufferLength);
+    For adding Strings to the Send-register the following functions need to be used.
+    ```c++
+    byte key = PirAtE_ADD_SEND_STRING(Data_Name, Global_VariableAddress);
+    byte key = PirAtE_ADD_SEND_STRING(Data_Name, Global_VariableAddress, PirAtE_MSG_SENDMODE);
+    byte key = PirAtE_ADD_SEND_STRING(Data_Name, Global_VariableAddress, PirAtE_MSG_SENDMODE, StringBufferLength);
     ```
 
     - key: byte
@@ -209,22 +209,19 @@ Long Strings can Influence the behavior of Send and Receive.
             - Flag needs to be set each time it should be send
         - Default is PirAtE_MSG_SENDMODE_AUTO
     - StringBufferLength: int
-        - Needs to be the Size of the allocated String Buffer (including ```\0```)
+        - Needs to be the Size of the allocated String Buffer (including ```\0``` space)
         - Needs to be Smaller or Equal to ```PirAtE_DATATYPE_STRING_MAXLENGTH + 1```
 
+    **When a String isn't ended correctly it will be replaced with just a ```\0```!**
+
+    **When long strings are used, no Debug messages should be used, because the Buffer could be to full for sending and it will always skip. By Enabling ```PirAtE_AllowActiveWaitingOnSend``` and a long enough blocktime it can be fixed, but cycle time will increase.**
 
 - Receive String
 
-    - Default_Value: any
-        - Initial Value
-    - Max_Value: any
-        - Max Value for the Control
-    - Min_Value: any
-        - Min Value for the Control
+    For adding Strings to the Recv-register the following function needs to be used.
 
-
-    ```
-    // key = PirAtE_ADD_RECV_STRING(Data_Name, Global_VariableAddress, StringBufferLength);
+    ```c++
+    byte key = PirAtE_ADD_RECV_STRING(Data_Name, Global_VariableAddress, StringBufferLength);
     ```
 
     - key: byte
@@ -236,23 +233,80 @@ Long Strings can Influence the behavior of Send and Receive.
         - Pointer to any supported [Datatype](#datatypes)
     - PirAtE_MSG_DATATYPE: [PirAtE_MSG_DATATYPE](#datatypes)
     - StringBufferLength: int
-        - Needs to be the Size of the allocated String Buffer (including ```\0```)
+        - Needs to be the Size of the allocated String Buffer (including ```\0``` space)
         - Needs to be Smaller or Equal to ```PirAtE_DATATYPE_STRING_MAXLENGTH + 1```
 
-    strings länge begrenzt serial buffer full \0 fehler verhalten
+    **When a String isn't ended correctly it will try to read as much character as it finds and end it with a ```\0```! This means some messages could become a part of the string.**
 
+    When using the Default Add Variable Function, these Parameters are handelt different.
+
+    - Default_Value: any
+        - No effect
+    - Max_Value: any
+        - Limits the Size that can be created on the [Pirate Bridge](../Pirate-Bridge/00-bridge.md) side
+    - Min_Value: any
+        - No effect
+
+     It shouldn't be used to prevent unpredictable and unwanted behavior.
 
 ## Flags<a id="flags"></a>
 
+There are two Flags, one for the Send  and one for the Receive Variables.
 
-## More Infos
-more defines
-disbale com
-tweak send revc intervall
-serialbuffersize
+### Send Flag
 
+This Flag signals the Send function that "New Data is available for sending". It is only needed to be set when the ```PirAtE_MSG_SENDMODE``` is ```PirAtE_MSG_SENDMODE_MANUEL``` of the variable. When set it will send the Data just one Time in the next Send cycle.
 
-## good to know
-bugs issues features
-baudrate datarate
+```c++
+PirAtE_SET_SEND_FLAG(key);
+```
 
+- key: byte
+    - Is the returned ID of the Add Variable to Send Function.
+
+### Receive Flag
+
+With this Flag, the Receive function will signal that "New Data is available for reading". The Flag can be Read with the Get-function and needs to be reset with the Reset-Function.
+
+```c++
+byte PirAtE_GET_RECV_FLAG(key)
+PirAtE_RST_RECV_FLAG(key);
+```
+
+- key: byte
+    - Is the returned ID of the Add Variable to Receive Function.
+
+## More Defines
+
+There are more small Defines for changing the Communication behavior of the Hook.
+
+### Com Defines
+
+The Communication can be adjusted with the following Defines, but the modification has to also happen on the [Pirate Bridge Side](../Pirate-Bridge/00-bridge.md).
+
+```c++
+#define PirAtE_Serial_Baudrate 115200
+```
+
+When changing the Baudrate, make sure it is supported by the [Arduino](Theory/arduino.md) and in case of debugging in Serial Monitor, its supported Baudrates need to be accounted, too.
+
+### Intervall Defines
+
+With this Defines the message speed can be tweaked, what also has an impact on the Resource intensity on the [Bridge side](../Pirate-Bridge/00-bridge.md). 
+
+```c++
+#define PirAtE_SendMSGInterVal_micros 1000ul
+#define PirAtE_AllowedSendBlockTime_micros 2000ul
+#define PirAtE_RequestInterVal_micros 1000ul
+#define PirAtE_AllowedReceiveBlockTime_micros 200ul
+```
+
+Detailed description coming soon!
+
+## Good to know
+
+Coming soon!
+
+## Known Bugs
+
+Coming soon!

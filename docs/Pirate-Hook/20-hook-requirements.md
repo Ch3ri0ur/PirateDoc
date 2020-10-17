@@ -1,6 +1,6 @@
 # Requirements
 
-The Requirements for the [Pirate Hook](00-hook.md) have mostly a relation to the controller project that they should be used in. This includes time management and memory usage.
+The Requirements for the [Pirate Hook](00-hook.md) have mostly a relation to the controller projects that they should be used in. This includes time management and memory usage.
 
 This and more Requirements for the Implementation are listed below:
 
