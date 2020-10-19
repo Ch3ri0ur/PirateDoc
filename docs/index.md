@@ -6,6 +6,8 @@ Pirate (short for "Pirate Implements Remote Access to Experiments") is a remote 
 <!-- logo? -->
 ![Architecture Overview](./attachment/pirate_overview.png)
 
+The solution uses a Raspberry PI as an intermediate server translating and broadcasting between the Arduino project and client webpages. It also supports the use of a webcam for a live view of the project.
+
 [Getting Started](firstrun.md){: .md-button .md-button--primary }
 
 ## Motivation
