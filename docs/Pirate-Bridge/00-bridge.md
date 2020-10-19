@@ -20,7 +20,7 @@ The Bridge is a [[nodejs]] application which reads the serial port on the Raspbe
 
 When polled the Bridge will supply the Arduino with the values the clients sent to it. 
 
-It also serves the client website, the Pirate Flag.
+It also serves the client website, the [Pirate Flag](../Pirate-Flag/00-flag.md).
 
 [Implementation](30-bridge-implementation.md){: .md-button}
 

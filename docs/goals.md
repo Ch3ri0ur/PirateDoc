@@ -1,19 +1,20 @@
 # Project Goals and Requirements
 
-As already stated in the overview Pirate tries to create a solution for monitoring Arduino projects.
-The primary use case is sending and receiving of data. In addition the remote Monitoring 
-
-The overall Goals are defined below. Further and more specific requirements can be found in each components section.
+As already stated in the overview, Pirate tries to create a solution for monitoring Arduino projects. To further define the goals user stories have been gathered.
 
 ## User Stories
 * As a User I want to be able to see the status of my project in realtime on a graph.
 * As a User I want to be able to download the shown graph data.
 * As a User I want to be able to influence the variables/parameters directly without reflashing the Arduino.
-* As a User I want to be able to access the the dashboard from "anywhere".
+* As a User I want to be able to access the the dashboard from "anywhere" (the internet).
 * When controlling a project from a remote location I as a User want to view a live feed of the project to monitor the actual influence my action have.
 * As a User I want to easily be able to set up this solution.
 
-# Functional Requirements
+## Original Requirements
+
+The following requirements were originally sourced and approved by the customer.
+
+### Functional Requirements
 
 Parameter ändern
 Der Benutzer verbindet sich mit Webseite
@@ -46,7 +47,7 @@ Die Webseite stellt den Status des Projektes dar
 Der Benutzer kann Statusansicht auf zeitlichen Verlauf umstellen
 Die Webseite beginnt den zeitlichen Verlauf des Status bereitzustellen
 
-## Non-Functional Requirements
+### Non-Functional Requirements
 Frontend muss 3h stabil funktionieren ( während eines Praktikums )
 24/7 Bereitschaft sollte gewährleistet sein
 Verzögerungszeit der gesamten Übertragung darf nicht länger als 2 Sekunden sein
@@ -61,6 +62,3 @@ Schnittstellen die in der Architekturplanung festgelegt werden, müssen nach Spe
 Dokumentation muss von Auftraggeber abgenommen worden sein
 Optionale Nichtfunktionale Anforderungen
 Zweites eingerichtetes funktionsfähiges RProjekt
-
-
-<!-- perhaps a "solutions" section where links to how we solved the problems are linked? -->
