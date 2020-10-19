@@ -1,4 +1,4 @@
-# An example Page
+# Testpage for possible Link variations
 
 * [[firstrun]]
 
