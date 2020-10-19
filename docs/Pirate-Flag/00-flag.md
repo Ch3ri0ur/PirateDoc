@@ -4,6 +4,10 @@ Under this Banner the client is placed. The client is a React application. Its j
 
 [Getting Started](10-flag-getting-started.md){: .md-button .md-button--primary }
 
+![Example Client](../attachment/pirate_flag_example.png)
+
+Here you can see a first implementation of a Pirate-Flag client.
+
 ## Requirements
 
 The rough requirements of the Client are:
