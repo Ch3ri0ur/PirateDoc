@@ -1,0 +1,2082 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.0.2">
+    
+    
+      
+        <title>Getting Started - Pirate Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.38780c08.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.3f72e892.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+      
+  
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#getting-started" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href="../.." title="Pirate Docs" class="md-header-nav__button md-logo" aria-label="Pirate Docs">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            Pirate Docs
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              Getting Started
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+
+  
+
+<nav class="md-tabs md-tabs--active" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href="../.." class="md-tabs__link">
+        Pirate Overview
+      </a>
+    
+  </li>
+
+      
+        
+      
+        
+      
+        
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../Misc/1-is-first-md/" class="md-tabs__link">
+          Misc
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../Pirate-Bridge/00-bridge/" class="md-tabs__link">
+          Pirate Bridge
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../Pirate-Flag/00-flag/" class="md-tabs__link">
+          Pirate Flag
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../00-hook/" class="md-tabs__link md-tabs__link--active">
+          Pirate Hook
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../Pirate-Map/00-map/" class="md-tabs__link">
+          Pirate Map
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../Pirate-Spyglass/00-spyglass/" class="md-tabs__link">
+          Pirate Spyglass
+        </a>
+      
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Pirate Docs" class="md-nav__button md-logo" aria-label="Pirate Docs">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Pirate Docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." class="md-nav__link">
+      Pirate Overview
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../firstrun/" class="md-nav__link">
+      Firstrun
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../goals/" class="md-nav__link">
+      Project Goals and Requirements
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../setupraspberrypi/" class="md-nav__link">
+      Setup Raspberry Pi
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      Misc
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Misc" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        <span class="md-nav__icon md-icon"></span>
+        Misc
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Misc/1-is-first-md/" class="md-nav__link">
+      Hello you found a format testing folder. Hurray.
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Misc/caddy-md/" class="md-nav__link">
+      Caddy.md
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Misc/example/" class="md-nav__link">
+      Testpage for possible Link variations
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Misc/markdowntestfile/" class="md-nav__link">
+      Markdown: Syntax
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      Pirate Bridge
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Pirate Bridge" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        <span class="md-nav__icon md-icon"></span>
+        Pirate Bridge
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Pirate-Bridge/00-bridge/" class="md-nav__link">
+      Overview Pirate Bridge
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Pirate-Bridge/10-bridge-getting-started/" class="md-nav__link">
+      Getting Started
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Pirate-Bridge/20-bridge-requirements/" class="md-nav__link">
+      Requirements
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Pirate-Bridge/30-bridge-implementation/" class="md-nav__link">
+      Implementation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Pirate-Bridge/40-bridge-validation/" class="md-nav__link">
+      Validation and Future Steps
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Pirate-Bridge/client-facing-interface/" class="md-nav__link">
+      Client API
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6-7" type="checkbox" id="nav-6-7">
+    
+    <label class="md-nav__link" for="nav-6-7">
+      Theory
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Theory" data-md-level="2">
+      <label class="md-nav__title" for="nav-6-7">
+        <span class="md-nav__icon md-icon"></span>
+        Theory
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Pirate-Bridge/Theory/docker/" class="md-nav__link">
+      Docker
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Pirate-Bridge/Theory/express/" class="md-nav__link">
+      Express
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Pirate-Bridge/Theory/http/" class="md-nav__link">
+      HTTP
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Pirate-Bridge/Theory/nodejs/" class="md-nav__link">
+      Nodejs
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Pirate-Bridge/Theory/raspberrypi/" class="md-nav__link">
+      Raspberry Pi
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Pirate-Bridge/Theory/sse/" class="md-nav__link">
+      Server-Sent-Events
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+    
+    <label class="md-nav__link" for="nav-7">
+      Pirate Flag
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Pirate Flag" data-md-level="1">
+      <label class="md-nav__title" for="nav-7">
+        <span class="md-nav__icon md-icon"></span>
+        Pirate Flag
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Pirate-Flag/00-flag/" class="md-nav__link">
+      Overview Pirate Flag
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Pirate-Flag/10-flag-getting-started/" class="md-nav__link">
+      Getting Started
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Pirate-Flag/20-flag-requirements/" class="md-nav__link">
+      Requirements
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Pirate-Flag/30-flag-implementation/" class="md-nav__link">
+      Implementation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Pirate-Flag/40-flag-validation/" class="md-nav__link">
+      Validation and Future Steps
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Pirate-Flag/frontend/" class="md-nav__link">
+      Frontend thoughts
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8" checked>
+    
+    <label class="md-nav__link" for="nav-8">
+      Pirate Hook
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Pirate Hook" data-md-level="1">
+      <label class="md-nav__title" for="nav-8">
+        <span class="md-nav__icon md-icon"></span>
+        Pirate Hook
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../00-hook/" class="md-nav__link">
+      Overview Pirate Hook
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Getting Started
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+    
+    <a href="./" class="md-nav__link md-nav__link--active">
+      Getting Started
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-include-library" class="md-nav__link">
+    1. Include Library
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-configs--help" class="md-nav__link">
+    2. Configs &amp; Help
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-usage" class="md-nav__link">
+    3. Usage
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Usage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-start" class="md-nav__link">
+    3.1. Start
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-add-variables" class="md-nav__link">
+    3.2. Add Variables
+  </a>
+  
+    <nav class="md-nav" aria-label="3.2. Add Variables">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#add-variables-to-send" class="md-nav__link">
+    Add Variables to Send
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#add-variables-to-receive" class="md-nav__link">
+    Add Variables to Receive
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-send-and-receive" class="md-nav__link">
+    3.3. Send and Receive
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#debug" class="md-nav__link">
+    Debug
+  </a>
+  
+    <nav class="md-nav" aria-label="Debug">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#disable-pirate-protocol" class="md-nav__link">
+    Disable Pirate Protocol
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#disable-debug" class="md-nav__link">
+    Disable Debug
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#strings" class="md-nav__link">
+    Strings
+  </a>
+  
+    <nav class="md-nav" aria-label="Strings">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#send-string" class="md-nav__link">
+    Send String
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#receive-string" class="md-nav__link">
+    Receive String
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#flags" class="md-nav__link">
+    Flags
+  </a>
+  
+    <nav class="md-nav" aria-label="Flags">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#send-flag" class="md-nav__link">
+    Send Flag
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#receive-flag" class="md-nav__link">
+    Receive Flag
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#more-defines" class="md-nav__link">
+    More Defines
+  </a>
+  
+    <nav class="md-nav" aria-label="More Defines">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#com-defines" class="md-nav__link">
+    Com Defines
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#intervall-defines" class="md-nav__link">
+    Intervall Defines
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#good-to-know" class="md-nav__link">
+    Good to know
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#known-bugs" class="md-nav__link">
+    Known Bugs
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../20-hook-requirements/" class="md-nav__link">
+      Requirements
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../30-hook-implementation/" class="md-nav__link">
+      Implementation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../40-hook-validation/" class="md-nav__link">
+      Validation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../code-example/" class="md-nav__link">
+      Code Example
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../pirate-serial-protocol/" class="md-nav__link">
+      Pirate Serial Protocol
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-8-8" type="checkbox" id="nav-8-8">
+    
+    <label class="md-nav__link" for="nav-8-8">
+      Theory
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Theory" data-md-level="2">
+      <label class="md-nav__title" for="nav-8-8">
+        <span class="md-nav__icon md-icon"></span>
+        Theory
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Theory/arduino/" class="md-nav__link">
+      Arduino
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-9" type="checkbox" id="nav-9">
+    
+    <label class="md-nav__link" for="nav-9">
+      Pirate Map
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Pirate Map" data-md-level="1">
+      <label class="md-nav__title" for="nav-9">
+        <span class="md-nav__icon md-icon"></span>
+        Pirate Map
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Pirate-Map/00-map/" class="md-nav__link">
+      Overview Pirate Map
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Pirate-Map/10-map-getting-started/" class="md-nav__link">
+      Getting Started
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Pirate-Map/20-map-requirements/" class="md-nav__link">
+      Requirements
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Pirate-Map/30-map-implementation/" class="md-nav__link">
+      Implementation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Pirate-Map/40-map-validation/" class="md-nav__link">
+      Validation and Future Steps
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-9-6" type="checkbox" id="nav-9-6">
+    
+    <label class="md-nav__link" for="nav-9-6">
+      Theory
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Theory" data-md-level="2">
+      <label class="md-nav__title" for="nav-9-6">
+        <span class="md-nav__icon md-icon"></span>
+        Theory
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Pirate-Map/Theory/caddy/" class="md-nav__link">
+      Caddy
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Pirate-Map/Theory/dns/" class="md-nav__link">
+      Dns
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Pirate-Map/Theory/reverse-proxy/" class="md-nav__link">
+      Reverse Proxy
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-10" type="checkbox" id="nav-10">
+    
+    <label class="md-nav__link" for="nav-10">
+      Pirate Spyglass
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Pirate Spyglass" data-md-level="1">
+      <label class="md-nav__title" for="nav-10">
+        <span class="md-nav__icon md-icon"></span>
+        Pirate Spyglass
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Pirate-Spyglass/00-spyglass/" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Pirate-Spyglass/10-spyglass-getting-started/" class="md-nav__link">
+      Getting Started
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Pirate-Spyglass/20-spyglass-requirements/" class="md-nav__link">
+      Requirements
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Pirate-Spyglass/30-spyglass-implementation/" class="md-nav__link">
+      Implementation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Pirate-Spyglass/40-spyglass-validation/" class="md-nav__link">
+      Validation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Pirate-Spyglass/streamingmethods/" class="md-nav__link">
+      Streaming Methods
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-10-7" type="checkbox" id="nav-10-7">
+    
+    <label class="md-nav__link" for="nav-10-7">
+      Sources
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Sources" data-md-level="2">
+      <label class="md-nav__title" for="nav-10-7">
+        <span class="md-nav__icon md-icon"></span>
+        Sources
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Pirate-Spyglass/Sources/gstreamer/" class="md-nav__link">
+      GStreamer
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Pirate-Spyglass/Sources/stream-headless-chrome/" class="md-nav__link">
+      Self implemented WebRTC
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Pirate-Spyglass/Sources/uv4l/" class="md-nav__link">
+      UV4L
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-10-8" type="checkbox" id="nav-10-8">
+    
+    <label class="md-nav__link" for="nav-10-8">
+      Streamers
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Streamers" data-md-level="2">
+      <label class="md-nav__title" for="nav-10-8">
+        <span class="md-nav__icon md-icon"></span>
+        Streamers
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Pirate-Spyglass/Streamers/comercialstreamingsolutions/" class="md-nav__link">
+      Commercial solutions
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Pirate-Spyglass/Streamers/janus/" class="md-nav__link">
+      Janus
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Pirate-Spyglass/Streamers/kurento/" class="md-nav__link">
+      Kurento
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-10-9" type="checkbox" id="nav-10-9">
+    
+    <label class="md-nav__link" for="nav-10-9">
+      Theory
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Theory" data-md-level="2">
+      <label class="md-nav__title" for="nav-10-9">
+        <span class="md-nav__icon md-icon"></span>
+        Theory
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Pirate-Spyglass/Theory/webRTC/" class="md-nav__link">
+      WebRTC
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-include-library" class="md-nav__link">
+    1. Include Library
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-configs--help" class="md-nav__link">
+    2. Configs &amp; Help
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-usage" class="md-nav__link">
+    3. Usage
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Usage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-start" class="md-nav__link">
+    3.1. Start
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-add-variables" class="md-nav__link">
+    3.2. Add Variables
+  </a>
+  
+    <nav class="md-nav" aria-label="3.2. Add Variables">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#add-variables-to-send" class="md-nav__link">
+    Add Variables to Send
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#add-variables-to-receive" class="md-nav__link">
+    Add Variables to Receive
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-send-and-receive" class="md-nav__link">
+    3.3. Send and Receive
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#debug" class="md-nav__link">
+    Debug
+  </a>
+  
+    <nav class="md-nav" aria-label="Debug">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#disable-pirate-protocol" class="md-nav__link">
+    Disable Pirate Protocol
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#disable-debug" class="md-nav__link">
+    Disable Debug
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#strings" class="md-nav__link">
+    Strings
+  </a>
+  
+    <nav class="md-nav" aria-label="Strings">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#send-string" class="md-nav__link">
+    Send String
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#receive-string" class="md-nav__link">
+    Receive String
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#flags" class="md-nav__link">
+    Flags
+  </a>
+  
+    <nav class="md-nav" aria-label="Flags">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#send-flag" class="md-nav__link">
+    Send Flag
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#receive-flag" class="md-nav__link">
+    Receive Flag
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#more-defines" class="md-nav__link">
+    More Defines
+  </a>
+  
+    <nav class="md-nav" aria-label="More Defines">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#com-defines" class="md-nav__link">
+    Com Defines
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#intervall-defines" class="md-nav__link">
+    Intervall Defines
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#good-to-know" class="md-nav__link">
+    Good to know
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#known-bugs" class="md-nav__link">
+    Known Bugs
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="getting-started">Getting Started<a class="headerlink" href="#getting-started" title="Permanent link">#</a></h1>
+<div class="admonition note">
+<p class="admonition-title">Warning!</p>
+<p>The function names have changed over the versions and can be different in old ones.</p>
+</div>
+<p>In this <a href="../code-example/">Code Example</a> a really basic Setup can be found and can be extended easily.</p>
+<h2 id="1-include-library">1. Include Library<a class="headerlink" href="#1-include-library" title="Permanent link">#</a></h2>
+<p>The Pirate Library needs to be inserted in the Arduino Project folder. After <code>pirate.h</code> and <code>pirate_config.h</code> are in the Folder the Programm/Arduino IDE can be opened again and the Code can be included in the Programm with:</p>
+<div class="highlight"><pre><span></span><code>#include &quot;pirate.h&quot;
+</code></pre></div>
+<h2 id="2-configs--help">2. Configs &amp; Help<a class="headerlink" href="#2-configs--help" title="Permanent link">#</a></h2>
+<p>Config and Help can be found in the <code>pirate_config.h</code>. It Provides the main Config-Parameter that can be adjusted and also the Function descriptions <code>!NO DESCRIPTIONS YET!ONLY FUNCTION HEADERS ARE LISTED!</code></p>
+<p>With the Defines, the amount of possible Send and Receive Variables can be adjusted.</p>
+<div class="highlight"><pre><span></span><code><span class="cp">#define PirAtE_SendVar_Amount 2</span>
+<span class="cp">#define PirAtE_RecvVar_Amount 2</span>
+</code></pre></div>
+<p>The defined amount needs to be equal or higher the amount used. It will cause Illegal Memory access when this is violated. When the defined amount is higher only a little bit more memory is used, but it will still work.</p>
+<h2 id="3-usage">3. Usage<a class="headerlink" href="#3-usage" title="Permanent link">#</a></h2>
+<h3 id="31-start">3.1. Start<a id=start></a><a class="headerlink" href="#31-start" title="Permanent link">#</a></h3>
+<p>The Serial communication with the Host needs to be started, this means at the start of the Setup the Start Function needs to be called. It also sends out the System (Arduino) Based Informations.</p>
+<div class="highlight"><pre><span></span><code><span class="n">PirAtE_START</span><span class="p">();</span>
+</code></pre></div>
+<h3 id="32-add-variables">3.2. Add Variables<a class="headerlink" href="#32-add-variables" title="Permanent link">#</a></h3>
+<p>This needs to happen in the Arduino <code>void setup()</code> once for each Variable that should be send or received (both at once will work but the sliders in the Website will not adjust with it). It needs to happen after the <a href="#start">Pirate Start</a> or the information can not be send out!</p>
+<p>Datatypes:<a id="datatypes"></a></p>
+<table>
+<thead>
+<tr>
+<th align="center">Datatype</th>
+<th align="center">Defined Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">int</td>
+<td align="center">PirAtE_MSG_DATATYPE_INT</td>
+</tr>
+<tr>
+<td align="center">unsigned int</td>
+<td align="center">PirAtE_MSG_DATATYPE_UINT</td>
+</tr>
+<tr>
+<td align="center">long</td>
+<td align="center">PirAtE_MSG_DATATYPE_LONG</td>
+</tr>
+<tr>
+<td align="center">unsigned long</td>
+<td align="center">PirAtE_MSG_DATATYPE_ULONG</td>
+</tr>
+<tr>
+<td align="center">float</td>
+<td align="center">PirAtE_MSG_DATATYPE_FLOAT</td>
+</tr>
+<tr>
+<td align="center">double</td>
+<td align="center">PirAtE_MSG_DATATYPE_DOUBLE</td>
+</tr>
+<tr>
+<td align="center">byte</td>
+<td align="center">PirAtE_MSG_DATATYPE_BYTE</td>
+</tr>
+<tr>
+<td align="center">word</td>
+<td align="center">PirAtE_MSG_DATATYPE_WORD</td>
+</tr>
+<tr>
+<td align="center">bool</td>
+<td align="center">PirAtE_MSG_DATATYPE_BOOL</td>
+</tr>
+<tr>
+<td align="center">char</td>
+<td align="center">PirAtE_MSG_DATATYPE_CHAR</td>
+</tr>
+<tr>
+<td align="center">char[]</td>
+<td align="center">PirAtE_MSG_DATATYPE_STRING</td>
+</tr>
+</tbody>
+</table>
+<p>Strings have some limitations and are handelt different this can be found <a href="#strings">here</a> or in the <a href="../30-hook-implementation/">Implementation</a>!</p>
+<h4 id="add-variables-to-send">Add Variables to Send<a class="headerlink" href="#add-variables-to-send" title="Permanent link">#</a></h4>
+<p>All Variables that the user wants to be send and displayed on the website, need to be defined in the Arduino Setup with one of the following functions:</p>
+<div class="highlight"><pre><span></span><code><span class="n">byte</span> <span class="n">key</span> <span class="o">=</span> <span class="n">PirAtE_ADD_SEND_VAR</span><span class="p">(</span><span class="n">Data_Name</span><span class="p">,</span> <span class="n">Global_VariableAddress</span><span class="p">,</span> <span class="n">PirAtE_MSG_DATATYPE</span><span class="p">);</span>
+
+<span class="n">byte</span> <span class="n">key</span> <span class="o">=</span> <span class="n">PirAtE_ADD_SEND_VAR</span><span class="p">(</span><span class="n">Data_Name</span><span class="p">,</span> <span class="n">Global_VariableAddress</span><span class="p">,</span> <span class="n">PirAtE_MSG_DATATYPE</span><span class="p">,</span> <span class="n">PirAtE_Scale</span><span class="p">);</span>
+
+<span class="n">byte</span> <span class="n">key</span> <span class="o">=</span> <span class="n">PirAtE_ADD_SEND_VAR</span><span class="p">(</span><span class="n">Data_Name</span><span class="p">,</span> <span class="n">Global_VariableAddress</span><span class="p">,</span> <span class="n">PirAtE_MSG_DATATYPE</span><span class="p">,</span> <span class="n">PirAtE_Scale</span><span class="p">,</span> <span class="n">PirAtE_MSG_SENDMODE</span><span class="p">);</span>
+</code></pre></div>
+<p>The Function uses these arguments:</p>
+<ul>
+<li>key: byte<ul>
+<li>Returns a ID that can be used for <a href="#flags">Flag management</a></li>
+</ul>
+</li>
+<li>Data_Name: String<ul>
+<li>Name of the Variable on the Website. <code>E.g. "Var1"</code></li>
+<li>Should be short</li>
+</ul>
+</li>
+<li>Global_VariableAdress: *any<ul>
+<li>Pointer to any supported <a href="#datatypes">Datatype</a></li>
+</ul>
+</li>
+<li>PirAtE_MSG_DATATYPE: <a href="#datatypes">PirAtE_MSG_DATATYPE</a></li>
+<li>PirAtE_Scale: String<ul>
+<li>Scale Name in which the Variable should be displayed. <code>E.g. "Distance"</code></li>
+<li>Units can be defined in Square Brackets and will. <code>E.g. "Distance in [m]"</code></li>
+<li>Default is "y" with no unit</li>
+<li>Should be short</li>
+</ul>
+</li>
+<li>PirAtE_MSG_SENDMODE<ul>
+<li>PirAtE_MSG_SENDMODE_AUTO<ul>
+<li>Send automatically each time it can</li>
+</ul>
+</li>
+<li>PirAtE_MSG_SENDMODE_MANUEL<ul>
+<li>Flag needs to be set each time it should be send</li>
+</ul>
+</li>
+<li>Default is PirAtE_MSG_SENDMODE_AUTO</li>
+</ul>
+</li>
+</ul>
+<h4 id="add-variables-to-receive">Add Variables to Receive<a class="headerlink" href="#add-variables-to-receive" title="Permanent link">#</a></h4>
+<p>All Variables that the user wants to be controllable on the website, need to be defined in the Arduino Setup with the following function:<br />
+<div class="highlight"><pre><span></span><code><span class="n">byte</span> <span class="n">key</span> <span class="o">=</span> <span class="n">PirAtE_ADD_RECV_VAR</span><span class="p">(</span><span class="n">Data_Name</span><span class="p">,</span> <span class="n">Global_VariableAddress</span><span class="p">,</span> <span class="n">PirAtE_MSG_DATATYPE</span><span class="p">,</span> <span class="n">Default_Value</span><span class="p">,</span> <span class="n">Max_Value</span><span class="p">,</span> <span class="n">Min_Value</span><span class="p">);</span>
+</code></pre></div></p>
+<p>The Function uses these arguments:</p>
+<ul>
+<li>key: byte<ul>
+<li>Returns a ID that can be used for <a href="#flags">Flag management</a></li>
+</ul>
+</li>
+<li>Data_Name: String<ul>
+<li>Name of the Variable on the Website. <code>E.g. "Var1"</code></li>
+<li>Should be short</li>
+</ul>
+</li>
+<li>Global_VariableAdress: *any<ul>
+<li>Pointer to any supported <a href="#datatypes">Datatype</a></li>
+</ul>
+</li>
+<li>PirAtE_MSG_DATATYPE: <a href="#datatypes">PirAtE_MSG_DATATYPE</a></li>
+<li>Default_Value: any<ul>
+<li>Initial Value</li>
+</ul>
+</li>
+<li>Max_Value: any<ul>
+<li>Max Value for the Control</li>
+</ul>
+</li>
+<li>Min_Value: any<ul>
+<li>Min Value for the Control</li>
+</ul>
+</li>
+</ul>
+<h3 id="33-send-and-receive">3.3. Send and Receive<a class="headerlink" href="#33-send-and-receive" title="Permanent link">#</a></h3>
+<p>To be able to Receive and Send the registered variables the Functions for <code>Send</code> and <code>Receive</code> need to be performed. They will try to Send and Receive, while trying to not exceed defined maximum Blocktimes, that can be defined.</p>
+<div class="highlight"><pre><span></span><code><span class="n">PirAtE_SEND</span><span class="p">();</span>
+<span class="n">PirAtE_RECV</span><span class="p">();</span>
+</code></pre></div>
+<p>They need to be used in the Arduino <code>void loop()</code> and can be used multiple time, but this will increase the code size. Directly in the main loop, where it is very often called, is the best way to include it. The other code in the Loop should be nonen Blocking, so try to not use any <code>delay(ms);</code>, this way the sending and receiving happens frequently.</p>
+<h2 id="debug">Debug<a class="headerlink" href="#debug" title="Permanent link">#</a></h2>
+<p>All Messages need to be Send in the correct format, see <a href="../pirate-serial-protocol/">Pirate Serial Protocol</a>. For Debug the <a href="../00-hook/">Pirate Hook</a> provides a Function to send Debug message. It can be used like the <a href="https://www.arduino.cc/reference/de/language/functions/communication/serial/println/">Serial.println()</a>.</p>
+<div class="highlight"><pre><span></span><code><span class="n">PirAtE_DEBUG</span><span class="p">(</span><span class="n">content</span><span class="p">);</span>
+<span class="n">PirAtE_DEBUG</span><span class="p">(</span><span class="n">content</span><span class="p">,</span> <span class="n">format</span><span class="p">);</span>
+</code></pre></div>
+<p>The Function uses these arguments:</p>
+<ul>
+<li>content: any</li>
+<li>format: a format modifier of Serial.println()</li>
+</ul>
+<p>Keep in Mind that this will fill the send buffer of the Arduino, especially intensive usage of Debug messages. When used before the Send Methode a full Buffer could cause a skip of the sending. When intensive debugging a <a href="#disablepirate">disabling of the Pirate Communication</a> and using the serial monitor is recommended.</p>
+<p>For better performance in the final application the <a href="#disabledebug">Debug Messages can also be turned off</a>.</p>
+<h3 id="disable-pirate-protocol">Disable Pirate Protocol<a id="disablepirate"></a><a class="headerlink" href="#disable-pirate-protocol" title="Permanent link">#</a></h3>
+<p>All Message use the <a href="../pirate-serial-protocol/">Pirate Serial Protocol</a>, this means also all Debug Messages start with an <code>M</code> and end with the Pirate Delimiter. Also all Send Variables get send all the time.</p>
+<p>To make Debugging in the Serial Monitor of the Arduino IDE easier, all Pirate related communication can be disabled with a Define. All Debug Message will than appear like a basic <code>Serial.println()</code> and the normal Sending gets Disabled. </p>
+<div class="highlight"><pre><span></span><code><span class="cp">#define PirAtE_COM_OFF</span>
+</code></pre></div>
+<p>The Code size gets reduced dramatically by this, so keep in mind when turning it back on it will turn normal again.</p>
+<p><strong>This can only be used when not connected to the <a href="../../attachment/pirate_bridge.png">Pirate Bridge</a>!</strong></p>
+<h3 id="disable-debug">Disable Debug<a id="disabledebug"></a><a class="headerlink" href="#disable-debug" title="Permanent link">#</a></h3>
+<p>When this is defined all Debug messages will be deactivated completely.</p>
+<div class="highlight"><pre><span></span><code><span class="cp">#define PirAtE_DEBUG_DISABLED</span>
+</code></pre></div>
+<h2 id="strings">Strings<a id="strings"></a><a class="headerlink" href="#strings" title="Permanent link">#</a></h2>
+<p>Strings have some special properties, that are different from normal vars. The Send and Receive Var can be added with the basic Add methode, but in these cases the size of the String is set to the maximum possible length, which is depending on the Serial buffersize.</p>
+<ul>
+<li>In case of Sending its defined as <code>PirAtE_DATATYPE_STRING_MAXLENGTH</code></li>
+<li>In case of Receiving it is <code>PirAtE_RECEIVE_DATATYPE_STRING_MAXLENGTH</code></li>
+</ul>
+<p>This is the char symbol count without the String endsymbole <code>\0</code>.<br />
+Long Strings can Influence the behavior of Send and Receive.</p>
+<h3 id="send-string">Send String<a class="headerlink" href="#send-string" title="Permanent link">#</a></h3>
+<p>For adding Strings to the Send-register the following functions need to be used.<br />
+<div class="highlight"><pre><span></span><code><span class="n">byte</span> <span class="n">key</span> <span class="o">=</span> <span class="n">PirAtE_ADD_SEND_STRING</span><span class="p">(</span><span class="n">Data_Name</span><span class="p">,</span> <span class="n">Global_VariableAddress</span><span class="p">);</span>
+<span class="n">byte</span> <span class="n">key</span> <span class="o">=</span> <span class="n">PirAtE_ADD_SEND_STRING</span><span class="p">(</span><span class="n">Data_Name</span><span class="p">,</span> <span class="n">Global_VariableAddress</span><span class="p">,</span> <span class="n">PirAtE_MSG_SENDMODE</span><span class="p">);</span>
+<span class="n">byte</span> <span class="n">key</span> <span class="o">=</span> <span class="n">PirAtE_ADD_SEND_STRING</span><span class="p">(</span><span class="n">Data_Name</span><span class="p">,</span> <span class="n">Global_VariableAddress</span><span class="p">,</span> <span class="n">PirAtE_MSG_SENDMODE</span><span class="p">,</span> <span class="n">StringBufferLength</span><span class="p">);</span>
+</code></pre></div></p>
+<ul>
+<li>key: byte<ul>
+<li>Returns a ID that can be used for <a href="#flags">Flag management</a></li>
+</ul>
+</li>
+<li>Data_Name: String<ul>
+<li>Name of the Variable on the Website. <code>E.g. "Var1"</code></li>
+<li>Should be short</li>
+</ul>
+</li>
+<li>Global_VariableAdress: *any<ul>
+<li>Pointer to any supported <a href="#datatypes">Datatype</a></li>
+</ul>
+</li>
+<li>PirAtE_MSG_DATATYPE: <a href="#datatypes">PirAtE_MSG_DATATYPE</a></li>
+<li>PirAtE_MSG_SENDMODE<ul>
+<li>PirAtE_MSG_SENDMODE_AUTO<ul>
+<li>Send automatically each time it can</li>
+</ul>
+</li>
+<li>PirAtE_MSG_SENDMODE_MANUEL<ul>
+<li>Flag needs to be set each time it should be send</li>
+</ul>
+</li>
+<li>Default is PirAtE_MSG_SENDMODE_AUTO</li>
+</ul>
+</li>
+<li>StringBufferLength: int<ul>
+<li>Needs to be the Size of the allocated String Buffer (including <code>\0</code> space)</li>
+<li>Needs to be Smaller or Equal to <code>PirAtE_DATATYPE_STRING_MAXLENGTH + 1</code></li>
+</ul>
+</li>
+</ul>
+<p><strong>When a String isn't ended correctly it will be replaced with just a <code>\0</code>!</strong></p>
+<p><strong>When long strings are used, no Debug messages should be used, because the Buffer could be to full for sending and it will always skip. By Enabling <code>PirAtE_AllowActiveWaitingOnSend</code> and a long enough blocktime it can be fixed, but cycle time will increase.</strong></p>
+<h3 id="receive-string">Receive String<a class="headerlink" href="#receive-string" title="Permanent link">#</a></h3>
+<p>For adding Strings to the Recv-register the following function needs to be used.</p>
+<div class="highlight"><pre><span></span><code><span class="n">byte</span> <span class="n">key</span> <span class="o">=</span> <span class="n">PirAtE_ADD_RECV_STRING</span><span class="p">(</span><span class="n">Data_Name</span><span class="p">,</span> <span class="n">Global_VariableAddress</span><span class="p">,</span> <span class="n">StringBufferLength</span><span class="p">);</span>
+</code></pre></div>
+<ul>
+<li>key: byte<ul>
+<li>Returns a ID that can be used for <a href="#flags">Flag management</a></li>
+</ul>
+</li>
+<li>Data_Name: String<ul>
+<li>Name of the Variable on the Website. <code>E.g. "Var1"</code></li>
+<li>Should be short</li>
+</ul>
+</li>
+<li>Global_VariableAdress: *any<ul>
+<li>Pointer to any supported <a href="#datatypes">Datatype</a></li>
+</ul>
+</li>
+<li>PirAtE_MSG_DATATYPE: <a href="#datatypes">PirAtE_MSG_DATATYPE</a></li>
+<li>StringBufferLength: int<ul>
+<li>Needs to be the Size of the allocated String Buffer (including <code>\0</code> space)</li>
+<li>Needs to be Smaller or Equal to <code>PirAtE_DATATYPE_STRING_MAXLENGTH + 1</code></li>
+</ul>
+</li>
+</ul>
+<p><strong>When a String isn't ended correctly it will try to read as much character as it finds and end it with a <code>\0</code>! This means some messages could become a part of the string.</strong></p>
+<p>When using the Default Add Variable Function, these Parameters are handelt different.</p>
+<ul>
+<li>Default_Value: any<ul>
+<li>No effect</li>
+</ul>
+</li>
+<li>Max_Value: any<ul>
+<li>Limits the Size that can be created on the <a href="../../Pirate-Bridge/00-bridge/">Pirate Bridge</a> side</li>
+</ul>
+</li>
+<li>
+<p>Min_Value: any</p>
+<ul>
+<li>No effect</li>
+</ul>
+<p>It shouldn't be used to prevent unpredictable and unwanted behavior.</p>
+</li>
+</ul>
+<h2 id="flags">Flags<a id="flags"></a><a class="headerlink" href="#flags" title="Permanent link">#</a></h2>
+<p>There are two Flags, one for the Send  and one for the Receive Variables.</p>
+<h3 id="send-flag">Send Flag<a class="headerlink" href="#send-flag" title="Permanent link">#</a></h3>
+<p>This Flag signals the Send function that "New Data is available for sending". It is only needed to be set when the <code>PirAtE_MSG_SENDMODE</code> is <code>PirAtE_MSG_SENDMODE_MANUEL</code> of the variable. When set it will send the Data just one Time in the next Send cycle.</p>
+<div class="highlight"><pre><span></span><code><span class="n">PirAtE_SET_SEND_FLAG</span><span class="p">(</span><span class="n">key</span><span class="p">);</span>
+</code></pre></div>
+<ul>
+<li>key: byte<ul>
+<li>Is the returned ID of the Add Variable to Send Function.</li>
+</ul>
+</li>
+</ul>
+<h3 id="receive-flag">Receive Flag<a class="headerlink" href="#receive-flag" title="Permanent link">#</a></h3>
+<p>With this Flag, the Receive function will signal that "New Data is available for reading". The Flag can be Read with the Get-function and needs to be reset with the Reset-Function.</p>
+<div class="highlight"><pre><span></span><code><span class="n">byte</span> <span class="nf">PirAtE_GET_RECV_FLAG</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+<span class="n">PirAtE_RST_RECV_FLAG</span><span class="p">(</span><span class="n">key</span><span class="p">);</span>
+</code></pre></div>
+<ul>
+<li>key: byte<ul>
+<li>Is the returned ID of the Add Variable to Receive Function.</li>
+</ul>
+</li>
+</ul>
+<h2 id="more-defines">More Defines<a class="headerlink" href="#more-defines" title="Permanent link">#</a></h2>
+<p>There are more small Defines for changing the Communication behavior of the Hook.</p>
+<h3 id="com-defines">Com Defines<a class="headerlink" href="#com-defines" title="Permanent link">#</a></h3>
+<p>The Communication can be adjusted with the following Defines, but the modification has to also happen on the <a href="../../Pirate-Bridge/00-bridge/">Pirate Bridge Side</a>.</p>
+<div class="highlight"><pre><span></span><code><span class="cp">#define PirAtE_Serial_Baudrate 115200</span>
+</code></pre></div>
+<p>When changing the Baudrate, make sure it is supported by the <a href="../Theory/arduino/">Arduino</a> and in case of debugging in Serial Monitor, its supported Baudrates need to be accounted, too.</p>
+<h3 id="intervall-defines">Intervall Defines<a class="headerlink" href="#intervall-defines" title="Permanent link">#</a></h3>
+<p>With this Defines the message speed can be tweaked, what also has an impact on the Resource intensity on the <a href="../../Pirate-Bridge/00-bridge/">Bridge side</a>. </p>
+<div class="highlight"><pre><span></span><code><span class="cp">#define PirAtE_SendMSGInterVal_micros 1000ul</span>
+<span class="cp">#define PirAtE_AllowedSendBlockTime_micros 2000ul</span>
+<span class="cp">#define PirAtE_RequestInterVal_micros 1000ul</span>
+<span class="cp">#define PirAtE_AllowedReceiveBlockTime_micros 200ul</span>
+</code></pre></div>
+<p>Detailed description coming soon!</p>
+<h2 id="good-to-know">Good to know<a class="headerlink" href="#good-to-know" title="Permanent link">#</a></h2>
+<p>Coming soon!</p>
+<h2 id="known-bugs">Known Bugs<a class="headerlink" href="#known-bugs" title="Permanent link">#</a></h2>
+<p>Coming soon!</p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../00-hook/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Overview Pirate Hook
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../20-hook-requirements/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Requirements
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/vendor.77e55a48.min.js"></script>
+      <script src="../../assets/javascripts/bundle.9554a270.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      
+      <script>
+        app = initialize({
+          base: "../..",
+          features: ['navigation.expand', 'navigation.tabs', 'navigation.instant'],
+          search: Object.assign({
+            worker: "../../assets/javascripts/worker/search.4ac00218.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+    
+  </body>
+</html>

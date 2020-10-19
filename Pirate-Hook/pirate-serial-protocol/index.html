@@ -1,0 +1,1655 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.0.2">
+    
+    
+      
+        <title>Pirate Serial Protocol - Pirate Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.38780c08.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.3f72e892.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+      
+  
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#pirate-serial-protocol" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href="../.." title="Pirate Docs" class="md-header-nav__button md-logo" aria-label="Pirate Docs">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            Pirate Docs
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              Pirate Serial Protocol
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+
+  
+
+<nav class="md-tabs md-tabs--active" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href="../.." class="md-tabs__link">
+        Pirate Overview
+      </a>
+    
+  </li>
+
+      
+        
+      
+        
+      
+        
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../Misc/1-is-first-md/" class="md-tabs__link">
+          Misc
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../Pirate-Bridge/00-bridge/" class="md-tabs__link">
+          Pirate Bridge
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../Pirate-Flag/00-flag/" class="md-tabs__link">
+          Pirate Flag
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../00-hook/" class="md-tabs__link md-tabs__link--active">
+          Pirate Hook
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../Pirate-Map/00-map/" class="md-tabs__link">
+          Pirate Map
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../Pirate-Spyglass/00-spyglass/" class="md-tabs__link">
+          Pirate Spyglass
+        </a>
+      
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Pirate Docs" class="md-nav__button md-logo" aria-label="Pirate Docs">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Pirate Docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." class="md-nav__link">
+      Pirate Overview
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../firstrun/" class="md-nav__link">
+      Firstrun
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../goals/" class="md-nav__link">
+      Project Goals and Requirements
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../setupraspberrypi/" class="md-nav__link">
+      Setup Raspberry Pi
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      Misc
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Misc" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        <span class="md-nav__icon md-icon"></span>
+        Misc
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Misc/1-is-first-md/" class="md-nav__link">
+      Hello you found a format testing folder. Hurray.
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Misc/caddy-md/" class="md-nav__link">
+      Caddy.md
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Misc/example/" class="md-nav__link">
+      Testpage for possible Link variations
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Misc/markdowntestfile/" class="md-nav__link">
+      Markdown: Syntax
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      Pirate Bridge
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Pirate Bridge" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        <span class="md-nav__icon md-icon"></span>
+        Pirate Bridge
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Pirate-Bridge/00-bridge/" class="md-nav__link">
+      Overview Pirate Bridge
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Pirate-Bridge/10-bridge-getting-started/" class="md-nav__link">
+      Getting Started
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Pirate-Bridge/20-bridge-requirements/" class="md-nav__link">
+      Requirements
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Pirate-Bridge/30-bridge-implementation/" class="md-nav__link">
+      Implementation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Pirate-Bridge/40-bridge-validation/" class="md-nav__link">
+      Validation and Future Steps
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Pirate-Bridge/client-facing-interface/" class="md-nav__link">
+      Client API
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6-7" type="checkbox" id="nav-6-7">
+    
+    <label class="md-nav__link" for="nav-6-7">
+      Theory
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Theory" data-md-level="2">
+      <label class="md-nav__title" for="nav-6-7">
+        <span class="md-nav__icon md-icon"></span>
+        Theory
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Pirate-Bridge/Theory/docker/" class="md-nav__link">
+      Docker
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Pirate-Bridge/Theory/express/" class="md-nav__link">
+      Express
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Pirate-Bridge/Theory/http/" class="md-nav__link">
+      HTTP
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Pirate-Bridge/Theory/nodejs/" class="md-nav__link">
+      Nodejs
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Pirate-Bridge/Theory/raspberrypi/" class="md-nav__link">
+      Raspberry Pi
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Pirate-Bridge/Theory/sse/" class="md-nav__link">
+      Server-Sent-Events
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+    
+    <label class="md-nav__link" for="nav-7">
+      Pirate Flag
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Pirate Flag" data-md-level="1">
+      <label class="md-nav__title" for="nav-7">
+        <span class="md-nav__icon md-icon"></span>
+        Pirate Flag
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Pirate-Flag/00-flag/" class="md-nav__link">
+      Overview Pirate Flag
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Pirate-Flag/10-flag-getting-started/" class="md-nav__link">
+      Getting Started
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Pirate-Flag/20-flag-requirements/" class="md-nav__link">
+      Requirements
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Pirate-Flag/30-flag-implementation/" class="md-nav__link">
+      Implementation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Pirate-Flag/40-flag-validation/" class="md-nav__link">
+      Validation and Future Steps
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Pirate-Flag/frontend/" class="md-nav__link">
+      Frontend thoughts
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8" checked>
+    
+    <label class="md-nav__link" for="nav-8">
+      Pirate Hook
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Pirate Hook" data-md-level="1">
+      <label class="md-nav__title" for="nav-8">
+        <span class="md-nav__icon md-icon"></span>
+        Pirate Hook
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../00-hook/" class="md-nav__link">
+      Overview Pirate Hook
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../10-hook-getting-started/" class="md-nav__link">
+      Getting Started
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../20-hook-requirements/" class="md-nav__link">
+      Requirements
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../30-hook-implementation/" class="md-nav__link">
+      Implementation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../40-hook-validation/" class="md-nav__link">
+      Validation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../code-example/" class="md-nav__link">
+      Code Example
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Pirate Serial Protocol
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+    
+    <a href="./" class="md-nav__link md-nav__link--active">
+      Pirate Serial Protocol
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#master-to-slave" class="md-nav__link">
+    Master to Slave
+  </a>
+  
+    <nav class="md-nav" aria-label="Master to Slave">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#initial-communication" class="md-nav__link">
+    Initial Communication
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sending-of-informations" class="md-nav__link">
+    Sending of Informations
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#requesting-of-informations" class="md-nav__link">
+    Requesting of Informations 
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#slave-to-master" class="md-nav__link">
+    Slave to Master
+  </a>
+  
+    <nav class="md-nav" aria-label="Slave to Master">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#data-transfer" class="md-nav__link">
+    Data Transfer
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#no-data" class="md-nav__link">
+    No Data 
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-8-8" type="checkbox" id="nav-8-8">
+    
+    <label class="md-nav__link" for="nav-8-8">
+      Theory
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Theory" data-md-level="2">
+      <label class="md-nav__title" for="nav-8-8">
+        <span class="md-nav__icon md-icon"></span>
+        Theory
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Theory/arduino/" class="md-nav__link">
+      Arduino
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-9" type="checkbox" id="nav-9">
+    
+    <label class="md-nav__link" for="nav-9">
+      Pirate Map
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Pirate Map" data-md-level="1">
+      <label class="md-nav__title" for="nav-9">
+        <span class="md-nav__icon md-icon"></span>
+        Pirate Map
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Pirate-Map/00-map/" class="md-nav__link">
+      Overview Pirate Map
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Pirate-Map/10-map-getting-started/" class="md-nav__link">
+      Getting Started
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Pirate-Map/20-map-requirements/" class="md-nav__link">
+      Requirements
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Pirate-Map/30-map-implementation/" class="md-nav__link">
+      Implementation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Pirate-Map/40-map-validation/" class="md-nav__link">
+      Validation and Future Steps
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-9-6" type="checkbox" id="nav-9-6">
+    
+    <label class="md-nav__link" for="nav-9-6">
+      Theory
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Theory" data-md-level="2">
+      <label class="md-nav__title" for="nav-9-6">
+        <span class="md-nav__icon md-icon"></span>
+        Theory
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Pirate-Map/Theory/caddy/" class="md-nav__link">
+      Caddy
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Pirate-Map/Theory/dns/" class="md-nav__link">
+      Dns
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Pirate-Map/Theory/reverse-proxy/" class="md-nav__link">
+      Reverse Proxy
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-10" type="checkbox" id="nav-10">
+    
+    <label class="md-nav__link" for="nav-10">
+      Pirate Spyglass
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Pirate Spyglass" data-md-level="1">
+      <label class="md-nav__title" for="nav-10">
+        <span class="md-nav__icon md-icon"></span>
+        Pirate Spyglass
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Pirate-Spyglass/00-spyglass/" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Pirate-Spyglass/10-spyglass-getting-started/" class="md-nav__link">
+      Getting Started
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Pirate-Spyglass/20-spyglass-requirements/" class="md-nav__link">
+      Requirements
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Pirate-Spyglass/30-spyglass-implementation/" class="md-nav__link">
+      Implementation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Pirate-Spyglass/40-spyglass-validation/" class="md-nav__link">
+      Validation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Pirate-Spyglass/streamingmethods/" class="md-nav__link">
+      Streaming Methods
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-10-7" type="checkbox" id="nav-10-7">
+    
+    <label class="md-nav__link" for="nav-10-7">
+      Sources
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Sources" data-md-level="2">
+      <label class="md-nav__title" for="nav-10-7">
+        <span class="md-nav__icon md-icon"></span>
+        Sources
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Pirate-Spyglass/Sources/gstreamer/" class="md-nav__link">
+      GStreamer
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Pirate-Spyglass/Sources/stream-headless-chrome/" class="md-nav__link">
+      Self implemented WebRTC
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Pirate-Spyglass/Sources/uv4l/" class="md-nav__link">
+      UV4L
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-10-8" type="checkbox" id="nav-10-8">
+    
+    <label class="md-nav__link" for="nav-10-8">
+      Streamers
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Streamers" data-md-level="2">
+      <label class="md-nav__title" for="nav-10-8">
+        <span class="md-nav__icon md-icon"></span>
+        Streamers
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Pirate-Spyglass/Streamers/comercialstreamingsolutions/" class="md-nav__link">
+      Commercial solutions
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Pirate-Spyglass/Streamers/janus/" class="md-nav__link">
+      Janus
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Pirate-Spyglass/Streamers/kurento/" class="md-nav__link">
+      Kurento
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-10-9" type="checkbox" id="nav-10-9">
+    
+    <label class="md-nav__link" for="nav-10-9">
+      Theory
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Theory" data-md-level="2">
+      <label class="md-nav__title" for="nav-10-9">
+        <span class="md-nav__icon md-icon"></span>
+        Theory
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Pirate-Spyglass/Theory/webRTC/" class="md-nav__link">
+      WebRTC
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#master-to-slave" class="md-nav__link">
+    Master to Slave
+  </a>
+  
+    <nav class="md-nav" aria-label="Master to Slave">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#initial-communication" class="md-nav__link">
+    Initial Communication
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sending-of-informations" class="md-nav__link">
+    Sending of Informations
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#requesting-of-informations" class="md-nav__link">
+    Requesting of Informations 
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#slave-to-master" class="md-nav__link">
+    Slave to Master
+  </a>
+  
+    <nav class="md-nav" aria-label="Slave to Master">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#data-transfer" class="md-nav__link">
+    Data Transfer
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#no-data" class="md-nav__link">
+    No Data 
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="pirate-serial-protocol">Pirate Serial Protocol<a class="headerlink" href="#pirate-serial-protocol" title="Permanent link">#</a></h1>
+<p>The Pirate Serial Protocol is used by the <a href="../00-hook/">Pirate Hook</a> and the <a href="../../Pirate-Bridge/00-bridge/">Pirate Bridge</a> to transmit data between them. It was for the usage with an <a href="../Theory/arduino/">Arduino</a> and a Raspberry Pi generated and uses the serial connection. The protocol makes the <a href="../Theory/arduino/">Arduino</a> to a Master and the the Raspberry Pi to a Slave of the communication.</p>
+<p>The Master side of this Communication is implemented by the <a href="../00-hook/">Pirate Hook</a> and is limited by the Arduino performance. It needed to be less intensive in computing time and bandwidth. Also it shouldn't block the loop of the Arduino to much or other needed calculations and action on the single processed controller could be delayed. For this the Master side of the Protocol will use the data in its byte format directly from the Memory and will not need to perform any parsings. This also shrinks the amount of bytes to send in the Serial Communication and generates fixed size Messages. Also it will never need to wait on the Slave, it will send asynchron Data or request some Data, which also will arrive asynchron. The reason for the Request is to stop an overflow in the input buffer of the Master.</p>
+<p>The Slave in this case will be the <a href="../../Pirate-Bridge/00-bridge/">Pirate Bridge</a>, that will have to read all incoming data and wait for delimiter and messsagetype symbols from the Master. That shouldn't be a problem for this side, because we expect that it would be a Raspberry Pi or something equal or better. It should own an OS to manage tasks, so that blocking couldn't occurs. With the multi core System and high Clock frequency (<a href="../Theory/arduino/">Arduino</a> Uno 16MHz) the parsing and handeling of the data on event base shouldn't be a problem. With a virtual buffersize of 4KB an overflow shouldn't happen, too.</p>
+<p>To allow different <a href="../Theory/arduino/">Arduino</a> Boards as Master, even if the byte size of some datatypes are different, the Master sends at the start the byte size of each datatype and its own Buffersize. This way the parser in the Slave can modify its data the way it needs to be.</p>
+<p>To make the Website <a href="../../Pirate-Flag/00-flag/">Pirate Flag</a> as dynamic as possible and to reduce the effort of creating one, the Master also sends information about each generated Send and Receive variable. This way the website generates from this data directly a basic layout with all Components. The informations contain Name, Type and some more parameter that will be listed in a section below. </p>
+<p>All Symbols used in the Protocol are based on ASCII (<a href="http://www.asciitable.com/">http://www.asciitable.com/</a>) values and are only one character long and Strings are only char arrays with an '\0' at the end.</p>
+<p><a id="idoffset"></a><br />
+ID's of Messages have an offset of '0x30', what represents a '0' in ASCII. This is to make the first 10 Messages better readable in the Terminal. </p>
+<p><a id="byteformat"></a><br />
+When something refers to Value in "byteformat", than it means that the value of any Datatype is split in bytes that are order in LSB (least significant Byte first). Strings are unaffected by this.</p>
+<h2 id="master-to-slave">Master to Slave<a class="headerlink" href="#master-to-slave" title="Permanent link">#</a></h2>
+<p>All Messages from the Master to the Slave End with a Delimiter, so that the Slave can easy separate the different messages.<br />
+<div class="highlight"><pre><span></span><code>0xff, &#39;P&#39;, &#39;i&#39;, &#39;r&#39;, &#39;A&#39;, &#39;t&#39;, &#39;E&#39;, &#39;\n&#39;
+</code></pre></div><br />
+The length of the Delimiter is chosen to never get mixups with data. The Newline and the choice of readable symbol's was chosen to allow reading of the data Stream in Serial Terminal from the Arduino IDE.</p>
+<p><a id="datatypes"></a><br />
+Data containing messages get signed with a Datatype Symbol, these Symbols are listed in the table below.</p>
+<table>
+<thead>
+<tr>
+<th align="center">Datatype</th>
+<th align="center">Symbol</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">int</td>
+<td align="center">I</td>
+</tr>
+<tr>
+<td align="center">unsigned int</td>
+<td align="center">U</td>
+</tr>
+<tr>
+<td align="center">long</td>
+<td align="center">L</td>
+</tr>
+<tr>
+<td align="center">unsigned long</td>
+<td align="center">u</td>
+</tr>
+<tr>
+<td align="center">float</td>
+<td align="center">F</td>
+</tr>
+<tr>
+<td align="center">double</td>
+<td align="center">D</td>
+</tr>
+<tr>
+<td align="center">byte</td>
+<td align="center">B</td>
+</tr>
+<tr>
+<td align="center">word</td>
+<td align="center">W</td>
+</tr>
+<tr>
+<td align="center">bool</td>
+<td align="center">b</td>
+</tr>
+<tr>
+<td align="center">char</td>
+<td align="center">C</td>
+</tr>
+<tr>
+<td align="center">char[]</td>
+<td align="center">S</td>
+</tr>
+</tbody>
+</table>
+<p>The Master to Slave Communication can be separated in 3 different Categories<br />
+- Initial Informations<br />
+- Sending of Informations<br />
+- Requesting of Informations</p>
+<h3 id="initial-communication">Initial Communication<a class="headerlink" href="#initial-communication" title="Permanent link">#</a></h3>
+<p>To allow the Website auto generation and inform the Slave, what data can be Received or Send and what bytesize is used for the different <a href="#datatypes">Message Datatypes</a> the Master has to send this informations at the start.</p>
+<ol>
+<li>
+<p>Synced Start</p>
+<p>To Sync the Communications and to ignore all Data send before the Communication starts with a Start Sequence:</p>
+<div class="highlight"><pre><span></span><code>0xee, &#39;P&#39;, &#39;i&#39;, &#39;r&#39;, &#39;A&#39;, &#39;t&#39;, &#39;E&#39;, &#39;\n&#39;
+</code></pre></div>
+<p>It has no Delimiter at the end</p>
+</li>
+<li>
+<p>Datatypes info 'P'</p>
+<p>To inform the Slave about the Bytesize of the different Datatypes an information about each Datatype and its size gets send at the start. This Message starts with a 'P' and contains each <a href="#datatypes">Message Datatype Symbol</a> followed with its bytesize as number. All the Types are separated by a Separator '$'.</p>
+</li>
+<li>
+<p>Send Message info 'T'</p>
+<p>For the Website generation a list of all incoming data is needed. For this Reason an information of all Send messages need to be send at the start. This type of Message is signed with an 'T' and gets repeated for each Send Message index.</p>
+<p>The content of this Message is ID (with <a href="#idoffset">Offset</a>), Name, <a href="#datatypes">Datatype</a> and Scale separated by a Separator '$':</p>
+<div class="highlight"><pre><span></span><code>T&lt;ID&gt;$&lt;Name&gt;$&lt;Type&gt;$&lt;Scale&gt;
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">For Example:</p>
+<div class="highlight"><pre><span></span><code>T0\$X1\0\$I\$Y
+</code></pre></div>
+<p>Is the Information about the Send Message with ID = 0 that has the Name = X1, Datatype = Int and gets displayed in the Scale 'Y'.</p>
+</div>
+</li>
+<li>
+<p>Receive Message info 't'</p>
+<p>All Values that can be controlled by the Website need also be listed. This information get also be send at the start and is signed with a 't'. It gets repeated for each Message ID</p>
+<p>The content of this Message is ID (with <a href="#idoffset">Offset</a>), Name, <a href="#datatypes">Datatype</a>, DefaultValue, MaxValue and MinValue separated by a Separator '$':</p>
+<div class="highlight"><pre><span></span><code>t&lt;ID&gt;$&lt;Name&gt;$&lt;Type&gt;$&lt;Default&gt;$&lt;Max&gt;$&lt;Min&gt;
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">For Example:</p>
+<div class="highlight"><pre><span></span><code>t0\$X1\0\$I\$0$100$-100
+</code></pre></div>
+<p>Is the Information about the Receive Message with ID = 0 that has the Name = X1, Datatype = Int, that starts with a default value = 0 and can be set to values between -100 and 100.</p>
+</div>
+<p>In case of <a href="#datatypes">Datatype</a> String the Max Value is the max length of the String without the '\0'.</p>
+</li>
+</ol>
+<h3 id="sending-of-informations">Sending of Informations<a class="headerlink" href="#sending-of-informations" title="Permanent link">#</a></h3>
+<p>All Informations that get send to the Slave start with a <a href="#datatypes">Datatype Symbol</a> followed by the Message ID (with <a href="#idoffset">Offset</a>) and the Datavalue in <a href="#byteformat">raw Bytes</a>:</p>
+<div class="highlight"><pre><span></span><code>&lt;Type&gt;&lt;ID&gt;&lt;ValueAsBytes&gt;
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">For Example:</p>
+<div class="highlight"><pre><span></span><code>C0A
+</code></pre></div>
+<p>A 'C' Char Message that is for Data with the Index = 0 contains the Value 'A'.</p>
+</div>
+<h3 id="requesting-of-informations">Requesting of Informations <a id="request"></a><a class="headerlink" href="#requesting-of-informations" title="Permanent link">#</a></h3>
+<p>When the Master can receive new Informations and no Data is available in the Buffer, than the Master can Request new Data by Sending out an Request. This is signed by an 'R' and contains no other informations.</p>
+<div class="highlight"><pre><span></span><code>R
+</code></pre></div>
+<p>It should be only send after all Received Data is read and no <a href="#nodata">NoData</a> from the Slave was received. After an Intervall of not receiving any Data or <a href="#nodata">NoData</a> the Master can request again to keep the Communication running.</p>
+<h2 id="slave-to-master">Slave to Master<a class="headerlink" href="#slave-to-master" title="Permanent link">#</a></h2>
+<p>Slave can only Answer on the Master <a href="#request">Request</a>, but the Master has to restart the Communication, when the Serial Connection is established and send all the Initial informations again.</p>
+<p>On the <a href="#request">Request</a> the Slave can answer with a Data Transfer or a No Data.</p>
+<h3 id="data-transfer">Data Transfer<a class="headerlink" href="#data-transfer" title="Permanent link">#</a></h3>
+<p>When a <a href="#request">Request</a> is received the Slave can send Data till the buffer size is reached or end it with a <a href="#nodata">NoData</a>. The Sending of multiple Values for one Message Index in one Message shouldn't be done. The Values could get ignored or could slowly be readout and cause unpredictable changes.</p>
+<p>All Data that gets transmitted has to start with the Message ID followed by the Value in <a href="#byteformat">Byteformat</a> and bytesize that got defined in the start.</p>
+<div class="highlight"><pre><span></span><code>&lt;ID&gt;&lt;ValueAsBytes&gt;
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">For Example:</p>
+<div class="highlight"><pre><span></span><code>00
+</code></pre></div>
+<p>A Message for the Data with Index = 0 and it contains an one Byte long data with the value 0x30.</p>
+</div>
+<h3 id="no-data">No Data <a id="nodata"></a><a class="headerlink" href="#no-data" title="Permanent link">#</a></h3>
+<p>When on a Request no Data available is, the Slave can send a "No Data" '0x29' to the Master, to inform it to not ask for more Data till the next intervall.</p>
+<div class="highlight"><pre><span></span><code>0x29
+</code></pre></div>
+<p>0x29 is used because the Indexes start with the <a href="#idoffset">Offset</a> 0x30.</p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../code-example/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Code Example
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../Theory/arduino/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Arduino
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/vendor.77e55a48.min.js"></script>
+      <script src="../../assets/javascripts/bundle.9554a270.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      
+      <script>
+        app = initialize({
+          base: "../..",
+          features: ['navigation.expand', 'navigation.tabs', 'navigation.instant'],
+          search: Object.assign({
+            worker: "../../assets/javascripts/worker/search.4ac00218.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+    
+  </body>
+</html>
