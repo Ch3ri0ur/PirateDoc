@@ -1,6 +1,6 @@
 # Requirements
 
-The Bridge component has a set of functional and non functional Requirements.
+The Bridge component has a set of functional and non functional requirements.
 
 The following requirements are derived from the accepted overarching requirements approved by the customer. 
 

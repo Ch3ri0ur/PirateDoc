@@ -17,7 +17,7 @@ The components are written in [Javascript](https://developer.mozilla.org/en-US/d
 
 ## Communication with the Arduino
 
-The Hook can send messages to the Raspberry PI "any time" but the communication to the Hook on the Arduino from the Raspberry PI is polling based with the Hook being the initiator. Here is more information about the implemented [serial protocol](../Pirate-Hook/pirate-serial-protocol.md). 
+The [Pirate-Hook](../Pirate-Hook/00-hook.md) can send messages to the Raspberry PI at "any time" but the communication to the Hook on the Arduino from the Raspberry PI is polling based with the Hook being the initiator. Here is more information about the implemented [serial protocol](../Pirate-Hook/pirate-serial-protocol.md). 
 
 On the Node side a library called [serialport](https://serialport.io/) is used. With it the Bridge can read from connected serial devices. The library provides an event based API, in which every time a message is received a callback is triggered. 
 
