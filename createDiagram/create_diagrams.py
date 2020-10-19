@@ -39,7 +39,7 @@ with Diagram(filename="pirate_architecture", show=False, graph_attr=graph_attr):
             Janus << Edge(label="RTSP Stream", color="firebrick") << Gstreamer
             with Cluster("ReactJs"):
                 react = React("Pirate-Flag")
-            caddy = Caddy("Reverse Proxy")
+            caddy = Caddy("Pirate-Map")
             caddy << Edge(color="firebrick") >> Janus
             caddy << Edge(color="firebrick") >> react
             caddy << Edge(color="firebrick") >> nodeJs
