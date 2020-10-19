@@ -1,6 +1,6 @@
 # Getting Started
 
-The assumption is that the Raspberry PI was correctly set up and [[NodeJS]] was installed.
+The assumption is that the Raspberry PI was correctly [set up](../setupraspberrypi.md) and [[NodeJS]] was installed.
 
 To start install this project follow these steps:
 
@@ -25,7 +25,7 @@ This command compresses the client and strips out unnecessary symbols. The resul
 
 ## Serve the Production build
 
-Any static HTTP server can serve this build, but the pirate bridge already serves the ./build folder in its root directory. So the build folder can just be moved.
+Any static HTTP server can serve this build, but the [Pirate-Bridge](../Pirate-Bridge/00-bridge.md) already serves the ./build folder in its root directory. So the build folder can just be moved.
 
 Alternatively can the caddy server of the Map be configured to serve this folder instead of routing the "/" endpoint to the Bridge.
 
