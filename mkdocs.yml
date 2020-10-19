@@ -10,7 +10,6 @@ theme:
     features:
         - navigation.expand
         - navigation.tabs
-        - navigation.instant
 markdown_extensions:
     - abbr
     - sane_lists
