@@ -1,29 +1,44 @@
 # Validation
 
 ## tests
-test ino
 
-testbandwidth
+The Test Files can be found in the Repository
 
-simulated pid
+### Pirate_arduino_Library.ino
 
-serial monitor
+Was the Implementation Environment with current feature tests.
 
+### test.ino
 
+Used to Test first Implementation and used for Echo test with Bridge
+
+### testbandwidth.ino
+
+First test to search for bottlenecks and check transmitting rate.
+
+### simulatedPID.ino
+
+For Demonstration a simulation of a controller Project was created.
 
 ## Future Steps
-other systems
 
-other com types
+- Tests with other [Arduinos](Theory/arduino.md).
 
-serial
+- Test with other com types
+    - serial RX TX pins
+    - SPI
+    - I2C
 
-spi i2c rxtx ..
 
-adding data security/checks parity ..
+- Adding data security/checks
+    - parity
 
-protocol improvement
+- [Pirate Serial Protocol](pirate-serial-protocol.md) improvement
+    - optimize Overhead
 
-more tests
+- More tests
+    - analyzing Speed
+    - durability Test
 
-compare with xcp (Extended Calibration Protocol)
+- Compare [Pirate Serial Protocol](pirate-serial-protocol.md) with xcp (Extended Calibration Protocol)
+    - Was the creation unnecessary?
