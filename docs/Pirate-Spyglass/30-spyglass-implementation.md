@@ -1,2 +1,2 @@
-# 30 Spyglass Implementation
+# Implementation
 

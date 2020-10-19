@@ -1,2 +1,2 @@
-# 20 Spyglass Requirements
+# Requirements
 
