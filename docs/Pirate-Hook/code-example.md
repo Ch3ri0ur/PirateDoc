@@ -61,6 +61,12 @@ void loop()
 
 ## Result
 
-Graph with Actual and Setpoint
+From the Code example above, on the Website will be created:
 
-Control with offset and setpoint
+- one Graph with (only one Scale):
+    - Actual
+    - Setpoint
+
+- two Control slider for:
+    - offset (-200 to 200)
+    - setpoint (0.01 to 100)
