@@ -5,7 +5,7 @@
 - latency
 - bandwith
 - ease of use
-  - not more languages (not php)
+    - not more languages (not php)
 
 ## Methods
 Comparison different Types:\
@@ -14,21 +14,21 @@ Comparison different Types:\
 
 
 - get an ip camera ? for surveillance so perhaps not good latency
-  - https://www.controlbooth.com/threads/low-latency-ip-cameras.45601/
+    - https://www.controlbooth.com/threads/low-latency-ip-cameras.45601/
 - [[UV4L]]
 - [[GStreamer]]
 - RPI-Cam-Web-Interface
 - [[stream-headless-chrome]] 
 - Raspivid
 - [motion](https://motion-project.github.io/motion_config.html) 
-  - [high cpu usage](https://chriscarey.com/blog/2017/04/30/achieving-high-frame-rate-with-a-raspberry-pi-camera-system/comment-page-1/)
+    - [high cpu usage](https://chriscarey.com/blog/2017/04/30/achieving-high-frame-rate-with-a-raspberry-pi-camera-system/comment-page-1/)
 - [RemoteMe](https://remoteme.org/raspberry-pi/)
 - v4l2 
 - [ffmpeg](https://ffmpeg.org) 
-  - https://en.wikipedia.org/wiki/FFmpeg ( what is [avconv](https://libav.org/avconv.html) last news blog 12.02.2018)
+    - https://en.wikipedia.org/wiki/FFmpeg ( what is [avconv](https://libav.org/avconv.html) last news blog 12.02.2018)
 - netcat (nc ) for streaming / vlc else
 - [RazTot](https://github.com/benbusby/raztot) gstreamer janus interessting setup.sh file 
-  - didn't work -> janus threw errors (also libnice problem with configure.ac (got it from other repository ))
+    - didn't work -> janus threw errors (also libnice problem with configure.ac (got it from other repository ))
 ## Other stuff
 
 good collection 
@@ -58,16 +58,16 @@ https://flussonic.com/blog/news/html5-streaming/
 h264 hardware support on raspberry pi
 
 - webrtc? [[webRTC]]
-  - turn/stun server?
+    - turn/stun server?
 - websockets
 
 whats ffmpeg
 
 concern that needs to be addressed
 - restart stream (or close on lost connection)
-  - not sure which protocol but some had problems with that (ffmpeg perhaps)
+    - not sure which protocol but some had problems with that (ffmpeg perhaps)
 - how to display h264 (raw)
-  - https://blog.ronnyvdb.net/2019/01/20/howto-stream-html5-video-h264-encoded-video-encapsulated-in-mp4-from-the-raspberry-pi-to-any-web-browser/ not sure if needed does some raspivid gstreamer stuff
+    - https://blog.ronnyvdb.net/2019/01/20/howto-stream-html5-video-h264-encoded-video-encapsulated-in-mp4-from-the-raspberry-pi-to-any-web-browser/ not sure if needed does some raspivid gstreamer stuff
 
 boardcasting stuff
 thought there was something possible with janus as a server
