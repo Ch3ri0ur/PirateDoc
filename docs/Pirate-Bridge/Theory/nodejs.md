@@ -1,5 +1,7 @@
 # Nodejs
 
+[Nodejs](https://nodejs.org/en/) is a Javascript runtime built on the V8 Javascript engine used in Googles Chrome browser.
+
 ## Install Instructions
 
 ### Load source path for newest node Version in bash

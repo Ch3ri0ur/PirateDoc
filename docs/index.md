@@ -1,4 +1,7 @@
 # Pirate Overview
+
+![Pirate Client](attachment/pirate_flag_example.png)
+
 Pirate (short for "Pirate Implements Remote Access to Experiments") is a remote monitoring solution for Arduino projects.
 
 <!-- perhaps add image with project ->arduino -> raspi -> website -->
