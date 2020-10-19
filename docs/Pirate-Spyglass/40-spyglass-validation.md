@@ -1,2 +1,2 @@
-# 40 Spyglass Validation
+# Validation
 

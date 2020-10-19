@@ -41,7 +41,7 @@ The low memory and time usage aspect are partly the reason, why many functions a
 
 ### PirAtE_START() : Macro
 
-**Must be used once in the Setup! Before any other PirArE Functions.**
+**Must be used once in the Setup! Before any other PirAtE Functions.**
 
 ```c++
 PirAtE_START()
@@ -55,7 +55,7 @@ Returns:
 
 - void
 
-Is a Macro and activates the Serial Communication. Also sends out the Datatype information and Buffersize that is defined in the Initial steps of [Pirate Serial Protocol](pirate-serial-protocol.md).
+Activates the Serial Communication and also sends out the Datatype information and Buffersize. This is defined in the Initial steps of [Pirate Serial Protocol](pirate-serial-protocol.md).
 
 When [Pirate Communication is Disabled](#disablepirate) it will skip the Initial steps of the [Pirate Serial Protocol](pirate-serial-protocol.md), but still start the Serial Port.
 
@@ -89,7 +89,7 @@ For the Sending some modes got defined, which configure how the sending should h
 
 ### PirAtE_ADD_SEND_VAR() : Macro
 
-**Should be used only in the Setup! After PirAtE_START() for each Send Var to Add.**
+**Should be used only in the Setup! After PirAtE_START() for each Send Var to Add. The Times used can not exceed the [Defined Send Amount](#sendamount).**
 
 ```c++
 byte key = PirAtE_ADD_SEND_VAR(Data_Name, Global_VariableAddress, PirAtE_MSG_DATATYPE, PirAtE_Scale, PirAtE_MSG_SENDMODE);
@@ -117,6 +117,8 @@ Returns:
 
 Is overloaded and registrates the variables for the PirAtE_SEND() methode.
 
+When [Pirate Communication is Disabled](#disablepirate) it will skip the Initial steps of the [Pirate Serial Protocol](pirate-serial-protocol.md), but still start the Serial Port.
+
 !!! note "Note:"
     Suggested is it to use programm memory for the Strings in this functions.
 
@@ -124,9 +126,21 @@ Is overloaded and registrates the variables for the PirAtE_SEND() methode.
     byte key = PirAtE_ADD_SEND_VAR("Name", &..., PirAtE_MSG_DATATYPE_..., "Y in [unit]", PirAtE_MSG_SENDMODE_...);
     ```
 
+### PirAtE_SendVar_Amount : Define<a id="sendamount"></a>
+
+**Needs to be defined in PirAtE_Config.h!**
+
+```c++
+#define PirAtE_SendVar_Amount 5
+```
+
+Defines the Amount of possible Send Variables. Can be Higher than the actual used amount, but than it will use more memory than needed.
+
+For amount x, an Array for x byte-Pointer will be defined. Also two byte Arrays that are X/8 Bytes long and get rounded up. One is a Register that holds the [Sendmode](#sendmodes) for each Send variable in one bit. The other one is to hold the Flag that signals, if the data Value needs to be send again.
+
 ### PirAtE_ADD_RECV_VAR() : Macro
 
-**Should be used only in the Setup! After PirAtE_START() for each Receive Var to Add.**
+**Should be used only in the Setup! After PirAtE_START() for each Receive Var to Add. The Times used can not exceed the [Defined Send Amount](#recvamount).**
 
 ```c++
 byte key = PirAtE_ADD_RECV_VAR(Data_Name, Global_VariableAddress, PirAtE_MSG_DATATYPE, Default_Value, Max_Value, Min_Value);
@@ -152,7 +166,9 @@ Returns:
 - key : byte
     - "Can only be Assigned to a Variable!"
 
-Is overloaded and registrates the variables for the PirAtE_RECV() methode.
+Is overloaded and registrates the variables for the PirAtE_RECV() methode. Can only be done up to the Defined maximum amount of Receive Messages.
+
+When [Pirate Communication is Disabled](#disablepirate) it will skip the Initial steps of the [Pirate Serial Protocol](pirate-serial-protocol.md), but still start the Serial Port.
 
 !!! note "Note:"
     Suggested is it to use programm memory for the Strings in this functions.
@@ -160,6 +176,70 @@ Is overloaded and registrates the variables for the PirAtE_RECV() methode.
     ```c++
     byte key = PirAtE_ADD_RECV_VAR("Name", &..., PirAtE_MSG_DATATYPE_..., ..., ..., ...);
     ```
+
+
+### PirAtE_RECVVar_Amount : Define<a id="recvamount"></a>
+
+**Needs to be defined in PirAtE_Config.h!**
+
+```c++
+#define PirAtE_RecvVar_Amount 5
+```
+
+Defines the Amount of possible Receive Variables. Can be Higher than the actual used amount, but than it will use more memory than needed.
+
+For amount x, an Array for x byte-Pointer will be defined. Also one byte Arrays that is X/8 Bytes long and get rounded up. It is a Register that holds the Flag that signals, if the data Value is new.
+
+### PirAtE_SEND() : Macro
+
+**Has to be used in the Main Loop! To get called often as possible!**
+
+```c++
+PirAtE_SEND();
+```
+
+Arguments:
+
+- None
+
+Returns:
+
+- void
+
+Performs Sending over the serial connection following the [Pirate Serial Protocol](pirate-serial-protocol.md). With Defines the Send intervall, blocktime and active wait behavior can be adjusted.
+
+Is influenced by the Defines:
+- PirAtE_SendMSGInterVal_micros
+    - default: 1000ul
+- PirAtE_AllowedSendBlockTime_micros
+    - default: 200ul
+- PirAtE_AllowActiveWaitingOnSend
+    - default: false
+
+
+### PirAtE_RECV() : Macro
+
+**Has to be used in the Main Loop! To get called often as possible!**
+
+```c++
+PirAtE_RECV();
+```
+
+Arguments:
+
+- None
+
+Returns:
+
+- void
+
+Performs Receiving over the serial connection following the [Pirate Serial Protocol](pirate-serial-protocol.md). With Defines the Request intervall and blocktime behavior can be adjusted.
+
+Is influenced by the Defines:
+- PirAtE_RequestInterVal_micros
+    - default: 1000ul
+- PirAtE_AllowedReceiveBlockTime_micros
+    - default: 200ul
 
 
 ### PirAtE_COM_OFF<a id="disablepirate"></a>
@@ -176,16 +256,9 @@ Is overloaded and registrates the variables for the PirAtE_RECV() methode.
 
 ## Flags<a id="flags"></a>
 
-start
-
-define vars
-receive
-send overloaded
 
 
-send
-
-recv
+# Unfinished
 
 code
 
@@ -203,16 +276,6 @@ debug
 comtype func
 baudrate
 buffersize
-serial functions
-allowwdblocktime send
-allow block on send
-interval send
-
-allowedblocktime recive
-interval request
-
-
-
 
 
 bugs
