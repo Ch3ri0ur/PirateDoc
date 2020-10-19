@@ -18,7 +18,7 @@ Even tough namecheap provides certificates it is easier to use the automatic cer
 
 ## Reverse Proxy
 
-The used reverse proxy is a [caddy](https://caddyserver.com/) server. It enables automatic certificates via Let's Encrypt. It is written in the programming language Go. This has the benefit, that Go programs are mostly compiled to a single executable, making the deployment very easy. The caddy server also uses a single configuration file. The configuration used for the reverse proxies can be viewed in the [setup section](10-chart-getting-started.md)
+The used reverse proxy is a [caddy](https://caddyserver.com/) server. It enables automatic certificates via Let's Encrypt. It is written in the programming language Go. This has the benefit, that Go programs are mostly compiled to a single executable, making the deployment very easy. The caddy server also uses a single configuration file. The configuration used for the reverse proxies can be viewed in the [setup section](10-map-getting-started.md)
 
 The reverse proxy supports the following routes.
 

@@ -41,6 +41,7 @@ Spanning the top the most important feature of the client is displayed: the char
 The Chart component has a set of tasks:
 
 ### Generating the Chart
+
 On the first render or when the configuration is changed the component analyzes the configuration and creates data structures that can store the expected data and have the format the uPlot library needs for its charts. Once this is generated a new uPlot instance is generated with the desired configuration.
 
 Because this is a charting application strings and chars are not supported. Support for these might come in a later release.
@@ -48,7 +49,7 @@ Because this is a charting application strings and chars are not supported. Supp
 Additionally listeners are generated to watch for resizing events of the window, so that the chart always stretches the whole width of the window. 
 
 ### Source Data
-In order to be modular this component also sources the Arduino data directly and registers for the SSE-Stream on "/stream". This creates a stream of events which the Javascript runtime cyclicly processes. This cycle time is approximately 50 ms. If the chart where to be updated on the events directly multiple rerenders would be batched into a cycle of 50 ms at a minimum. To smooth out the experience the events themselves only store the received data in a queue to be processed when the chart is updated on a higher and regular interval.
+In order to be modular this component also sources the Arduino data directly and registers for the SSE-Stream on "/stream". This creates a stream of events which the Javascript runtime cyclicly processes. This cycle time is approximately 50 ms. If the chart were to be updated on the events directly multiple rerenders would be batched into a cycle of 50 ms at a minimum. To smooth out the experience the events themselves only store the received data in a queue to be processed when the chart is updated on a higher and regular interval.
 
 ### Update Chart
 To allow for smooth animation the chart is not updated, when the stream events are processed, but on each redraw of the website. Each redraw a appropriate portion of the previously mentioned queue is used to update the chart. In normal conditions this results in frame times of sub 16 ms. When more points are displayed on screen this time gradually increases. In tests with 6 graphs and 5000 timestamps render times increased to around 50 ms. Which is equal to around 20 frames per second. This is still acceptable and even resulted in a smoother experience, because the plots moved at a slower pace.

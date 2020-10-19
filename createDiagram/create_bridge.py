@@ -32,7 +32,7 @@ with Diagram(filename="pirate_bridge", show=False, graph_attr=graph_attr):
             config = NodeJS("Config Data")
             client_sent = NodeJS("Client Send Buffer")
             httpapi = Custom("HTTP-API", "./customImages/Expressjs.png")
-        caddy = Caddy("Pirate Chart")
+        caddy = Caddy("Pirate Map")
 
     with Cluster("Arduino Project"):
         with Cluster("Arduino"):

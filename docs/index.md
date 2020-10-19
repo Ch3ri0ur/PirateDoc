@@ -39,7 +39,7 @@ To get started a set of setup instructions are provided:
 
 [Add a camera to your Project](Pirate-Spyglass/10-spyglass-getting-started.md)
 
-[Extra credit: Set up DNS / Domain for remote Access](Pirate-Map/10-chart-getting-started.md) 
+[Extra credit: Set up DNS / Domain for remote Access](Pirate-Map/10-map-getting-started.md) 
 
 
 <!-- ## Components
