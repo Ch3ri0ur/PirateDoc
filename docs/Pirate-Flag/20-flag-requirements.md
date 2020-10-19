@@ -17,7 +17,7 @@ The following requirements are derived from the accepted overarching requirement
 
 ### Live-view of Arduino Project
 
-* A video stream of the project must be viewable from the client
+* A video stream of the project must be viewable from the client.
 
 ## Non-Functional Requirements
 
