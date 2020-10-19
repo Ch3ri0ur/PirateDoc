@@ -29,13 +29,18 @@ When integrated into an Arduino project via the [Pirate Hook](Pirate-Hook/00-hoo
 
 To get started a set of setup instructions are provided:
 
-[Hook into the Arduino](Pirate-Hook/arduino.md)
+[Hook into the Arduino](./Pirate-Hook/10-hook-getting-started.md)
 
-[Setup the Raspberry PI with Bridge, Spyglass and Flag](Pirate-Bridge/setupraspberrypi.md)
+[Setup the Raspberry PI](setupraspberrypi.md)
 
-[Extra credit: Set up DNS / Domain for remote Access](Pirate-Bridge/caddy.md) 
+[Install the Bridge](./Pirate-Bridge/10-bridge-getting-started.md)
 
-[Use Pirate to Control and Monitor your Project](Pirate-Flag/00-flag.md)
+[Use Pirate to Control and Monitor your Project](Pirate-Flag/10-flag-getting-started.md)
+
+[Add a camera to your Project](Pirate-Spyglass/10-spyglass-getting-started.md)
+
+[Extra credit: Set up DNS / Domain for remote Access](Pirate-Chart/10-chart-getting-started.md) 
+
 
 <!-- ## Components
 
