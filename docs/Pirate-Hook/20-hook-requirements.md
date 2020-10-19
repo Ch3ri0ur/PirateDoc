@@ -1,12 +1,12 @@
 # Requirements
 
-The Requirements for the [Pirate Hook](00-hook.md) have mostly a relation to the controller project that they should be used in. This includes time management and memory usage.
+The Requirements for the [Pirate Hook](00-hook.md) have mostly a relation to the controller projects that they should be used in. This includes time management and memory usage.
 
 This and more Requirements for the Implementation are listed below:
 
 - low memory usage
-    - dynamic variables
-    - global variables
+    - dynamic variables memory
+    - global variables memory
     - program code
 - low time usage
     - almost no blocking / active waiting
@@ -21,4 +21,4 @@ This and more Requirements for the Implementation are listed below:
     - mostly data lost free
     - predictable behavior
     - self fixing, restart
-- debug via Serial Terminal still possible
+- debug via Serial still possible (Serial Terminal)
