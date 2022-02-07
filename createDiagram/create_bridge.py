@@ -7,7 +7,6 @@ from diagrams.onprem.analytics import Spark
 from diagrams.onprem.compute import Server
 from diagrams.onprem.database import PostgreSQL
 from diagrams.onprem.inmemory import Redis
-from diagrams.onprem.logging import Fluentd
 from diagrams.onprem.monitoring import Grafana, Prometheus
 from diagrams.onprem.network import Caddy
 from diagrams.onprem.queue import Kafka
