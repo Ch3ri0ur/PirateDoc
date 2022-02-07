@@ -4,7 +4,7 @@
 !!! note "Warning!"
     The Spyglass Implementation will change in MEM Project 2 and the detailed Documentation will follow.
 
-[Getting Started](10-10-spyglass-getting-started.md-getting-started.md){: .md-button .md-button--primary }
+[Getting Started](10-spyglass-getting-started.md){: .md-button .md-button--primary }
 
 ## Requirements
 
