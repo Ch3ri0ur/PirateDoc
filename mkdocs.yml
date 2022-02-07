@@ -2,7 +2,22 @@
 # mkdocs-material: https://squidfunk.github.io/mkdocs-material/
 # mkdocs: https://www.mkdocs.org/user-guide/configuration/
 
+site_name: 
+# Project information
 site_name: Pirate Docs
+site_url: https://ch3ri0ur.github.io/piratedocs/
+site_author: Maximilian Koch and Christian Wappler
+site_description: >-
+  Create a branded static site from a set of Markdown files to host the
+  documentation of your Open Source or commercial project
+# Repository
+repo_name: Ch3ri0ur/piratedocs
+repo_url: https://github.com/Ch3ri0ur/piratedocs
+
+# Copyright
+copyright: Copyright &copy; 2022 Maximilian Koch and Christian Wappler
+
+
 theme:
     name: material
     #  favicon: attachment/portrait.png
