@@ -38,11 +38,8 @@ https://en.wikipedia.org/wiki/MPEG-4_Part_14
 MPEG-4 Part 15 defines the storage and transport of AVC/H264 (MPEG-4 Part 10) Streams in ISOBMFF File Format (MPEG-4 Part 12) and is similar to MP4 (MPEG-4 Part 14).
 Every Frame/NAL Unit is stored in its own independent ISOBMFF sample. The Initial sample holds some separate Settings and Parameters for the streaming and can be highly configured to adjust bitrate and others.
 
-The Media Source Extension (MSE) of Browsers can handle a Streams based on MPEG-4 Part 15.
+The Media Source Extension (MSE) of Browsers can handle a Streams based on MPEG-4 Part 15. Each NAL Unit can be send separate and gets combined in the SourceBuffer of MSE. This would allow to send the H.264 from a Camera directly to the User, which means the host would no longer need to decode and encode the video stream.
 
 https://mpeg.chiariglione.org/standards/mpeg-4/carriage-nal-unit-structured-video-iso-base-media-file-format
 
-
-
-
-
+The project [BerryMSE](https://github.com/thinkski/berrymse) and [pi_streaming](https://www.codeinsideout.com/blog/pi/stream-picamera-h264/) use this Methode of sending each NAL Unit separate as a Websocket Msg to the User. BerryMSE uses the MSE and pi_streaming uses a Javascript to decode video.
