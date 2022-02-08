@@ -13,6 +13,7 @@ This Implementation had one website for the Host and a Website for the Users to 
 To Automate the Host side the server just starts a Headless Chromium Webbrowser that opens the Hostpage.
 
 This concept worked very well and didn't used many extra components, just:
+
 - node to serve and coordinate everything
 - puppeteer extension for node to manage a webbrowser ([puppeteer](https://github.com/puppeteer/puppeteer) is from a Google developer)
 - chromium as web browser (automatically installed with puppeteer and is a Open source Webbrowser)
@@ -29,6 +30,7 @@ This double conversion used a lot of resources and each new user that needed a s
 The Solution could be Promising if the multi compression that happens for each user could be reduced and the original H264 Format of the Camera could be used.
 
 Further Investigations should be made on:
+
 - Re-Re-Stream: Send the Stream to yourself so that it is compressed and than to the users (only one compression and not for each new user)
 - GStreamer WebRTC Implementation. https://gstreamer.freedesktop.org/documentation/webrtc/index.html?gi-language=c
 - ALternative video driver or webbrowser
