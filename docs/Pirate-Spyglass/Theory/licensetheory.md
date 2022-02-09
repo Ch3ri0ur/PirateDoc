@@ -10,7 +10,7 @@ Legal documents for giving someone the right to contribute are Contributor Licen
 
 Most License for OpenSource Software or Free Software force the Owner to allow others of getting free Copy of Sourcecode to study or modify. This doesn't mean that the Code looses its copyright or is free of charge to use.
 
-A Copyright Quote mustn't be removed or modified! It is usually acceptable to move the Quote can be moved to a more Central location or when a file gets split up to duplicate it in each file.
+A Copyright Quote mustn't be removed or modified! It is usually acceptable to move the Quote to a more Central location or when a file gets split up, to duplicate it in each file.
 
 When someone else modifies a work (with allowance) the new code and changes fall under a new copyright with the modifier as owner. This doesn't mean that the old copyright is replaced, but that all changes are protected by an new one. 
 A Copyright Quote for the Modification can be added to the file/section or listed under the original Copyright Quote with or without a description what changes have been introduced. In versioning tools all changes get tracked and it can be easily seen who did which changes. Adding a Date/Year to the copyright helps to keep track.
