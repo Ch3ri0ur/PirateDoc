@@ -1,4 +1,4 @@
-# Legacy Camera Stack
+# Legacy Raspicam Camera Stack
 Old camera driver for RPI 10- (Buster or earlier). Driver runs on a Broadcom GPU.
 
 [0](https://www.raspberrypi.com/documentation/accessories/camera.html)
@@ -9,6 +9,11 @@ Full Camera System Access on /dev/video0
 On /dev/video1 raw image / legacy MMAL Rawcam component
 
 ## Usage
+
+The Camera in RPi-OS Buster (10) or earlier need to activate the Camera in the boot.config.
+
+https://projects.raspberrypi.org/en/projects/getting-started-with-picamera/2
+
 
 For Images:
 

@@ -42,4 +42,4 @@ The Media Source Extension (MSE) of Browsers can handle a Streams based on MPEG-
 
 https://mpeg.chiariglione.org/standards/mpeg-4/carriage-nal-unit-structured-video-iso-base-media-file-format
 
-The project [BerryMSE](https://github.com/thinkski/berrymse) and [pi_streaming](https://www.codeinsideout.com/blog/pi/stream-picamera-h264/) use this Methode of sending each NAL Unit separate as a Websocket Msg to the User. BerryMSE uses the MSE and pi_streaming uses a Javascript to decode video.
+The project [BerryMSE](https://github.com/thinkski/berrymse) and [pi_streaming](https://www.codeinsideout.com/blog/pi/stream-picamera-h264/) use this Methode of sending each NAL Unit separate as a Websocket Msg to the User. BerryMSE uses the MSE and pi_streaming uses a Javascript to decode the video.
