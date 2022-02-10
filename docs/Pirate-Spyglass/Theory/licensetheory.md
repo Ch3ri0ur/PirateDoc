@@ -1,4 +1,10 @@
-# License Types
+# License Information
+
+Only a short Complication of the most used Licenses and some Important Information about Copyright and Copyleft.
+
+This is only a short Summary, more Information can be found in the Linked Sources.
+
+This is no Legal Advice!!!, only a small overview!!!
 
 ## Copyright
 
@@ -38,7 +44,7 @@ https://www.gnu.org/philosophy/free-sw.en.html
 
 ## Free Software
 
-Free Software means the software follows the rules of Freedom to run, study or modify the code and retribute it to others. This doesn't mean that this is free of charge but you got option do so if you want.
+Free Software is defined by The Free Software Foundation (FSF). Programms under a Free Software License have to follow the rules of Freedom, which allow the user to run, study or modify the code and retribute it to others. This doesn't need to be free of charge, but an option needs to be provided to the user.
 
 - Freedom to run means you don't have to communicate to the developer for what you want to use it.
 - Freedom to study and modify the SourceCode means a way to access the SourceCode needs to be given any you are free to do changes.
@@ -47,12 +53,13 @@ Free Software means the software follows the rules of Freedom to run, study or m
 
 Software released unter a free software license needs to follow the rules a both.
 
+https://www.fsf.org/
 https://www.gnu.org/philosophy/free-sw.en.html
 https://en.wikipedia.org/wiki/Free_software
 
 ## Open Source
 
-Open Source isn't equal to Free Software and is defined by the Open Source Initiative. Open Source got more restriction than Free Software. But Free Software is not so loose defined and more focused on the Freedom for the user. Because of the Similarity do Programms with a License that follows OpenSource or FreeSoftware rules often fulfill both definitions.
+Open Source isn't equal to Free Software and is defined by the Open Source Initiative. Open Source comes with more restriction than Free Software, but Free Software is more strict defined and more focused on the Freedom for the user. Because of the Similarity do Programms with a License that follows OpenSource or FreeSoftware rules often fulfill both definitions.
 
 https://opensource.org/osd
 https://en.wikipedia.org/wiki/Open_source
@@ -62,16 +69,35 @@ https://www.gnu.org/philosophy/free-sw.en.html
 
 ## GNU General Public License
 
+GNU General Public License is a License provided by Free Software Foundation, Inc. This License is free of Charge and can be use for own Project that should follow the rules of Free Software. This License includes a Copyleft restriction that prevents others from using the project in own Projects that have closed Source or other restriction against Free Software.
 
+The latest Version of this License is GNU GPL v3.
+
+The GNU Lesser General Public License contains a less strong Copyleft.
+
+https://www.gnu.org/licenses/quick-guide-gplv3.en.html
 https://www.gnu.org/licenses/licenses.en.html
 https://www.gnu.org/philosophy/free-sw.en.html
 
-## GNU GPL Affero
+## GNU Affero GPL
 
+The GNU Affero General Public License is a GNU GPL v3 with the addition of closing a loophole. The definition of the regular GNU GPL was that the freedoms only have to be applied when distributing the modified software. The new restriction forces that it also has to follow the rules of freedom if a modified Version is used to run a service others can use.
 
-## MIT
+https://www.gnu.org/licenses/why-affero-gpl.en.html
 
+## MIT License
 
-## APACHE2
+Is a permissive free software license created by the Massachusetts Institute of Technology (MIT). This license has only minimal restrictions on how to use, modify, merge or redistribute and doesn't include a copyleft rule. But the copies or substantial portions of the Software need to include a copy of the terms of the MIT License and of the copyright notices.
 
+https://en.wikipedia.org/wiki/MIT_License
+https://opensource.org/licenses/MIT
+https://en.wikipedia.org/wiki/Permissive_software_license
 
+## APACHE License
+
+The APACHE License is very similar to the MIT License and was created by Apache Software Foundation (ASF). It is also a permissive free software license with no copyleft and allows modified work to be published under an different License. But all unmodified parts need to stay under the old (APACHE2) License.
+
+The currently public provided License from Apache Software Foundation is APACHE LICENSE, VERSION 2.0.
+
+https://www.apache.org/licenses/LICENSE-2.0
+https://en.wikipedia.org/wiki/Apache_License
