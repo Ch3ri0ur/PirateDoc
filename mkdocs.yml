@@ -2,7 +2,6 @@
 # mkdocs-material: https://squidfunk.github.io/mkdocs-material/
 # mkdocs: https://www.mkdocs.org/user-guide/configuration/
 
-site_name: 
 # Project information
 site_name: Pirate Docs
 site_url: https://ch3ri0ur.github.io/piratedocs/
@@ -23,8 +22,8 @@ theme:
     #  favicon: attachment/portrait.png
     language: en
     features:
-        - navigation.expand
         - navigation.tabs
+        - navigation.tabs.sticky
         - navigation.instant
 markdown_extensions:
     - abbr
