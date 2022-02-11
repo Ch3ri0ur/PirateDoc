@@ -10,20 +10,20 @@ This solution uses the existing Raspberry Pi and a Raspberry Pi camera to captur
 
 The Goals for the Camera Implementation have been:
 
-- Low Ressourcen Usage on Host and User side
+- Works on Raspberry Pi
+- Low Ressourcen Usage on server and client side
 - Low Latency
 - Low Bandwidth
-- Works on Raspberry Pi
+- Viewable from Browser
+- Works in Reutlingen University's network
 
 [Requirements](20-spyglass-requirements.md){: .md-button}
-
-
 
 ## Implementation
 
 This video implementation is based on the project [berrymse](https://github.com/thinkski/berrymse) from Chris Hiszpanski. 
 
-!!! note "Description from the berrymse project"
+!!! note "Description from the [berrymse](https://github.com/thinkski/berrymse) project"
 
         H.264 Network Abstraction Layer (NAL) units are read from `/dev/video0`, a
         Video4Linux2 compatible camera interface. Each unit corresponds to one frame.
@@ -33,55 +33,39 @@ This video implementation is based on the project [berrymse](https://github.com/
 
 This camera stack has three major components, the hardware/driver stack, the server and the client.
 
-### Hardware
-
-Matching the used Raspberry Pi, a Raspberry Pi camera module is used to capture image data. This data is provided in a [v4l2] format 
-- A Raspberry Pi camera module provides the driver with raw image data.
-- The v4l2 video driver (Legacy Raspberry Pi Buster Stack)
-  - hardware accelerated encoding
-  - generates mp4 part 10 NAL units
-
-### Server
-- A server to
-  -  wrap the encoded h264 fragments into 
-  - Provide websocket endpoints to send the fragments
-
-### Client
-- Client side the MSE is used to enable playback in a \<video\> tag.
-
-
-
-
-H.264 Network Abstraction Layer (NAL) units are read from `/dev/video0`, a
-Video4Linux2 compatible camera interface. Each unit corresponds to one frame.
-Frames are packaged into MPEG-4 ISO BMFF (ISO/IEC 14496-12) compliant
-fragments and sent via a websocket to the browser client. The client appends
-each received buffer to the media source for playback.
-
-
 [Further details on Implementation](30-spyglass-implementation.md){: .md-button}
+
 ## Validation
 
-Currently the Implementation runs with:
-    - Bandwidth: 1.5 Mbit/s 
-    - Latency: < 300ms 
-    - Resolution: 960x540
-    - Problems with HS Network
+The implementation was tested in multiple hour stress tests. 
+
+Currently the Implementation runs with the following characteristics:
+    - CPU utilization: sub 10%
+    - Bandwidth: 1.5 Mbit/s
+    - Latency: < 300ms
+    - Resolution: 1280x720
+    - Works with university Network
     - USB Video Class devices are not supported
+    - Safari support has not been tested
 
-Tests to other Resolutions and the Setup can be found in [Janus WebRTC Broadcaster](../Streamers/janus.md).
+With these characteristics it matches the requirements and is suitable.
 
-[Validation](40-spyglass-validation.md){: .md-button}
-
+<!-- [Validation](40-spyglass-validation.md){: .md-button} -->
 
 ## Research
 
-In the Theory tab,
+This information was collected throughout the implementation. 
 
 ### Video Streaming
 
-In the Theory, Streamer, Sources and in [Streaming method's](../streamingmethods.md) the research Material can be found
-
+In the Theory section further information about video streaming can be found.
 ### Licensing
 
+Because the underlying solution is licensed under the [AGPL](https://www.gnu.org/licenses/agpl-3.0.en.html), a copy left license, these kind of licenses and their impact on this project were studied.
+
+[Further details on licensing](Theory/licensetheory.md){: .md-button}
+
 ## Legacy Solution
+The original solution was based on [gstreamer](Sources/gstreamer.md) and a dockerized [Janus WebRTC Broadcaster](./Streamers/janus.md) to provide a [WebRTC](Theory/webRTC.md) video endpoint. WebRTC proved unusable for our use case, because the Reutlingen University network was incompatible with STUN signaling. Because of this no stream could cross the network border. A possible solution would be a TURN server, but this incurs a monthly cost and was not used. See https://github.com/bartbalaz/janus-container at "Experimentation and observations" for similar problem.
+
+Outside the network this solution performed adequately, with low latency.
