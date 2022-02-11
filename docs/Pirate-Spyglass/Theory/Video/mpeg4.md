@@ -2,7 +2,7 @@
 
 MPEG-4 is a Standard for Coding of audio-visual objects from MPEG (The Moving Picture Experts Group).
 
-Important for the project berryMSE are only a view Parts from this standard needed. The most important and used one can be found in this Section.
+Important for the project berryMSE are only a view Parts from this standard needed. The most important and used ones can be found in this Section.
 
 
 ## MPEG-4 Part 10 Advanced Video Coding (AVC) H.264 ISO/IEC 14496-10
