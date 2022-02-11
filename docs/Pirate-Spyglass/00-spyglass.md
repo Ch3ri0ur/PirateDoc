@@ -1,5 +1,7 @@
 # Overview
 
+![Architecture Spyglass](../attachment/pirate_spyglass.png)
+
 In order to directly monitor the setup and to make the measurements more engaging, a webcam solution was found.
 
 This solution uses the existing Raspberry Pi and a Raspberry Pi camera to capture video and provides a endpoint to stream this data to a webpage.
