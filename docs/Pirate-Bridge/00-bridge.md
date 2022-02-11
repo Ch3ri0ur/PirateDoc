@@ -16,9 +16,9 @@ The Bridge component translates the serial communication with the Arduino and pr
 
 ## Implementation
 
-The Bridge is a [[nodejs]] application which reads the serial port on the Raspberry PI and broadcasts the information to all connected clients. (more about this interface here: [client facing API](client-facing-interface.md)). 
+The Bridge is a [[nodejs]] application which reads the serial port on the Raspberry PI and broadcasts the information to all connected clients. (more about this interface here: [client facing API](client-facing-interface.md)).
 
-When polled the Bridge will supply the Arduino with the values the clients sent to it. 
+When polled the Bridge will supply the Arduino with the values the clients sent to it.
 
 It also serves the client website, the [Pirate Flag](../Pirate-Flag/00-flag.md).
 
