@@ -6,7 +6,7 @@ Visual tests by recursively filming a stopwatch showed a latency below 300ms.
 
 Stress tests with up to 5 Streams showed only minor CPU utilization on the Raspberry Pi.
 
-Long term tests only stopped when the websocket connection was closed by the browser (during standby for instance) after multiple hours.
+Long term tests only stopped when the websocket connection was closed by the browser (during standby for instance) after multiple hours. The reset Button works 
 
 The server never generated any problems or crashes.
 

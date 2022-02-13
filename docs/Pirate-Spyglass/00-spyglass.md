@@ -56,7 +56,7 @@ With these characteristics it matches the requirements and is suitable.
 
 ## Research
 
-This information was collected throughout the implementation. 
+This information was collected throughout the implementation.
 
 ### Video Streaming
 
