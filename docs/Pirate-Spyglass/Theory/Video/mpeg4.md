@@ -38,12 +38,13 @@ https://en.wikipedia.org/wiki/MPEG-4_Part_14
 MPEG-4 Part 15 defines the storage and transport of AVC/H264 (MPEG-4 Part 10) Streams in ISOBMFF File Format (MPEG-4 Part 12) and is similar to MP4 (MPEG-4 Part 14).
 Every Frame/NAL Unit is stored in its own independent ISOBMFF sample. The Initial sample holds some separate Settings and Parameters for the streaming and can be highly configured to adjust bitrate and others.
 
-
+ Fragmented Movie Architecture:
 ![Fragmented Movie https://alexzambelli.com/blog/wp-content/uploads/smooth_slide16.png](../../../attachment/Spyglass/FragmentedMovie.png)
-Fragmented Movie https://alexzambelli.com/blog/wp-content/uploads/smooth_slide16.png
+Source: https://alexzambelli.com/blog/wp-content/uploads/smooth_slide16.png
 
+Fragment Architecture:
 ![Fragment https://alexzambelli.com/blog/wp-content/uploads/smooth_slide17.png](../../../attachment/Spyglass/Fragment.png)
-Fragment https://alexzambelli.com/blog/wp-content/uploads/smooth_slide17.png
+Source: https://alexzambelli.com/blog/wp-content/uploads/smooth_slide17.png
 
 (Similar Technologie based on MEPG-4 Part 12 but not Part 15
 https://alexzambelli.com/blog/2009/02/10/smooth-streaming-architecture/
