@@ -8,9 +8,28 @@ Almost the complete Project is written in the Programming Language Golang. Only 
 
 Only the [RaspberryPi Camera](Theory/Camera%20and%20Driver/rpicamera.md) is currently supported and also only works with the default settings for Width, Height and Bitrate. The Reason for this is, that the [H.264 Parameter](Theory/Video/h264.md) are currently Hardcoded. Further Goal is to support this Settings and also make it possible to use other [Cameras](Theory/Camera%20and%20Driver/h264camera.md) that support [H.264](Theory/Video/h264.md).
 
-## Short Summary
+## Brief Process Overview
 
-Camera - RawImage - Camera Driver - V4L2 - H.264 NAL Units - BerryMSE - NAL Unit ISOBMFF MPEG-4 Part15 - BerryMSE WebSocket - JavaScript Websocket - JavaScript MSE - HTML Video Element
+1. Camera ([RPiCam](Theory/Camera%20and%20Driver/rpicamera.md), [H264 Camera](Theory/Camera%20and%20Driver/h264camera.md))
+    - Produces RawImage Data.
+2. Camera Driver ([libcamera](Theory/Camera%20and%20Driver/libcamera.md), [raspicam](Theory/Camera%20and%20Driver/legacycameraStack.md))
+    - Converts Imagedata from Camera to selected data format, [H.264 NAL Units](Theory/Video/h264.md).
+3. V4L2
+    - Stores Image Data in Buffer and provides Device Interface on the Device Node, ``/dev/video0``.
+4. BerryMSE
+    1. Source [goV4l2](Theory/Camera%20and%20Driver/goV4l2.md)
+            - Retrieves single [NAL Unit](Theory/Video/h264.md) from Device Node and adds it to the Hubs Buffer.
+    2. Hub
+            - [AVCFF MPEG-4 Part 15](Theory/Video/mpeg4.md) conform packages by storing [NAL Units](Theory/Video/h264.md) into [ISOBMFF](Theory/Video/mpeg4.md) Structure. 
+    3. Websocket
+            - Created [AVCFF](Theory/Video/avcff.md) conform packages (Frames) get send to register WebSocket Clients. 
+5. JavaScript
+    1. Websocket
+        - Append [AVCFF](Theory/Video/avcff.md) packages in [MSE SourceBuffer](Theory/Video/mse.md).
+    2. MSE
+        - Creates Video by Decode [H.264](Theory/Video/h264.md) out the received NAL Units.
+6. HTML Video Element
+    - Displays Video on Website.
 
 
 
