@@ -2,7 +2,7 @@
 
 The Pirate Bridge is a single file application. 
 
-As a prerequisite the Raspberry PI should have been set up according to the [setup](../setupraspberrypi.md).
+As a prerequisite the Raspberry PI should have been set up according to the [setup](../Getting%20Started/setupraspberrypi.md).
 
 To run it first download the repository and move into that folder, if this has not already been done.
 

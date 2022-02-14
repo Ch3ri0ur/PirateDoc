@@ -12,8 +12,8 @@
     - Activate RPi Camera Interface
     - Activate Serial Interface
     - Install Git
-    - Install [Nodejs](Pirate-Bridge/Theory/nodejs.md)
-    - Install [Docker](Pirate-Bridge/Theory/docker.md)
+    - Install [Nodejs](../Pirate-Bridge/Theory/nodejs.md)
+    - Install [Docker](../Pirate-Bridge/Theory/docker.md)
 
 More detailed setup instructions for a Raspberry Pi Desktop can be found here:
 https://projects.raspberrypi.org/en/projects/raspberry-pi-setting-up
@@ -138,9 +138,9 @@ Enable Wifi otherwise use Ethernet connection:
           sudo apt install git -y
           ```
 3. Install NodeJs
-    - [nodejs](Pirate-Bridge/Theory/nodejs.md)
+    - [nodejs](../Pirate-Bridge/Theory/nodejs.md)
 4. Install Docker
-    - [docker](Pirate-Bridge/Theory/docker.md)
+    - [docker](../Pirate-Bridge/Theory/docker.md)
 
 ## Password less SSH
 add your public ssh key to ~/.ssh/authorized_keys (on the pi) for passwordless ssh connection

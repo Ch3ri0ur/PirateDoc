@@ -1,6 +1,6 @@
 # Getting Started
 
-As a prerequisite the Raspberry PI should have been set up according to the [setup](../../setupraspberrypi.md). 
+As a prerequisite the Raspberry PI should have been set up according to the [setup](../../Getting%20Started/setupraspberrypi.md). 
 
 ## Video Stream
     ```
