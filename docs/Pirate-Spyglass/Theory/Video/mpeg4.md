@@ -35,7 +35,7 @@ https://en.wikipedia.org/wiki/MPEG-4_Part_14
 
 ## MPEG-4 Part 15 Advanced Video Coding (AVC) file format ISO/IEC 14496-15
 
-MPEG-4 Part 15 defines the storage and transport of AVC/H264 (MPEG-4 Part 10) Streams in ISOBMFF File Format (MPEG-4 Part 12) and is similar to MP4 (MPEG-4 Part 14).
+MPEG-4 Part 15 defines the storage and transport of AVC/H264 (MPEG-4 Part 10) Streams in ISOBMFF File Format (MPEG-4 Part 12) and the storage format is similar to MP4 (MPEG-4 Part 14).
 Every Frame/NAL Unit is stored in its own independent ISOBMFF sample. The Initial sample holds some separate Settings and Parameters for the streaming and can be highly configured to adjust bitrate and others.
 
  Fragmented Movie Architecture:
@@ -46,11 +46,21 @@ Fragment Architecture:
 ![Fragment https://alexzambelli.com/blog/wp-content/uploads/smooth_slide17.png](../../../attachment/Spyglass/Fragment.png)
 Source: https://alexzambelli.com/blog/wp-content/uploads/smooth_slide17.png
 
-(Similar Technologie based on MEPG-4 Part 12 but not Part 15
+(Fragmented Movies Similar Technologie from Microsoft based on MEPG-4 Part 12 but not Part 15
 https://alexzambelli.com/blog/2009/02/10/smooth-streaming-architecture/
 https://alexzambelli.com/blog/smooth-streaming-faq/)
 
-The AVC FF used in BerryMSE is show in [AVC File Format Example](avcff.md)
+Media Segment in (BerryMSE) Streaming Application.
+![Media Segment](../../../attachment/Spyglass/MediaSegments.png)
+https://mpeg.chiariglione.org/standards/mpeg-4/iso-base-media-file-format
+https://mpeg.chiariglione.org/sites/default/files/files/standards/parts/docs/N18093_ISOFF%28TS%29.pptx
+
+Typical ISOBMFF Structure for Streaming Application.
+![Media Segment](../../../attachment/Spyglass/TypicalISOBMFFStructure.png)
+https://mpeg.chiariglione.org/standards/mpeg-4/iso-base-media-file-format
+https://mpeg.chiariglione.org/sites/default/files/files/standards/parts/docs/N18093_ISOFF%28TS%29.pptx
+
+The AVC FF Structure and Values used in BerryMSE is shown in [AVC File Format Example](avcff.md)
 
 The [Media Source Extension (MSE)](mse.md) of Browsers can handle a Streams based on MPEG-4 Part 15. Each NAL Unit gets send separate and is combined in the SourceBuffer of the MSE. This would allow to send the H.264 from a Camera directly to the User, which means the host would no longer need to decode and encode the video stream.
 
