@@ -68,6 +68,6 @@ Because the underlying solution is licensed under the [AGPL](https://www.gnu.org
 [Further details on licensing](Theory/licensetheory.md){: .md-button}
 
 ## Legacy Solution
-The original solution was based on [gstreamer](Sources/gstreamer.md) and a dockerized [Janus WebRTC Broadcaster](./Streamers/janus.md) to provide a [WebRTC](Theory/webRTC.md) video endpoint. WebRTC proved unusable for our use case, because the Reutlingen University network was incompatible with STUN signaling. Because of this no stream could cross the network border. A possible solution would be a TURN server, but this incurs a monthly cost and was not used. See https://github.com/bartbalaz/janus-container at "Experimentation and observations" for similar problem.
+The original solution was based on [gstreamer](Research/Sources/gstreamer.md) and a dockerized [Janus WebRTC Broadcaster](Research/Streamers/janus.md) to provide a [WebRTC](Research/webRTC.md) video endpoint. WebRTC proved unusable for our use case, because the Reutlingen University network was incompatible with STUN signaling. Because of this no stream could cross the network border. A possible solution would be a TURN server, but this incurs a monthly cost and was not used. See https://github.com/bartbalaz/janus-container at "Experimentation and observations" for similar problem.
 
 Outside the network this solution performed adequately, with low latency.

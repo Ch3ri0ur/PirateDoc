@@ -69,6 +69,6 @@ More on the ICE/NAT problematic in the readme
 https://github.com/bartbalaz/janus-container
 
 ## TLS 
-To get around encryption this instance is placed behind a reverse proxy server. The server [caddy](../../Pirate-Map/Theory/caddy.md) was used, to route the janus specific traffic.
+To get around encryption this instance is placed behind a reverse proxy server. The server [caddy](../../../Pirate-Map/Theory/caddy.md) was used, to route the janus specific traffic.
 
 
