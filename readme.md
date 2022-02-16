@@ -30,3 +30,7 @@ It will update each time automatically when changing files.
 ## Miscellaneous
 
 The Folder Misc Contains some Formatting Examples and some Formatting Tests we have done.
+
+## Diagramms
+
+How to create the Diagramms can be found [here](createDiagram/readme.md).
