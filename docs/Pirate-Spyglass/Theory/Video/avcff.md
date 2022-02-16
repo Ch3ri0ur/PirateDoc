@@ -248,9 +248,9 @@ pps := []byte{
             - sample duration, x = 330, 4byte, <div align="right">0x00 0x00 0x01 0x4a</div>
             - sample size, x = 4+lengthData, 4byte, <div align="right">x[3] ... x[0]</div>
 
-## MDAT Box
+## MDAT Box (Media Data Box)
 
-- MDAT Box
+- MDAT Box (Media Data Box)
     - Length of Box, x = length of Box Content, 4byte, <div align="right">x[3] ... x[0]</div>
     - Name of Box, "mdat", 4byte, <div align="right">'m' 'd' 'a' 't'</div>
     - data length, x = lengthData, 4byte, <div align="right">x[3] ... x[0]</div>
