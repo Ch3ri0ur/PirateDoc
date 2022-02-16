@@ -11,7 +11,7 @@ https://www.raspberrypi.org/documentation/hardware/raspberrypi/bcm2835/BCM2835-A
 P. 201 "Total Data FIFO RAM Depth   4096"
 SoftwareSerialbuffer Default 4KB
 
-## 3B+
+<!-- ## 3B+
 
 # A
-# Zero 
+# Zero  -->
