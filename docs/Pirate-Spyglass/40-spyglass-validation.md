@@ -5,7 +5,7 @@ In order to gauge the fit of this application for the requirements a set of test
 
 * The streaming method was used to display the images from a Raspberry Pi camera, proving basic functionality.
 * The application restarted successfully on a series of reboots.
-* The application was integrated into a website with 4 lines of code.
+* The application was integrated into a website with 5 lines of code.
 * Tests were conducted with Chrome based browsers and Firefox.
   * Safari could not be tested, but to our knowledge only iOS is incompatible (Phone).
 * During tests the application ran for multiple hours.
