@@ -2,7 +2,7 @@
 
 The BerryMSE project is so designed that it produces an one file executable, which runs on the RaspberryPi and streams the [RaspberryPi Camera](Theory/Camera%20and%20Driver/rpicamera.md) via Websocket. A Demo Website is contained in the executable and is reachable on the given address, but its also possible to integrate the video in other websites via a small JavaScript. The Integration and Display in the Website happens via [MSE](Theory/Video/mse.md) Extension, which almost every Browser has already implemented.
 
-The Implementation is focused on using as less components as possible and be very lightweight in performance and Network traffic. This is achieved by not doing any Decoding and Encoding on the RaspberryPi and using the [H.264](Theory/Video/h264.md) Compression of the [RaspberryPi Camera](Theory/Camera%20and%20Driver/rpicamera.md). By using the very optimized [MSE](Theory/Video/mse.md) of the Browser to decode the Video only a Transport of the [H.264 NAL Units](Theory/Video/h264.md) is needed. This is performed via Websocket, which is also very easy to setup and doesn't needs extra server infrastructure, like a STUN/TURN Server for [WebRTC](Theory/webRTC.md).
+The Implementation is focused on using as less components as possible and be very lightweight in performance and Network traffic. This is achieved by not doing any Decoding and Encoding on the RaspberryPi and using the [H.264](Theory/Video/h264.md) Compression of the [RaspberryPi Camera](Theory/Camera%20and%20Driver/rpicamera.md). By using the very optimized [MSE](Theory/Video/mse.md) of the Browser to decode the Video only a Transport of the [H.264 NAL Units](Theory/Video/h264.md) is needed. This is performed via Websocket, which is also very easy to setup and doesn't needs extra server infrastructure, like a STUN/TURN Server for [WebRTC](Research/webRTC.md).
 
 Almost the complete Project is written in the Programming Language Golang. Only for the Website is HTML and JavaScript code necessary.
 
@@ -31,7 +31,7 @@ Only the [RaspberryPi Camera](Theory/Camera%20and%20Driver/rpicamera.md) is curr
 6. HTML Video Element
     - Displays Video on Website.
 
-
+TODO
 
 H.264 Network Abstraction Layer (NAL) units are read from `/dev/video0`, a
 Video4Linux2 compatible camera interface. Each unit corresponds to one frame.

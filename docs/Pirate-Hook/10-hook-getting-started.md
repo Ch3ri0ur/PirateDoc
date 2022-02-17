@@ -305,8 +305,12 @@ Detailed description coming soon!
 
 ## Good to know
 
+TODO Maybe Discard because not needed
+
 Coming soon!
 
 ## Known Bugs
+
+TODO Maybe Discard because not needed
 
 Coming soon!

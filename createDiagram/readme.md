@@ -1,6 +1,6 @@
 # Generating Diagram 
 
-The Python codes use https://diagrams.mingrammer.com/ and generate the diagram png 
+The Python codes use https://diagrams.mingrammer.com/ to generate the diagram pngs.
 
 
 ## Installation/Setup Diagrams
@@ -37,7 +37,7 @@ The Custom images already used can be found in the Folder ``customImages``.
 
 ## Note
 
-Used pictures should be put into the ``docs/attachment`` folder!
+Used pictures in Documentation should be put into the ``docs/attachment`` folder!
 
 
 

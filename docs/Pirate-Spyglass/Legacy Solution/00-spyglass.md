@@ -1,8 +1,7 @@
 # Overview
 
-
 !!! note "Warning!"
-    The Spyglass Implementation will change in MEM Project 2 and the detailed Documentation will follow.
+    The Spyglass Implementation has change in MEM Project 2 and this is the Documentation to the Old Legacy Version that used a Janus Gateway Server.
 
 [Getting Started](10-spyglass-getting-started.md){: .md-button .md-button--primary }
 
@@ -17,11 +16,11 @@ The Goals for the Camera Implementation have been:
 
 ## Theory
 
-In the Theory, Streamer, Sources and in [Streaming method's](../streamingmethods.md) the research Material can be found
+In the Theory, Streamer, Sources and in [Streaming method's](../Research/streamingmethods.md) the research Material can be found
 
 ## Implementation
 
-The Implementation uses a [Janus WebRTC Broadcaster](../Streamers/janus.md) and its documentation and results are currently a bit mixed up.
+The Implementation uses a [Janus WebRTC Broadcaster](../Research/Streamers/janus.md) and its documentation and results are currently a bit mixed up.
 
 ## Validation
 
@@ -31,4 +30,4 @@ Currently the Implementation runs with:
     - Resolution: 960x540
     - Problems with HS Network
 
-Tests to other Resolutions and the Setup can be found in [Janus WebRTC Broadcaster](../Streamers/janus.md).
+Tests to other Resolutions and the Setup can be found in [Janus WebRTC Broadcaster](../Research/Streamers/janus.md).
