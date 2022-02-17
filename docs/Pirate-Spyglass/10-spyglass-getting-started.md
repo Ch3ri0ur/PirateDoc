@@ -16,6 +16,8 @@ Hardware wise a Raspberry Pi camera module is necessary. It was tested with v1 a
 
 ## Fast Method
 
+Connect the camera.
+
 Download newest precompiled version from [repository](https://github.com/Ch3ri0ur/berrymse/releases).
 
 Make executable:
@@ -56,13 +58,13 @@ server:
 
 Run with sudo and visit website under ```localhost```.
 
-In order to 
 
 ## Register Service
 To register the executable as an autostart service:
 
-download the repository, compile or place the executable in the armv7l folder. 
-Then 
+- download the repository, 
+- compile or place the executable in the armv7l folder (path must match the path in the `berrymse.service` file)
+Then use the provided convenience scripts in the for_autostart folder. 
 
 ```
 cd for_autostart
@@ -82,10 +84,27 @@ go install github.com/markbates/pkger/cmd/pkger
 
 Build:
 ```
-GOOS=linux go get -v ./...
-go install github.com/markbates/pkger/cmd/pkger
+make
 ```
-Find executable in arm7l folder.
+Find executable in the arm7l folder.
 
 ## How to integrate into another Project
+
+Add the following snippets to the html file.
+
+``` html
+<script src="msevideo.js"></script>
+```
+
+
+```html
+<video autoplay controls muted></video>
+<button id="play-button" type="button">Pause</button>
+<button id="auto-skip-button" type="button">Auto Skip Enabled</button>
+<button id="reset-button" type="button">Reset</button>
+``` 
+
+## How to use the player
+
+The player has a auto skip function 
 
