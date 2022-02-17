@@ -3,7 +3,7 @@
 !!! note "Warning!"
     The Spyglass Implementation has change in MEM Project 2 and this is the Documentation to the Old Legacy Version that used a Janus Gateway Server.
 
-[Getting Started](10-spyglass-getting-started.md){: .md-button .md-button--primary }
+[Getting Started](10-spyglass-getting-started_legacy.md){: .md-button .md-button--primary }
 
 ## Requirements
 
