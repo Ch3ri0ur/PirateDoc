@@ -3,6 +3,7 @@
 This section contains instructions to create a streaming Raspberry Pi.
 
 It contains:
+
 - The Requirements
 - How to start the server
 - How to enable autostart
@@ -29,6 +30,7 @@ Some Cameras will provide multiple Device Nodes, you can check what Formats they
     v4l2-ctl --list-formats -d /dev/video0
 
 ## Fast Method
+
 * Connect the camera with the included ribbon cable.
 
 * Install the OS (Raspberry Pi OS (Legacy) with desktop) and 
@@ -45,6 +47,7 @@ cd berrymse
 ```
 
 The folder should contain:
+
 * berrymse, the executable
 * config.yml a config file
 * for_autorstart a folder with convenience scripts

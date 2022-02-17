@@ -1,6 +1,6 @@
 # H264 USB Camera
 
-USB Cameras can have a [H264](Theory/Video/h264.md) Encoder integrated and provide a [H264](Theory/Video/h264.md).
+USB Cameras can have a [H264](../Video/h264.md) Encoder integrated and provide a [H264](../Video/h264.md).
 
 Some Cameras will provide multiple Device Nodes, you can check what Formats they provide by using:
 
