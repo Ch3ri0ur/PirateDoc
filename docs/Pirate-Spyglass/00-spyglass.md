@@ -39,12 +39,12 @@ This camera stack has three major components, the hardware/driver stack, the ser
 
 ## Validation
 
-The implementation was tested in multiple hour stress tests. 
+The implementation was tested in multiple hour stress tests.
 
 Currently the Implementation runs with the following characteristics:
     - CPU utilization: sub 10%
     - Bandwidth: 1.5 Mbit/s
-    - Latency: < 300ms
+    - Latency: < 200ms
     - Resolution: 1280x720
     - Works with university Network
     - USB Video Class devices are not supported
@@ -54,9 +54,9 @@ With these characteristics it matches the requirements and is suitable.
 
 <!-- [Validation](40-spyglass-validation.md){: .md-button} -->
 
-## Research
+## Research and Theory
 
-This information was collected throughout the implementation.
+The information collected throughout the implementation has been placed into the subfolders.
 
 ### Video Streaming
 

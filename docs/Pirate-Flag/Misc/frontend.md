@@ -6,7 +6,7 @@ Here is a assortment of random thoughts about the frontend
 
 Limit rerender by not using state changes in higher components, triggering subsequent rerender of whole tree
 
-how to display video [[streamingmethods]]
+<!-- how to display video [[streamingmethods]] -->
 
 SSE events go into event queue and are dealt with in batches -> every 50ms -> no smooth update possible
 
