@@ -29,17 +29,19 @@ Some Cameras will provide multiple Device Nodes, you can check what Formats they
     v4l2-ctl --list-formats -d /dev/video0
 
 ## Fast Method
-Connect the camera with the included ribbon cable. 
+* Connect the camera with the included ribbon cable.
 
-Install the OS and then activate the camera interface (`raspi-config`). (Optional on Bullseye, activate legacy stack [[libcamera]])
+* Install the OS (Raspberry Pi OS (Legacy) with desktop) and 
 
-Download newest precompiled version from [repository](https://github.com/Ch3ri0ur/berrymse/releases).
+* then activate the camera interface (`raspi-config`). (for additional information see[[setupraspberrypi]]) (Optional on Bullseye, activate legacy stack [[libcamera]])
+
+* Download newest precompiled version from [repository](https://github.com/Ch3ri0ur/berrymse/releases).
 
 Unzip with and move into folder with
 
 ``` bash
 tar xf berrymse.tar.gz
-cd berrymse_release
+cd berrymse
 ```
 
 The folder should contain:
@@ -57,9 +59,9 @@ and run it.
 ## Run
 
 ```
-./berrymse
+sudo ./berrymse
 ```
-This runs a server that provides a demo website. Port 2020 is standard. To open it visit `localhost:2020`.
+This runs a server that provides a demo website. Without a config file port 2020 is standard. To open it visit `localhost:2020`.
 
 The server provides a webpage (`index.html`), a websocket stream of the camera (`/video_websocket`) and the javascript (`/msevideo.js`) to run it. For more information on how to integrate this into another project please see the chapter below.
 
@@ -96,12 +98,28 @@ Then use the provided convenience scripts in the for_autostart folder.
 
 ```
 cd for_autostart
+chmod +x ./register.sh
 sudo ./register.sh
 ```
 
+Restart to test the service.
+
 ## Compile Manually
 
-Install [Golang](https://go.dev/dl/)
+Install [Golang](https://go.dev/dl/) (use either armv6l for 32-bit or arm64)
+
+```
+sudo rm -rf /usr/local/go && sudo tar -C /usr/local -xzf go1.17.7.linux-armv7l.tar.gz
+```
+
+Add PATH and GOPATH
+```
+export PATH=$PATH:/usr/local/go/bin
+export GOPATH=$HOME/go
+export PATH=$PATH:$GOPATH/bin
+```
+
+
 Clone the [repository](https://github.com/Ch3ri0ur/berrymse)
 
 Install pkger and dependencies:
@@ -115,6 +133,12 @@ Build:
 make
 ```
 Find executable in the arm7l folder.
+
+Execute from folder with config.yml
+
+```
+sudo ./armv7l/berrymse
+```
 
 ## How to integrate into another Project
 
