@@ -47,12 +47,12 @@ Currently the Implementation runs with the following characteristics:
     - Latency: < 200ms
     - Resolution: 1280x720
     - Works with university Network
-    - USB Video Class devices are not supported
+    - USB Video Class devices are not well supported
     - Safari support has not been tested
 
 With these characteristics it matches the requirements and is suitable.
 
-<!-- [Validation](40-spyglass-validation.md){: .md-button} -->
+[Validation](40-spyglass-validation.md){: .md-button}
 
 ## Research and Theory
 
