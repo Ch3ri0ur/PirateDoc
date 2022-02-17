@@ -26,6 +26,7 @@ The following requirements are derived from the accepted overarching requirement
 * The frontend must run stably for 3 hours.
 * The video should run with more than 10 fps.
 * The delay to display the information may not exceed two seconds.
+* The bandwidth requirements should not exceed 5 MBit/s pre stream.
 * Multiple clients should be able to view the stream at the same time
 * The image should be rotatable by 90°.
 * The client must be usable with LTE.
