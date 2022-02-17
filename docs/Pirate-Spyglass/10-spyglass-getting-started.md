@@ -12,13 +12,21 @@ It contains:
 
 This solution was tested on a Raspberry Pi 4 with the 32-bit Raspberry Pi OS Debian 10 (Buster) and 11 (Bullseye).
 
-Camera wise a [Raspberry Pi Camera Module](Theory/Camera%20and%20Driver/rpicamera.md) is necessary or a USB Webcam with integrated H264 encoder. It was tested with V1 and V2 of the RPI Camera and Victure SC30 USB Webcam. USB Webcams don't have many supported settings and the Bitrate is trash.
+Camera wise a [Raspberry Pi Camera Module](Theory/Camera%20and%20Driver/rpicamera.md) is necessary or a [USB Webcam with integrated H264 encoder](Theory/Camera%20and%20Driver/h264camera.md). It was tested with V1 and V2 of the RPI Camera and Victure SC30 USB Webcam. USB Webcams don't have many supported settings and the Bitrate is trash.
 
 ### Raspberry Pi Camera
 
 The Camera driver needs to be activated. This can be done in the Raspberry Pi Config in the interface section.
 
-  sudo raspi-config
+    sudo raspi-config
+
+### USB H264 Camera
+
+The [Camera](Theory/Camera%20and%20Driver/h264camera.md) needs to have a Device Node ``/dev/video*`` that provides Video with the [H264](Theory/Video/h264.md) Codec.
+
+Some Cameras will provide multiple Device Nodes, you can check what Formats they provide by using:
+
+    v4l2-ctl --list-formats -d /dev/video0
 
 ## Fast Method
 Connect the camera with the included ribbon cable. 

@@ -14,7 +14,7 @@ Only the [RaspberryPi Camera](Theory/Camera%20and%20Driver/rpicamera.md) is curr
     - Produces RawImage Data.
 2. Camera Driver ([libcamera](Theory/Camera%20and%20Driver/libcamera.md), [raspicam](Theory/Camera%20and%20Driver/legacycameraStack.md))
     - Converts Imagedata from Camera to selected data format, [H.264 NAL Units](Theory/Video/h264.md).
-3. V4L2
+3. V4L2 Driver
     - Stores Image Data in Buffer and provides Device Interface on the Device Node, ``/dev/video0``.
 4. BerryMSE
     1. Source [goV4l2](Theory/Camera%20and%20Driver/goV4l2.md)
@@ -33,15 +33,11 @@ Only the [RaspberryPi Camera](Theory/Camera%20and%20Driver/rpicamera.md) is curr
 
 TODO
 
-H.264 Network Abstraction Layer (NAL) units are read from `/dev/video0`, a
-Video4Linux2 compatible camera interface. Each unit corresponds to one frame.
-Frames are packaged into MPEG-4 ISO BMFF (ISO/IEC 14496-12) compliant
-fragments and sent via a websocket to the browser client. The client appends
-each received buffer to the media source for playback.
-
 
 ## Camera to H.264 NAL Unit Stream
 
+[RaspberryPi Camera](Theory/Camera%20and%20Driver/rpicamera.md)
+[raspicam Driver](Theory/Camera%20and%20Driver/legacycameraStack.md)
 [V4L2](Theory/Camera%20and%20Driver/v4l2.md)
 [H.264](Theory/Video/h264.md)
 
@@ -55,21 +51,9 @@ each received buffer to the media source for playback.
 [MPEG-4](Theory/Video/mpeg4.md)
 [MSE](Theory/Video/mse.md)
 
-### Hardware
 
-Matching the used Raspberry Pi, a Raspberry Pi camera module is used to capture image data. This data is provided in a [v4l2] format 
-- A Raspberry Pi camera module provides the driver with raw image data.
-- The v4l2 video driver (Legacy Raspberry Pi Buster Stack)
-  - hardware accelerated encoding
-  - generates mp4 part 10 NAL units
-
-### Server
-- A server to
-  -  wrap the encoded h264 fragments into 
-  - Provide websocket endpoints to send the fragments
-
-### Client
-- Client side the MSE is used to enable playback in a \<video\> tag.
-
+## Website
+    Gets Http Served Website
+    Client side the MSE is used to enable playback in a \<video\> tag.
 
 

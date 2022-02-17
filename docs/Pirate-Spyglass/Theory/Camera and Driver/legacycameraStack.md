@@ -1,27 +1,19 @@
 # Legacy Raspicam Camera Stack
 
-Old camera driver for RPI 10- (Buster or earlier). Driver runs on the Broadcom GPU and the 
-GPU-Firmware cannot be modified.
+Old [Raspberry Pi Camera](rpicamera.md) driver for RPI 10- (Buster or earlier). Driver runs on the Broadcom GPU and the GPU-Firmware cannot be modified. (ideoCore IV 3D, Kernel-Modul bcm2835-v4l2)
 
 https://www.raspberrypi.com/documentation/accessories/camera.html
 https://www.raspberrypi.com/documentation/computers/processors.html
 
-VideoCore IV 3D
-
-Kernel-Modul bcm2835-v4l2
-
-    sudo modprobe bcm2835-v4l2
-
 Full Camera System Access on Device Node ``/dev/video0``
 
-On /dev/video1 raw image / legacy MMAL Rawcam component
+It provides many Options to manipulate and control the video and stream. It only works with the [Raspberry Pi Camera](rpicamera.md).
 
 ## Usage
 
 The Camera in RPi-OS Buster (10) or earlier need to activate the Camera in the ``boot.config`` or over the config Menu ``sudo raspi-config``. In the menu it can be found under ``Interfacing Options``.
 
 https://projects.raspberrypi.org/en/projects/getting-started-with-picamera/2
-
 
 For Images:
 
@@ -32,9 +24,6 @@ For Videos:
     raspivid
 
 https://projects.raspberrypi.org/en/projects/getting-started-with-picamera/3
-
-
-    raspivid
 
     "raspivid" Camera App (commit )
 
@@ -165,7 +154,4 @@ https://projects.raspberrypi.org/en/projects/getting-started-with-picamera/3
 
     Dynamic Range Compression (DRC) options :
     off,low,med,high
-
-
-## Problems
 
