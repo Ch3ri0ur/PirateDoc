@@ -14,17 +14,19 @@ This solution was tested on a Raspberry Pi 4 with the legacy Debian 10 (Buster) 
 Hardware wise a Raspberry Pi camera module is necessary. It was tested with v1 and v2 versions of the module.
 
 ## Fast Method
-Connect the camera with the included ribbon cable. 
+* Connect the camera with the included ribbon cable.
 
-Install the OS and then activate the camera interface (`raspi-config`). (Optional on Bullseye, activate legacy stack [[libcamera]])
+* Install the OS (Raspberry Pi OS (Legacy) with desktop) and 
 
-Download newest precompiled version from [repository](https://github.com/Ch3ri0ur/berrymse/releases).
+* then activate the camera interface (`raspi-config`). (for additional information see[[setupraspberrypi]]) (Optional on Bullseye, activate legacy stack [[libcamera]])
+
+* Download newest precompiled version from [repository](https://github.com/Ch3ri0ur/berrymse/releases).
 
 Unzip with and move into folder with
 
 ``` bash
 tar xf berrymse.tar.gz
-cd berrymse_release
+cd berrymse
 ```
 
 The folder should contain:
@@ -42,9 +44,9 @@ and run it.
 ## Run
 
 ```
-./berrymse
+sudo ./berrymse
 ```
-This runs a server that provides a demo website. Port 2020 is standard. To open it visit `localhost:2020`.
+This runs a server that provides a demo website. Without a config file port 2020 is standard. To open it visit `localhost:2020`.
 
 The server provides a webpage (`index.html`), a websocket stream of the camera (`/video_websocket`) and the javascript (`/msevideo.js`) to run it. For more information on how to integrate this into another project please see the chapter below.
 
@@ -81,8 +83,11 @@ Then use the provided convenience scripts in the for_autostart folder.
 
 ```
 cd for_autostart
+chmod +x ./register.sh
 sudo ./register.sh
 ```
+
+Restart to test the service.
 
 ## Compile Manually
 
