@@ -9,9 +9,16 @@ It contains:
 - How to include into clients
 
 ## Requirements
-This solution was tested on a Raspberry Pi 4 with the legacy Debian 10 (Buster) based 32-bit Raspberry Pi OS.
-(Bullseye works if legacy camera stack is activated)
-Hardware wise a Raspberry Pi camera module is necessary. It was tested with v1 and v2 versions of the module.
+
+This solution was tested on a Raspberry Pi 4 with the 32-bit Raspberry Pi OS Debian 10 (Buster) and 11 (Bullseye).
+
+Camera wise a [Raspberry Pi Camera Module](Theory/Camera%20and%20Driver/rpicamera.md) is necessary or a USB Webcam with integrated H264 encoder. It was tested with V1 and V2 of the RPI Camera and Victure SC30 USB Webcam. USB Webcams don't have many supported settings and the Bitrate is trash.
+
+### Raspberry Pi Camera
+
+The Camera driver needs to be activated. This can be done in the Raspberry Pi Config in the interface section.
+
+  sudo raspi-config
 
 ## Fast Method
 * Connect the camera with the included ribbon cable.
