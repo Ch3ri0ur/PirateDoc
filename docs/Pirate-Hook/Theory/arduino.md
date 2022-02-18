@@ -1,8 +1,6 @@
 # Arduino
 
-
-
-
+Arduino Hardware Information and Limitations can be found here.
 
 ## Serial USB (RX/TX)
 - Serial buffer

@@ -300,17 +300,3 @@ With this Defines the message speed can be tweaked, what also has an impact on t
 #define PirAtE_RequestInterVal_micros 1000ul
 #define PirAtE_AllowedReceiveBlockTime_micros 200ul
 ```
-
-Detailed description coming soon!
-
-## Good to know
-
-TODO Maybe Discard because not needed
-
-Coming soon!
-
-## Known Bugs
-
-TODO Maybe Discard because not needed
-
-Coming soon!

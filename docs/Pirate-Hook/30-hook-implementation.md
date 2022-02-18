@@ -253,38 +253,3 @@ Is influenced by the Defines:
 ```c++
 #define PirAtE_DEBUG_DISABLED
 ```
-
-## Flags<a id="flags"></a>
-
-
-TODO Maybe Discard because not needed
-
-# Unfinished
-
-code
-
-focus
-
-hardcoded aspects
-
-
-
-
-psoible modififcations
-defines ifndef
-
-debug
-comtype func
-baudrate
-buffersize
-
-
-bugs
-features
-need to be done
-missing
-
-
-already for later
-serial define
-other comtype replacement
