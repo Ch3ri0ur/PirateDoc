@@ -1,6 +1,8 @@
 # WebRTC
-https://webrtc.org/
 
+Link aggregation:
+
+https://webrtc.org/
 
 Protocol: https://developer.mozilla.org/en-US/docs/Web/API/WebRTC_API/Protocols
 
@@ -16,8 +18,7 @@ https://morioh.com/p/eda8d6fc06bf
 
 https://webrtc.org/getting-started/firebase-rtc-codelab 
 
-
-perhaps good paper for webrtc ipcams
+Perhaps good paper for webrtc ipcams:
 http://lup.lub.lu.se/luur/download?func=downloadFile&recordOId=8995044&fileOId=8995045
 
 http://www.fedoa.unina.it/10403/1/miniero_lorenzo_27.pdf

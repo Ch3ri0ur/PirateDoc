@@ -56,11 +56,17 @@ With these characteristics it matches the requirements and is suitable.
 
 ## Research and Theory
 
-The information collected throughout the implementation has been placed into the subfolders.
+The information collected throughout the implementation has been placed into the sub folders.
+
+The [Theory](Theory/00-theory.md) folder contains important information about the current solution.
+
+The [Research](Research/00-research.md) folder contains the research notes collected during the development of both solutions.
 
 ### Video Streaming
 
 In the Theory section further information about video streaming can be found.
+
+[Further details on streaming](Theory/Video/mpeg4.md){: .md-button}
 ### Licensing
 
 Because the underlying solution is licensed under the [AGPL](https://www.gnu.org/licenses/agpl-3.0.en.html), a copy left license, these kind of licenses and their impact on this project were studied.
