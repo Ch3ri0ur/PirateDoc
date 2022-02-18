@@ -37,27 +37,92 @@ Only the [RaspberryPi Camera](Theory/Camera%20and%20Driver/rpicamera.md) is curr
 
 [RaspberryPi Camera](Theory/Camera%20and%20Driver/rpicamera.md) or other [H264 Camera](Theory/Camera%20and%20Driver/h264camera.md) capture the image with a image sensor. This captured image gets converted into a [H.264 Stream](Theory/Video/h264.md) by the [raspicam Driver](Theory/Camera%20and%20Driver/legacycameraStack.md) or the integrated encoder by [H264 Camera](Theory/Camera%20and%20Driver/h264camera.md). The camera driver than gets accessed by the [V4L2 Driver](Theory/Camera%20and%20Driver/v4l2.md) that handles the user space buffer side and provides the device nodes ``e.g. /dev/video0`` to access the camera stream and provides a unicam config interface.
 
-This all happens outside the BerryMSE application on the RaspberryPi. BerryMSE starts with the usage of [go-v4l2 lib](Theory/Camera%20and%20Driver/goV4l2.md) that provides a data channel (Golang channel) and a configuration interface for the camera in Golang. The [go-v4l2 lib](Theory/Camera%20and%20Driver/goV4l2.md) opens the stream of the camera (as a [H.264 Stream](Theory/Video/h264.md)) and configures the [V4L2](Theory/Camera%20and%20Driver/v4l2.md) user space buffer.
-It reads the buffer and puts the data in the channel. The data in this case are NAL Units from the [H.264 Stream](Theory/Video/h264.md) of the camera. During testing we found that occasionally the library would crash, presumably because the source was not yet ready. In order to prevent these crashes, fault tolerance has been implemented to ensure reliable start on boot.
+This all happens outside the BerryMSE application on the RaspberryPi. BerryMSE starts with the usage of [go-v4l2 lib](Theory/Camera%20and%20Driver/goV4l2.md) that provides a data channel (Golang channel) and a configuration interface for the camera in Golang. The [go-v4l2 lib](Theory/Camera%20and%20Driver/goV4l2.md) opens the stream of the camera (as a [H.264 Stream](Theory/Video/h264.md)) and configures the [V4L2](Theory/Camera%20and%20Driver/v4l2.md) user space buffer. It reads the buffer and puts the data in the channel. The data in this case are NAL Units from the [H.264 Stream](Theory/Video/h264.md) of the camera. During testing we found that occasionally the library would crash, presumably because the source was not yet ready. In order to prevent these crashes, fault tolerance has been implemented to ensure reliable start on boot.
 
 ## H.264 NAL Unit Stream to WS Stream
 
-The NAL Units of [H.264](Theory/Video/h264.md) get inspected in BerryMSE for the type of NAL Units.
+The NAL Units of [H.264](Theory/Video/h264.md) get inspected in BerryMSE for their type.
 
-- If it is a [SPS or PPS](Theory/Video/h264.md) NAL Unit than the [SPS or PPS](Theory/Video/h264.md) will get stored. It is needed as a Parameter for the [AVC File Format](Theory/Video/avcff.md).
-- If it is frame data then it gets packed in [MPEG-4 Part 15](Theory/Video/mpeg4.md) [AVC File Format](Theory/Video/avcff.md) and prepared for the transport via Websocket to the clients. Important is that a client will only recieve
+- If it is a [SPS or PPS](Theory/Video/h264.md) NAL Unit then the [SPS or PPS](Theory/Video/h264.md) is stored. It is needed as a parameter for the [AVC File Format](Theory/Video/avcff.md).
+- If it is [P-Frame or I-Frame Data](Theory/Video/h264.md) then it is packed in a [MPEG-4 Part 15](Theory/Video/mpeg4.md) [AVC File Format](Theory/Video/avcff.md) and prepared for the transport via websocket to the clients. Important is that a client will only start receiving data when SPS, PPS are known, in order to dynamically extract necessary codec information. The first frame sent is always an I-Frame, because they initialize sequences.
 - Every other NAL Unit gets ignored.
 
-When a Client gets connected it will Receive
+When a client gets connected it will receive an [Initial Fragment package](Theory/Video/avcff.md) of "FTYP" and "MOOV" that contains information about the stream.
+Subsequent [Movie Fragments](Theory/Video/avcff.md) are a combination of a "MOOF" and "MDAT" package. The "MOOF" package contains metadata and a independent frame counter for each client. "MDAT" contains the actual image data.
+More infos for the packages can be found here: [AVC File Format](Theory/Video/avcff.md) and here: [MPEG-4 Part 15](Theory/Video/mpeg4.md).
+
+These wrapped packages get send over websocket to each client separately.
 
 ## WS Stream to Video
 
-[MPEG-4](Theory/Video/mpeg4.md)
-[MSE](Theory/Video/mse.md)
+On the clients side the video will be displayed on a webpage in a video tag. To do this the packages of the websocket need to be passed to the [Media Source Extention](Theory/Video/mse.md) that can read and decode [H.264 Videos](Theory/Video/h264.md) that are send as [MPEG-4 Part 15](Theory/Video/mpeg4.md) [AVC File Format](Theory/Video/avcff.md). This all happens in a separate JavaScript script.
+
+The JavaScript script not only creates and supplies the [MSE](Theory/Video/mse.md) with the packages from the websocket, it also extracts the codec information from the stream first to create the [MSE Object and SourceBuffer](Theory/Video/mse.md). The script also controls the video element so that it jumps to the newest decoded segment and doesn't spend time to prebuffering old data.
+
+The website (.html) and JavaScript are served via a HTTP file server at the selected URL address.
+
+## Configuration
+
+The server can be configured in a wide range of aspects. The currently implemented configurations are:
+
+-  H264 bitrate:
+    Changes the bitrate of the video.
+- Video height resolution:
+    Changes the video height resolution.
+- Video width resolution:
+    Changes the video width resolution.
+- Video rotation:
+    Changes the video rotation resolution. It can only be changed in 90 degree steps and rotates the picture clockwise.
+- Video source:
+    Changes the source device node of the video.
+- Server URL address:
+    Changes the URL address were the video and website gets published to.
+- Server websocket name:
+    Changes the websocket name were the video packages can get received. This will break the demo page if changed.
+
+!!! Warning
+
+    Only the [RPi Camera](Theory/Camera%20and%20Driver/rpicamera.md) currently supports the settings
+
+    - Rotation
+    - Bitrate
+
+    [H264 USB Cameras](Theory/Camera%20and%20Driver/h264camera.md) need to use ``-1`` to skip them.
 
 
-## Website
-    Gets Http Served Website
-    Client side the MSE is used to enable playback in a \<video\> tag.
+### Flags
 
+Flags have the highest Priority and will overwrite any default value and also overwrite the config loaded from the config file.
 
+The flags are listed below:
+
+    Usage of ./berrymse:
+        -c, -- string                   Use config Path/Name.yml
+                                        Default Path is current directory! (default "config.yml")
+        -b, --Camera.Bitrate int        Bitrate in bit/s!
+                                        Only supported for RPI Camera
+                                        Other Cameras need to use -1 (default 1500000)
+        -h, --Camera.Height int         Height Resolution (default 720)
+        -r, --Camera.Rotation int       Rotation in 90degree Step
+                                        Only supported for RPI Camera
+                                        Other Cameras need to use -1
+        -d, --Camera.SourceFD string    Use camera /dev/videoX (default "/dev/video0")
+        -w, --Camera.Width int          Width Resolution (default 1280)
+        -l, --Server.URL string         listen on host:port (default "localhost:2020")
+        -s, --Server.WebSocket string   Name of Websocket for Video Stream (default "video_websocket")
+
+### Config File
+
+    The config file, if available, gets loaded in the beginning. Default name is "config.yml" and it is structured as seen below. 
+
+    ``` yaml title="config.yml"
+    camera:
+    sourceFD: "/dev/video0"
+    width: 1280
+    height: 720
+    bitrate: 1500000
+    rotation: 0
+
+    server:
+    url: "0.0.0.0:80"
+    ```
