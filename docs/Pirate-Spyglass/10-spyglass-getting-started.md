@@ -55,7 +55,9 @@ The folder should contain:
 
 Make executable exectuable:
 
-```chomd +x ./berrymse```
+```
+chomd +x ./berrymse
+```
 
 and run it.
 
@@ -125,6 +127,11 @@ export PATH=$PATH:$GOPATH/bin
 
 Clone the [repository](https://github.com/Ch3ri0ur/berrymse)
 
+```
+git clone https://github.com/Ch3ri0ur/berrymse.git
+cd berrymse
+```
+
 Install pkger and dependencies:
 ```
 GOOS=linux go get -v ./...
@@ -133,9 +140,14 @@ go install github.com/markbates/pkger/cmd/pkger
 
 Build:
 ```
+cd cmd/berryMSE
 make
 ```
 Find executable in the arm7l folder.
+
+```
+chmod +x ./armv7l/berrymse
+```
 
 Execute from folder with config.yml
 
