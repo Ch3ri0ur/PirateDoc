@@ -1,4 +1,4 @@
-# Research
+# Research Overview
 
 This folder contains the research notes for the original WebRTC Solution.
 

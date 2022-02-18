@@ -60,16 +60,13 @@ The information collected throughout the implementation has been placed into the
 
 The [Theory](Theory/00-theory.md) folder contains important information about the current solution.
 
+[Further details on streaming](Theory/00-theory.md){: .md-button}
+
 The [Research](Research/00-research.md) folder contains the research notes collected during the development of both solutions.
 
-### Video Streaming
-
-In the Theory section further information about video streaming can be found.
-
-[Further details on streaming](Theory/Video/mpeg4.md){: .md-button}
 ### Licensing
 
-Because the underlying solution is licensed under the [AGPL](https://www.gnu.org/licenses/agpl-3.0.en.html), a copy left license, these kind of licenses and their impact on this project were studied.
+Because the underlying solution is licensed under the [AGPL](https://www.gnu.org/licenses/agpl-3.0.en.html), a copy left license, these kind of licenses were studied.
 
 [Further details on licensing](Theory/licensetheory.md){: .md-button}
 
