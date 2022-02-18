@@ -2,6 +2,11 @@
 
 This folder contains the research notes for the original WebRTC Solution.
 
-In this Section you can find many different things we Researched for finding the best streaming methode for this project.
+The folder contains two subfolders:
 
-TODO some more content and navigation to other files
+* Sources contains information about how to generate the image stream.
+* Streamers are ways to distribute this stream.
+
+[Streaming Methods](streamingmethods.md) is a collection of notes about different streaming methods.
+
+[WebRTC](webRTC.md) contains a collection of links.
