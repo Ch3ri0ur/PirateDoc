@@ -38,7 +38,7 @@ When integrated into an Arduino project via the [Pirate Hook](Pirate-Hook/00-hoo
 
 !!! warning
 
-    In Mechatronik Project 2 a new Streaming Soulution has been created and Replaces the [OLD Pirate Spyglass](Pirate-Spyglass/Original%20WebRTC%20Solution/00-spyglass_webrtc.md) with a new [Pirate Spyglass](Pirate-Spyglass/00-spyglass.md). The new one is now a complete Stand Alone that runs with only ONE Executable and is in its own Project.
+    In Mechatronik Project 2 a new streaming soulution ([Pirate Spyglass](Pirate-Spyglass/00-spyglass.md)) has been created and replaces the [original WebRTC Pirate Spyglass](Pirate-Spyglass/Original%20WebRTC%20Solution/00-spyglass_webrtc.md). The new solution avoids pitfalls with WebRTC signaling, making it suitable for usage on campus grounds. It is a stand alone executable and can easily be integrated into any webpage.
 
 ## The Project is currently hosted on Github
 The documentation can be found on: https://ch3ri0ur.github.io/piratedocs/
