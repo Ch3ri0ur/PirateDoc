@@ -1,10 +1,10 @@
 # Overview
 
+In order to directly monitor the experiment and the setup that is remotely controlled by PirAtE and to make the measurements more engaging, a webcam solution was found.
+
 ![Architecture Spyglass](../attachment/pirate_spyglass.png)
 
-In order to directly monitor the setup and to make the measurements more engaging, a webcam solution was found.
-
-This solution uses the existing Raspberry Pi and a Raspberry Pi camera to capture video and provides a endpoint to stream this data to a webpage.
+This solution uses the existing Raspberry Pi and a [Raspberry Pi Camera Module](Theory/Camera%20and%20Driver/rpicamera.md) (or a [USB Webcam with integrated H264 encoder](Theory/Camera%20and%20Driver/h264camera.md)) to capture video and provides a endpoint to stream this data to a webpage.
 
 [Getting Started](10-spyglass-getting-started.md){: .md-button .md-button--primary }
 
@@ -74,6 +74,7 @@ Because the underlying solution is licensed under the [AGPL](https://www.gnu.org
 [Further details on licensing](Theory/licensetheory.md){: .md-button}
 
 ## Legacy Solution
+
 The original solution was based on [gstreamer](Research/Sources/gstreamer.md) and a dockerized [Janus WebRTC Broadcaster](Research/Streamers/janus.md) to provide a [WebRTC](Research/webRTC.md) video endpoint. WebRTC proved unusable for our use case, because the Reutlingen University network was incompatible with STUN signaling. Because of this no stream could cross the network border. A possible solution would be a TURN server, but this incurs a monthly cost and was not used. See https://github.com/bartbalaz/janus-container at "Experimentation and observations" for similar problem.
 
 Outside the network this solution performed adequately, with low latency.
