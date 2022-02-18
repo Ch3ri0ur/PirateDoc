@@ -25,16 +25,20 @@ In order to gauge the fit of this application for the requirements a set of test
   * The bitrate can not be controlled and ends up at around 10 mbits, because many controls are not exposed to the v4l2 interface by the webcam.
 * The solution does not use any cookies.
 
+These tests show, that this solution matches the requirements and is usable. But as always there are possible improvements.
+
 ## Future steps and Improvements
 
 - Replace Websocket connection with Webtransport
 - Replace MSE with Webcodecs
 - migrate to libcamera (as soon as its ready for Raspberry Pi camera applications)
+  - Improve USB Webcam support.
   - [picamera2 preview](https://www.raspberrypi.com/news/a-preview-release-of-the-picamera2-library/)
+  - Only h264 
+    - generate h264 stream with e.g. ffmpeg loopback from usb camera (down scalable compared to current USB camera interface which is not very customizable (bitrate is not changeable))
+  - Migrate to an open codec. (Not possible because Raspberry Pi only supports h264 hardware encoding)
 - Add fallback for iOS
 - Add server reboot on crash (even though it was rock solid during testing)
 - No guard rails for config (1920x1080 and bitrate of 1000000 did not work)
   - to high resolution breaks video
-- Only h264 
-  - generate h264 stream with e.g. ffmpeg loopback from usb camera (down scalable compared to current USB camera interface which is not very customizable (bitrate is not changeable))
 - automatic reconnecting

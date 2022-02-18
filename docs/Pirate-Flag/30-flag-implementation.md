@@ -108,8 +108,6 @@ With the library included a provided streaming example could be adopted to work 
 
 While streaming the live view generates, depending on the source the gateway publishes, around 1 Mbps of traffic.
 
-
-TODO WebRTC no longer Part using WebSockets
 ### WebRTC Primer
 
 [[WebRTC]] is a open framework to enable real time peer-to-peer communication. It supports video, audio and data. To establish a WebRTC connection another signaling channel is needed to establish and manage the hight throughput connections. The high throughput channels are directly peer-to-peer. Establishing them is sadly not as straight forward as one might hope. To establish a connection both parties have to negotiate a way to navigate network boundaries, firewalls and NATs. This is normally done via STUN/ICE. These protocols fail sometimes on more complex networks and symmetric NATs, so as a last resort it is possible to relay the peer-to-peer connection via TURN over a relay server, kind of defeating the purpose of a peer-to-peer connection. 

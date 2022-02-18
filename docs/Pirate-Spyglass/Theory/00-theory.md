@@ -10,7 +10,7 @@ The Theory folder contains the information directly used in the current version 
     * [Raspberry PI Camera](Camera%20and%20Driver/rpicamera.md)
     * [v4l2](Camera%20and%20Driver/v4l2.md)
     * and more ...
-* Video contains information about condecs and streaming methods.
+* Video contains information about codecs and streaming methods.
     * [MPEG-4](Video/mpeg4.md)
     * [MSE](Video/mse.md)
     * [h264](Video/h264.md)
