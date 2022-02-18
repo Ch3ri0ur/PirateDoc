@@ -24,8 +24,6 @@ In order to gauge the fit of this application for the requirements a set of test
 * USB Webcam functionality was tested in limited fashion.
   * The bitrate can not be controlled and ends up at around 10 mbits, because many controls are not exposed to the v4l2 interface by the webcam.
 
-
-
 ## Future steps and Improvements
 
 - Replace Websocket connection with Webtransport

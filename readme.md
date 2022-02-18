@@ -9,17 +9,17 @@ The Documentation Builds it self on the Github, if changes were made.
 
 ## Run mkdocs Local
 
+Optionally create a virtual environment.
+
+    python -m venv venv
+
+Activate with:
+
+    ./venv/Scripts/activate
+
 A Local installation for the compiling is done with Python. The following Python Programms/Plugins are needed:
 
-    pip install mkdocs
-
-    pip install mkdocs-material
-
-    pip3 install mkdocs-exclude
-
-    pip install pymdown-extensions
-
-    pip install mkdocs-roamlinks-plugin
+    pip install -r requirements.txt
 
 Now you can just run MkDocs and Display the Website in the Own Browser.
 

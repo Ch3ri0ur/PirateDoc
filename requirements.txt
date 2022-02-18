@@ -1,4 +1,4 @@
-mkdocs-material====8.1.10
+mkdocs-material===8.2.1
 mkdocs==1.2.3
 mkdocs-roamlinks-plugin
 mkdocs-exclude
