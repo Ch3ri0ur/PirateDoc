@@ -1,0 +1,2392 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Create a branded static site from a set of Markdown files to host the documentation of your Open Source or commercial project">
+      
+      
+        <meta name="author" content="Maximilian Koch and Christian Wappler">
+      
+      
+        <link rel="canonical" href="https://ch3ri0ur.github.io/piratedocs/Pirate-Spyglass/Theory/Video/avcff/">
+      
+      <link rel="icon" href="../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.2.1">
+    
+    
+      
+        <title>MPEG AVC File Format - Pirate Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.e8d9bf0c.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.e6a45f82.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#mpeg-avc-file-format" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../.." title="Pirate Docs" class="md-header__button md-logo" aria-label="Pirate Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Pirate Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              MPEG AVC File Format
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Ch3ri0ur/piratedocs/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Ch3ri0ur/piratedocs
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../../.." class="md-tabs__link">
+      Pirate
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../Getting%20Started/firstrun/" class="md-tabs__link">
+        Getting Started
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../Pirate-Bridge/00-bridge/" class="md-tabs__link">
+        Pirate Bridge
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../Pirate-Flag/00-flag/" class="md-tabs__link">
+        Pirate Flag
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../Pirate-Hook/00-hook/" class="md-tabs__link">
+        Pirate Hook
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../Pirate-Map/00-map/" class="md-tabs__link">
+        Pirate Map
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../00-spyglass/" class="md-tabs__link md-tabs__link--active">
+        Pirate Spyglass
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../.." title="Pirate Docs" class="md-nav__button md-logo" aria-label="Pirate Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Pirate Docs
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Ch3ri0ur/piratedocs/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Ch3ri0ur/piratedocs
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../.." class="md-nav__link">
+        Pirate
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          Getting Started
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Getting Started" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Getting Started
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Getting%20Started/firstrun/" class="md-nav__link">
+        Firstrun
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Getting%20Started/goals/" class="md-nav__link">
+        Project Goals and Requirements
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Getting%20Started/setupraspberrypi/" class="md-nav__link">
+        Setup Raspberry Pi
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          Pirate Bridge
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Pirate Bridge" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Pirate Bridge
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Pirate-Bridge/00-bridge/" class="md-nav__link">
+        Overview Pirate Bridge
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Pirate-Bridge/10-bridge-getting-started/" class="md-nav__link">
+        Getting Started
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Pirate-Bridge/20-bridge-requirements/" class="md-nav__link">
+        Requirements
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Pirate-Bridge/30-bridge-implementation/" class="md-nav__link">
+        Implementation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Pirate-Bridge/40-bridge-validation/" class="md-nav__link">
+        Validation and Future Steps
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Pirate-Bridge/client-facing-interface/" class="md-nav__link">
+        Client API
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_7" type="checkbox" id="__nav_3_7" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_7">
+          Theory
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Theory" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_7">
+          <span class="md-nav__icon md-icon"></span>
+          Theory
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Pirate-Bridge/Theory/docker/" class="md-nav__link">
+        Docker
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Pirate-Bridge/Theory/express/" class="md-nav__link">
+        Express
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Pirate-Bridge/Theory/http/" class="md-nav__link">
+        HTTP
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Pirate-Bridge/Theory/nodejs/" class="md-nav__link">
+        Nodejs
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Pirate-Bridge/Theory/raspberrypi/" class="md-nav__link">
+        Raspberry Pi
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Pirate-Bridge/Theory/sse/" class="md-nav__link">
+        Server-Sent-Events
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          Pirate Flag
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Pirate Flag" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Pirate Flag
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Pirate-Flag/00-flag/" class="md-nav__link">
+        Overview Pirate Flag
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Pirate-Flag/10-flag-getting-started/" class="md-nav__link">
+        Getting Started
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Pirate-Flag/20-flag-requirements/" class="md-nav__link">
+        Requirements
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Pirate-Flag/30-flag-implementation/" class="md-nav__link">
+        Implementation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Pirate-Flag/40-flag-validation/" class="md-nav__link">
+        Validation and Future Steps
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_6" type="checkbox" id="__nav_4_6" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_6">
+          Misc
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Misc" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_6">
+          <span class="md-nav__icon md-icon"></span>
+          Misc
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Pirate-Flag/Misc/frontend/" class="md-nav__link">
+        Frontend thoughts
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5">
+          Pirate Hook
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Pirate Hook" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Pirate Hook
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Pirate-Hook/00-hook/" class="md-nav__link">
+        Overview Pirate Hook
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Pirate-Hook/10-hook-getting-started/" class="md-nav__link">
+        Getting Started
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Pirate-Hook/20-hook-requirements/" class="md-nav__link">
+        Requirements
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Pirate-Hook/30-hook-implementation/" class="md-nav__link">
+        Implementation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Pirate-Hook/40-hook-validation/" class="md-nav__link">
+        Validation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Pirate-Hook/code-example/" class="md-nav__link">
+        Code Example
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Pirate-Hook/pirate-serial-protocol/" class="md-nav__link">
+        Pirate Serial Protocol
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_8" type="checkbox" id="__nav_5_8" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5_8">
+          Theory
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Theory" data-md-level="2">
+        <label class="md-nav__title" for="__nav_5_8">
+          <span class="md-nav__icon md-icon"></span>
+          Theory
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Pirate-Hook/Theory/arduino/" class="md-nav__link">
+        Arduino
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6">
+          Pirate Map
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Pirate Map" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Pirate Map
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Pirate-Map/00-map/" class="md-nav__link">
+        Overview Pirate Map
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Pirate-Map/10-map-getting-started/" class="md-nav__link">
+        Getting Started
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Pirate-Map/20-map-requirements/" class="md-nav__link">
+        Requirements
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Pirate-Map/30-map-implementation/" class="md-nav__link">
+        Implementation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Pirate-Map/40-map-validation/" class="md-nav__link">
+        Validation and Future Steps
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_6" type="checkbox" id="__nav_6_6" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6_6">
+          Theory
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Theory" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_6">
+          <span class="md-nav__icon md-icon"></span>
+          Theory
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Pirate-Map/Theory/caddy/" class="md-nav__link">
+        Caddy
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Pirate-Map/Theory/dns/" class="md-nav__link">
+        Dns
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Pirate-Map/Theory/reverse-proxy/" class="md-nav__link">
+        Reverse Proxy
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7">
+          Pirate Spyglass
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Pirate Spyglass" data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          Pirate Spyglass
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../00-spyglass/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../10-spyglass-getting-started/" class="md-nav__link">
+        Getting Started
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../20-spyglass-requirements/" class="md-nav__link">
+        Requirements
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../30-spyglass-implementation/" class="md-nav__link">
+        Implementation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../40-spyglass-validation/" class="md-nav__link">
+        Validation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_6" type="checkbox" id="__nav_7_6" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7_6">
+          Original WebRTC Solution
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Original WebRTC Solution" data-md-level="2">
+        <label class="md-nav__title" for="__nav_7_6">
+          <span class="md-nav__icon md-icon"></span>
+          Original WebRTC Solution
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Original%20WebRTC%20Solution/00-spyglass_webrtc/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Original%20WebRTC%20Solution/10-spyglass-getting-started_webrtc/" class="md-nav__link">
+        Getting Started
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_7" type="checkbox" id="__nav_7_7" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7_7">
+          Research
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Research" data-md-level="2">
+        <label class="md-nav__title" for="__nav_7_7">
+          <span class="md-nav__icon md-icon"></span>
+          Research
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Research/00-research/" class="md-nav__link">
+        Research Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Research/streamingmethods/" class="md-nav__link">
+        Streaming Methods
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Research/webRTC/" class="md-nav__link">
+        WebRTC
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_7_4" type="checkbox" id="__nav_7_7_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7_7_4">
+          Sources
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Sources" data-md-level="3">
+        <label class="md-nav__title" for="__nav_7_7_4">
+          <span class="md-nav__icon md-icon"></span>
+          Sources
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Research/Sources/gstreamer/" class="md-nav__link">
+        GStreamer
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Research/Sources/stream-headless-chrome/" class="md-nav__link">
+        Self implemented WebRTC
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Research/Sources/uv4l/" class="md-nav__link">
+        UV4L
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_7_5" type="checkbox" id="__nav_7_7_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7_7_5">
+          Streamers
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Streamers" data-md-level="3">
+        <label class="md-nav__title" for="__nav_7_7_5">
+          <span class="md-nav__icon md-icon"></span>
+          Streamers
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Research/Streamers/comercialstreamingsolutions/" class="md-nav__link">
+        Commercial solutions
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Research/Streamers/janus/" class="md-nav__link">
+        Janus
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Research/Streamers/kurento/" class="md-nav__link">
+        Kurento
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_8" type="checkbox" id="__nav_7_8" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7_8">
+          Theory
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Theory" data-md-level="2">
+        <label class="md-nav__title" for="__nav_7_8">
+          <span class="md-nav__icon md-icon"></span>
+          Theory
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../00-theory/" class="md-nav__link">
+        Theory Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../licensetheory/" class="md-nav__link">
+        License Information
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_8_3" type="checkbox" id="__nav_7_8_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7_8_3">
+          Camera and Driver
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Camera and Driver" data-md-level="3">
+        <label class="md-nav__title" for="__nav_7_8_3">
+          <span class="md-nav__icon md-icon"></span>
+          Camera and Driver
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Camera%20and%20Driver/goV4l2/" class="md-nav__link">
+        GOV4L2 Lib
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Camera%20and%20Driver/h264camera/" class="md-nav__link">
+        H264 USB Camera
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Camera%20and%20Driver/legacycameraStack/" class="md-nav__link">
+        Legacy Raspicam Camera Stack
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Camera%20and%20Driver/libcamera/" class="md-nav__link">
+        libcamera
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Camera%20and%20Driver/rpicamera/" class="md-nav__link">
+        Raspberry Pi Camera Module
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Camera%20and%20Driver/v4l2/" class="md-nav__link">
+        V4L2
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_8_4" type="checkbox" id="__nav_7_8_4" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7_8_4">
+          Video
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Video" data-md-level="3">
+        <label class="md-nav__title" for="__nav_7_8_4">
+          <span class="md-nav__icon md-icon"></span>
+          Video
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          MPEG AVC File Format
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        MPEG AVC File Format
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#ftyp-box-file-type-box" class="md-nav__link">
+    FTYP Box (File Type Box)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#moov-box-movie-box-movie-metadata-box" class="md-nav__link">
+    MOOV Box (Movie Box, Movie Metadata Box)
+  </a>
+  
+    <nav class="md-nav" aria-label="MOOV Box (Movie Box, Movie Metadata Box)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#avc1-and-avcc-box" class="md-nav__link">
+    AVC1 and AVCC Box
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#moof-box-movie-fragment-box" class="md-nav__link">
+    MOOF Box (Movie Fragment Box)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mdat-box-media-data-box" class="md-nav__link">
+    MDAT Box (Media Data Box)
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../h264/" class="md-nav__link">
+        H.264
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mpeg4/" class="md-nav__link">
+        MPEG-4 (ISO/IEC-14496)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mse/" class="md-nav__link">
+        Media Source Extension (MSE) aka Media Source API
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../utilities/" class="md-nav__link">
+        Utilities for H264
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#ftyp-box-file-type-box" class="md-nav__link">
+    FTYP Box (File Type Box)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#moov-box-movie-box-movie-metadata-box" class="md-nav__link">
+    MOOV Box (Movie Box, Movie Metadata Box)
+  </a>
+  
+    <nav class="md-nav" aria-label="MOOV Box (Movie Box, Movie Metadata Box)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#avc1-and-avcc-box" class="md-nav__link">
+    AVC1 and AVCC Box
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#moof-box-movie-fragment-box" class="md-nav__link">
+    MOOF Box (Movie Fragment Box)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mdat-box-media-data-box" class="md-nav__link">
+    MDAT Box (Media Data Box)
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+<a href="https://github.com/Ch3ri0ur/piratedocs/edit/master/docs/Pirate-Spyglass/Theory/Video/avcff.md" title="Edit this page" class="md-content__button md-icon">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+</a>
+
+
+
+<h1 id="mpeg-avc-file-format">MPEG AVC File Format<a class="headerlink" href="#mpeg-avc-file-format" title="Permanent link">#</a></h1>
+<p>The Shown structure and values are from the currently used Project BerryMSE and contains almost the complete possible AVC File Format defined in MPEG-4 Part 15. There is still room to add, change or remove Parts of it.</p>
+<p>More detailed Information can be found in the Public Document to Common File Format &amp; Media Formats Specification <a href="https://www.uvcentral.com/files/CFFMediaFormat-2_1.pdf">https://www.uvcentral.com/files/CFFMediaFormat-2_1.pdf</a>. It is a extension of the ISOBMFF and extends it by a few more Boxes, but provides good information to each Box.</p>
+<p>Fragmented Movie Architecture:<br />
+<img alt="Fragmented Movie https://alexzambelli.com/blog/wp-content/uploads/smooth_slide16.png" src="../../../../attachment/Spyglass/FragmentedMovie.png" /><br />
+Source: <a href="https://alexzambelli.com/blog/wp-content/uploads/smooth_slide16.png">https://alexzambelli.com/blog/wp-content/uploads/smooth_slide16.png</a></p>
+<p>In the Project the FTYP, MOOV, MOOF and MDAT Boxes are used to send the Metadata and Media Data of the H264 Video Stream. MOOV and MOOF contain more Boxes and in this project a lot of them are implemented. Only a few Boxes are active used by us, but many are just filled with default Values. Ee don't know what impact it has to use change, remove or add Boxes. The MFRA Box isn't used in this project.</p>
+<p>The Boxes of the AVC File Format Structure and the used sub Boxes are shown bellow. The Bytestream is displayed on the right. Not all values are fixed so some will change and the bytes are only listed as Array Index of the Variable.</p>
+<h2 id="ftyp-box-file-type-box">FTYP Box (File Type Box)<a class="headerlink" href="#ftyp-box-file-type-box" title="Permanent link">#</a></h2>
+<p>Defines Type of File, Version and Compatible ISO Files.</p>
+<ul>
+<li>FTYP Box (File Type Box)<ul>
+<li>Length of Box, x = length of Box Content, 4byte, <div align="right">x[3] ... x[0]</div></li>
+<li>Name of Box, "ftyp", 4byte, <div align="right">'f' 't' 'y' 'p'</div></li>
+<li>major brand,"isom", 4byte, <div align="right">'i' 's' 'o' 'm'</div></li>
+<li>minor version, x = 0x200, 4byte, <div align="right">0x00 0x00 0x02 0x00</div></li>
+<li>compatible brands, "isomiso2iso5avc1mp41", nbyte, <div align="right">"isomiso2iso5avc1mp41"</div></li>
+</ul>
+</li>
+</ul>
+<h2 id="moov-box-movie-box-movie-metadata-box">MOOV Box (Movie Box, Movie Metadata Box)<a class="headerlink" href="#moov-box-movie-box-movie-metadata-box" title="Permanent link">#</a></h2>
+<p>Metadata Container for Presentation.</p>
+<ul>
+<li>MOOV Box (Movie Box)<ul>
+<li>Length of Box, x = length of Box Content, 4byte, <div align="right">x[3] ... x[0]</div></li>
+<li>Name of Box, "moov", 4byte, <div align="right">'m' 'o' 'o' 'v'</div></li>
+<li>MVHD Box (Movie Header Box)<ul>
+<li>Length of Box, x = length of Box Content, 4byte, <div align="right">x[3] ... x[0]</div></li>
+<li>Name of Box, "mvhd", 4byte, <div align="right">'m' 'v' 'h' 'd'</div></li>
+<li>version and flags, x = 0, 4byte, <div align="right">0x00 0x00 0x00 0x00</div></li>
+<li>creation time, x = 0, 4byte, <div align="right">0x00 0x00 0x00 0x00</div></li>
+<li>modification time, x = 0, 4byte, <div align="right">0x00 0x00 0x00 0x00</div></li>
+<li>timescale, x = 1000, 4byte, <div align="right">0x00 0x00 0x03 0xe8</div></li>
+<li>duration (all 1s == unknown), x = 0, 4byte, <div align="right">0x00 0x00 0x00 0x00</div></li>
+<li>rate (1.0 == normal), x = 0x00010000, 4byte, <div align="right">0x00 0x01 0x00 0x00</div></li>
+<li>volume (1.0 == normal), x = 0x0100, 2byte, <div align="right">0x01 0x00</div></li>
+<li>reserved, x = 0, 2byte, <div align="right">0x00 0x00</div></li>
+<li>reserved, x = 0, 4byte, <div align="right">0x00 0x00 0x00 0x00</div></li>
+<li>reserved, x = 0, 4byte, <div align="right">0x00 0x00 0x00 0x00</div></li>
+<li>matrix, x = 0x00010000, 4byte, <div align="right">0x00 0x01 0x00 0x00</div></li>
+<li>matrix, x = 0, 4byte, <div align="right">0x00 0x00 0x00 0x00</div></li>
+<li>matrix, x = 0, 4byte, <div align="right">0x00 0x00 0x00 0x00</div></li>
+<li>matrix, x = 0, 4byte, <div align="right">0x00 0x00 0x00 0x00</div></li>
+<li>matrix, x = 0x00010000, 4byte, <div align="right">0x00 0x01 0x00 0x00</div></li>
+<li>matrix, x = 0, 4byte, <div align="right">0x00 0x00 0x00 0x00</div></li>
+<li>matrix, x = 0, 4byte, <div align="right">0x00 0x00 0x00 0x00</div></li>
+<li>matrix, x = 0, 4byte, <div align="right">0x00 0x00 0x00 0x00</div></li>
+<li>matrix, x = 0x40000000, 4byte, <div align="right">0x40 0x00 0x00 0x00</div></li>
+<li>pre-defined, x = 0, 4byte, <div align="right">0x00 0x00 0x00 0x00</div></li>
+<li>pre-defined, x = 0, 4byte, <div align="right">0x00 0x00 0x00 0x00</div></li>
+<li>pre-defined, x = 0, 4byte, <div align="right">0x00 0x00 0x00 0x00</div></li>
+<li>pre-defined, x = 0, 4byte, <div align="right">0x00 0x00 0x00 0x00</div></li>
+<li>pre-defined, x = 0, 4byte, <div align="right">0x00 0x00 0x00 0x00</div></li>
+<li>pre-defined, x = 0, 4byte, <div align="right">0x00 0x00 0x00 0x00</div></li>
+<li>next track id, x = -1, 4byte, <div align="right">0xff 0xff 0xff 0xff</div></li>
+</ul>
+</li>
+<li>TRAK Box (Track Box)<ul>
+<li>Length of Box, x = length of Box Content, 4byte, <div align="right">x[3] ... x[0]</div></li>
+<li>Name of Box, "trak", 4byte, <div align="right">'t' 'r' 'a' 'k'</div></li>
+<li>TKHD Box (Track Header Box)<ul>
+<li>Length of Box, x = length of Box Content, 4byte, <div align="right">x[3] ... x[0]</div></li>
+<li>Name of Box, "tkhd", 4byte, <div align="right">'t' 'k' 'h' 'd'</div></li>
+<li>version and flags (track enabled), x = 7, 4byte, <div align="right">0x00 0x00 0x00 0x07</div></li>
+<li>creation time, x = 0, 4byte, <div align="right">0x00 0x00 0x00 0x00</div></li>
+<li>modification time, x = 0, 4byte, <div align="right">0x00 0x00 0x00 0x00</div></li>
+<li>track id, x = 1, 4byte, <div align="right">0x00 0x00 0x00 0x01</div></li>
+<li>reserved, x = 0, 4byte, <div align="right">0x00 0x00 0x00 0x00</div></li>
+<li>duration, x = 0, 4byte, <div align="right">0x00 0x00 0x00 0x00</div></li>
+<li>reserved, x = 0, 4byte, <div align="right">0x00 0x00 0x00 0x00</div></li>
+<li>reserved, x = 0, 4byte, <div align="right">0x00 0x00 0x00 0x00</div></li>
+<li>layer, x = 0, 2byte, <div align="right">0x00 0x00</div></li>
+<li>alternate group, x = 0, 2byte, <div align="right">0x00 0x00</div></li>
+<li>volume (ignored for video tracks), x = 0, 2byte, <div align="right">0x00 0x00</div></li>
+<li>reserved, x = 0, 2byte, <div align="right">0x00 0x00</div></li>
+<li>matrix, x = 0x00010000, 4byte, <div align="right">0x00 0x01 0x00 0x00</div></li>
+<li>matrix, x = 0, 4byte, <div align="right">0x00 0x00 0x00 0x00</div></li>
+<li>matrix, x = 0, 4byte, <div align="right">0x00 0x00 0x00 0x00</div></li>
+<li>matrix, x = 0, 4byte, <div align="right">0x00 0x00 0x00 0x00</div></li>
+<li>matrix, x = 0x00010000, 4byte, <div align="right">0x00 0x01 0x00 0x00</div></li>
+<li>matrix, x = 0, 4byte, <div align="right">0x00 0x00 0x00 0x00</div></li>
+<li>matrix, x = 0, 4byte, <div align="right">0x00 0x00 0x00 0x00</div></li>
+<li>matrix, x = 0, 4byte, <div align="right">0x00 0x00 0x00 0x00</div></li>
+<li>matrix, x = 0x40000000, 4byte, <div align="right">0x40 0x00 0x00 0x00</div></li>
+<li>width (fixed-point 16.16 format), x = width&lt;&lt;16, 4byte, <div align="right">x[3] ... x[0]</div></li>
+<li>height (fixed-point 16.16 format), x = height&lt;&lt;16, 4byte, <div align="right">x[3] ... x[0]</div></li>
+</ul>
+</li>
+<li>MDIA Box (Media Box)<ul>
+<li>Length of Box, x = length of Box Content, 4byte, <div align="right">x[3] ... x[0]</div></li>
+<li>Name of Box, "mdia", 4byte, <div align="right">'m' 'd' 'i' 'a'</div></li>
+<li>MDHD Box (Media Header Box)<ul>
+<li>Length of Box, x = length of Box Content, 4byte, <div align="right">x[3] ... x[0]</div></li>
+<li>Name of Box, "mdhd", 4byte, <div align="right">'m' 'd' 'h' 'd'</div></li>
+<li>version and flags, x = 0, 4byte, <div align="right">0x00 0x00 0x00 0x00</div></li>
+<li>creation time, x = 0, 4byte, <div align="right">0x00 0x00 0x00 0x00</div></li>
+<li>modification time, x = 0, 4byte, <div align="right">0x00 0x00 0x00 0x00</div></li>
+<li>timescale, x = 1000, 4byte, <div align="right">0x00 0x00 0x03 0xe8</div></li>
+<li>duration, x = 0, 4byte, <div align="right">0x00 0x00 0x00 0x00</div></li>
+<li>language ('und' == undefined), x = 0x55c4, 2byte, <div align="right">0x55 0xc4</div></li>
+<li>pre-defined, x = 0, 2byte, <div align="right">0x00 0x00</div></li>
+</ul>
+</li>
+<li>HDLR Box (Handler Box)<ul>
+<li>Length of Box, x = length of Box Content, 4byte, <div align="right">x[3] ... x[0]</div></li>
+<li>Name of Box, "hdlr", 4byte, <div align="right">'h' 'd' 'l' 'r'</div></li>
+<li>version and flags, x = 0, 4byte, <div align="right">0x00 0x00 0x00 0x00</div></li>
+<li>pre-defined, x = 0, 4byte, <div align="right">0x00 0x00 0x00 0x00</div></li>
+<li>handler type, "vide", 4byte, <div align="right">'v' 'i' 'd' 'e'</div></li>
+<li>reserved, x = 0, 4byte, <div align="right">0x00 0x00 0x00 0x00</div></li>
+<li>reserved, x = 0, 4byte, <div align="right">0x00 0x00 0x00 0x00</div></li>
+<li>reserved, x = 0, 4byte, <div align="right">0x00 0x00 0x00 0x00</div></li>
+<li>name, "MicroMSE Video Handler", nbyte, <div align="right">"MicroMSE Video Handler"</div></li>
+<li>null-terminator, x = 0, 1byte, <div align="right">0x00</div></li>
+</ul>
+</li>
+<li>MINF Box (Media Information Box)<ul>
+<li>Length of Box, x = length of Box Content, 4byte, <div align="right">x[3] ... x[0]</div></li>
+<li>Name of Box, "minf", 4byte, <div align="right">'m' 'i' 'n' 'f'</div></li>
+<li>VMHD Box (Video Media Header Box)<ul>
+<li>Length of Box, x = length of Box Content, 4byte, <div align="right">x[3] ... x[0]</div></li>
+<li>Name of Box, "vmhd", 4byte, <div align="right">'v' 'm' 'h' 'd'</div></li>
+<li>version and flags, x = 1, 4byte, <div align="right">0x00 0x00 0x00 0x01</div></li>
+<li>graphics mode, x = 0, 2byte, <div align="right">0x00 0x00</div></li>
+<li>opcolor, x = 0, 2byte, <div align="right">0x00 0x00</div></li>
+<li>opcolor, x = 0, 2byte, <div align="right">0x00 0x00</div></li>
+<li>opcolor, x = 0, 2byte, <div align="right">0x00 0x00</div></li>
+</ul>
+</li>
+<li>DINF Box (Data Information Box)<ul>
+<li>Length of Box, x = length of Box Content, 4byte, <div align="right">x[3] ... x[0]</div></li>
+<li>Name of Box, "dinf", 4byte, <div align="right">'d' 'i' 'n' 'f'</div></li>
+<li>DREF Box (Data Reference Box)<ul>
+<li>Length of Box, x = length of Box Content, 4byte, <div align="right">x[3] ... x[0]</div></li>
+<li>Name of Box, "dref", 4byte, <div align="right">'d' 'r' 'e' 'f'</div></li>
+<li>version and flags, x = 0, 4byte, <div align="right">0x00 0x00 0x00 0x00</div></li>
+<li>entry count, x = 1, 4byte, <div align="right">0x00 0x00 0x00 0x01</div></li>
+<li>URL Box (URL Box)<ul>
+<li>Length of Box, x = length of Box Content, 4byte, <div align="right">x[3] ... x[0]</div></li>
+<li>Name of Box, "url ", 4byte, <div align="right">'u' 'r' 'l' ' '</div></li>
+<li>version and flags, x = 1, 4byte, <div align="right">0x00 0x00 0x00 0x01</div></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>STBL Box (Sample Table Box)<ul>
+<li>Length of Box, x = length of Box Content, 4byte, <div align="right">x[3] ... x[0]</div></li>
+<li>Name of Box, "stbl", 4byte, <div align="right">'s' 't' 'b' 'l'</div></li>
+<li>STSD Box (Sample Description Box)<ul>
+<li>Length of Box, x = length of Box Content, 4byte, <div align="right">x[3] ... x[0]</div></li>
+<li>Name of Box, "stsd", 4byte, <div align="right">'s' 't' 's' 'd'</div></li>
+<li>reserved, x = 0, 6byte, <div align="right">0x00 0x00 0x00 0x00 0x00 0x00</div></li>
+<li>data reference index, x = 1, 2byte, <div align="right">0x00 0x01</div></li>
+<li>AVC1 Box (Advanced Codec (H264) Box)<ul>
+<li>Length of Box, x = length of Box Content, 4byte, <div align="right">x[3] ... x[0]</div></li>
+<li>Name of Box, "avc1", 4byte, <div align="right">'a' 'v' 'c' '1'</div></li>
+<li>reserved, x = 0, 6byte, <div align="right">0x00 0x00 0x00 0x00 0x00 0x00</div></li>
+<li>data reference index, x = 1, 2byte, <div align="right">0x00 0x01</div></li>
+<li>pre-defined, x = 0, 2byte, <div align="right">0x00 0x00</div></li>
+<li>reserved, x = 0, 2byte, <div align="right">0x00 0x00</div></li>
+<li>pre-defined, x = 0, 4byte, <div align="right">0x00 0x00 0x00 0x00</div></li>
+<li>pre-defined, x = 0, 4byte, <div align="right">0x00 0x00 0x00 0x00</div></li>
+<li>pre-defined, x = 0, 4byte, <div align="right">0x00 0x00 0x00 0x00</div></li>
+<li>width, x = width, 2byte, <div align="right">x[1] ... x[0]</div></li>
+<li>height, x = height, 2byte, <div align="right">x[1] ... x[0]</div></li>
+<li>horizontal resolution: 72 dpi, x = 0x00480000, 4byte, <div align="right">0x00 0x48 0x00 0x00</div></li>
+<li>vertical resolution: 72 dpi, x = 0x00480000, 4byte, <div align="right">0x00 0x48 0x00 0x00</div></li>
+<li>data size: 0, x = 0, 4byte, <div align="right">0x00 0x00 0x00 0x00</div></li>
+<li>frame count: 1, x = 1, 2byte, <div align="right">0x00 0x01</div></li>
+<li>compressor Length, x = 0, 32byte, <div align="right">0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00</div></li>
+<li>depth, x = 0x18, 2byte, <div align="right">0x00 0x18</div></li>
+<li>pre-defined, x = 0xffff, 2byte, <div align="right">0xff 0xff</div></li>
+<li>AVCC Box (AVC Configuration Box)<ul>
+<li>Length of Box, x = length of Box Content, 4byte, <div align="right">x[3] ... x[0]</div></li>
+<li>Name of Box, "avcC", 4byte, <div align="right">'a' 'v' 'c' 'C'</div></li>
+<li>configuration version, x = 1, 1byte, <div align="right">0x01</div></li>
+<li>H.264 profile (0x64 == high), x = 0x64, 1byte, <div align="right">0x64</div></li>
+<li>H.264 profile compatibility, x = 0x00, 1byte, <div align="right">0x00</div></li>
+<li>H.264 level (0x28 == 4.0), x = 0x28, 1byte, <div align="right">0x28</div></li>
+<li>nal unit Name - 1 (upper 6 bits == 1), x = 0xff, 1byte, <div align="right">0xff</div></li>
+<li>number of sps (upper 3 bits == 1), x = 0xe1, 1byte, <div align="right">0xe1</div></li>
+<li>len of sps, x = lengthSPS, 2byte, <div align="right">x[1] ... x[0]</div></li>
+<li>sps, x = sps, nbyte, <div align="right">x[n] ... x[0]</div></li>
+<li>number of pps, x = 1, 1byte, <div align="right">0x01&lt;/div</li>
+<li>len pps, x = lengthPPS, 2byte, <div align="right">x[1] ... x[0]</div></li>
+<li>pps, x = pps, nbyte, <div align="right">x[n] ... x[0]</div></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>STSZ Box (Sample Size Box)<ul>
+<li>Length of Box, x = length of Box Content, 4byte, <div align="right">x[3] ... x[0]</div></li>
+<li>Name of Box, "stsz", 4byte, <div align="right">'s' 't' 's' 'z'</div></li>
+<li>version and flags, x = 0, 4byte, <div align="right">0x00 0x00 0x00 0x00</div></li>
+<li>sample size, x = 0, 4byte, <div align="right">0x00 0x00 0x00 0x00</div></li>
+<li>sample count, x = 0, 4byte, <div align="right">0x00 0x00 0x00 0x00</div></li>
+</ul>
+</li>
+<li>STSC Box (Sample to Chunk Box)<ul>
+<li>Length of Box, x = length of Box Content, 4byte, <div align="right">x[3] ... x[0]</div></li>
+<li>Name of Box, "stsc", 4byte, <div align="right">'s' 't' 's' 'c'</div></li>
+<li>version and flags, x = 0, 4byte, <div align="right">0x00 0x00 0x00 0x00</div></li>
+<li>entry count, x = 0, 4byte, <div align="right">0x00 0x00 0x00 0x00</div></li>
+</ul>
+</li>
+<li>STTS Box (Time to Sample Box)<ul>
+<li>Length of Box, x = length of Box Content, 4byte, <div align="right">x[3] ... x[0]</div></li>
+<li>Name of Box, "stts", 4byte, <div align="right">'s' 't' 't' 's'</div></li>
+<li>version and flags, x = 0, 4byte, <div align="right">0x00 0x00 0x00 0x00</div></li>
+<li>entry count, x = 0, 4byte, <div align="right">0x00 0x00 0x00 0x00</div></li>
+</ul>
+</li>
+<li>STCO Box (Chunk Offset Box)<ul>
+<li>Length of Box, x = length of Box Content, 4byte, <div align="right">x[3] ... x[0]</div></li>
+<li>Name of Box, "stco", 4byte, <div align="right">'s' 't' 'c' 'o'</div></li>
+<li>version and flags, x = 0, 4byte, <div align="right">0x00 0x00 0x00 0x00</div></li>
+<li>entry count, x = 0, 4byte, <div align="right">0x00 0x00 0x00 0x00</div></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>MVEX Box (Movie Extends Box)<ul>
+<li>Length of Box, x = length of Box Content, 4byte, <div align="right">x[3] ... x[0]</div></li>
+<li>Name of Box, "mvex", 4byte, <div align="right">'m' 'v' 'e' 'x'</div></li>
+<li>MEHD Box (Movie Extends Header Box)<ul>
+<li>Length of Box, x = length of Box Content, 4byte, <div align="right">x[3] ... x[0]</div></li>
+<li>Name of Box, "mehd", 4byte, <div align="right">'m' 'e' 'h' 'd'</div></li>
+<li>version and flags, x = 0, 4byte, <div align="right">0x00 0x00 0x00 0x00</div></li>
+<li>fragment duration, x = 0, 4byte, <div align="right">0x00 0x00 0x00 0x00</div></li>
+</ul>
+</li>
+<li>TREX Box (Track Extends Box)<ul>
+<li>Length of Box, x = length of Box Content, 4byte, <div align="right">x[3] ... x[0]</div></li>
+<li>Name of Box, "trex", 4byte, <div align="right">'t' 'r' 'e' 'x'</div></li>
+<li>version and flags, x = 0, 4byte, <div align="right">0x00 0x00 0x00 0x00</div></li>
+<li>track id, x = 1, 4byte, <div align="right">0x00 0x00 0x00 0x01</div></li>
+<li>default sample description index, x = 1, 4byte, <div align="right">0x00 0x00 0x00 0x01</div></li>
+<li>default sample duration, x = 0, 4byte, <div align="right">0x00 0x00 0x00 0x00</div></li>
+<li>default sample size, x = 0, 4byte, <div align="right">0x00 0x00 0x00 0x00</div></li>
+<li>default sample flags, x = 0x00010000, 4byte, <div align="right">0x00 0x01 0x00 0x00</div></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="avc1-and-avcc-box">AVC1 and AVCC Box<a class="headerlink" href="#avc1-and-avcc-box" title="Permanent link">#</a></h3>
+<p>The most Important Boxes of the MOOV for the H264 Streaming are the AVC1 and AVCC Box. They contain needed Information for the Decoder, which settings/parameter are used.<br />
+This Includes Profile, Constraints, Level, SPS and PPS.<br />
+More info to this can be found in <a href="../h264/">H.264</a>.</p>
+<h2 id="moof-box-movie-fragment-box">MOOF Box (Movie Fragment Box)<a class="headerlink" href="#moof-box-movie-fragment-box" title="Permanent link">#</a></h2>
+<p>The MOOF Box holds the information to a Movie Fragment, which is in the following MDAT Object.</p>
+<ul>
+<li>MOOF Box (Movie Fragment Box)<ul>
+<li>Length of Box, x = length of Box Content, 4byte, <div align="right">x[3] ... x[0]</div></li>
+<li>Name of Box, "moof", 4byte, <div align="right">'m' 'o' 'o' 'f'</div></li>
+<li>MFHD Box (Movie Fragment Header Box)<ul>
+<li>Length of Box, x = length of Box Content, 4byte, <div align="right">x[3] ... x[0]</div></li>
+<li>Name of Box, "mfhd", 4byte, <div align="right">'m' 'f' 'h' 'd'</div></li>
+<li>version and flags, x = 0, 4byte, <div align="right">0x00 0x00 0x00 0x00</div></li>
+<li>sequence number, x = sequence, 4byte, <div align="right">x[3] ... x[0]</div></li>
+</ul>
+</li>
+<li>TRAF Box (Track Fragment Box)<ul>
+<li>Length of Box, x = length of Box Content, 4byte, <div align="right">x[3] ... x[0]</div></li>
+<li>Name of Box, "traf", 4byte, <div align="right">'t' 'r' 'a' 'f'</div></li>
+<li>TFHD Box (Track Fragment Header Box)<ul>
+<li>Length of Box, x = length of Box Content, 4byte, <div align="right">x[3] ... x[0]</div></li>
+<li>Name of Box, "tfhd", 4byte, <div align="right">'t' 'f' 'h' 'd'</div></li>
+<li>version and flags, x = 0x020020, 4byte, <div align="right">0x00 0x02 0x00 0x20</div></li>
+<li>track ID, x = 1, 4byte, <div align="right">0x00 0x00 0x00 0x01</div></li>
+<li>default sample flags, x = 0x01010000, 4byte, <div align="right">0x01 0x01 0x00 0x00</div></li>
+</ul>
+</li>
+<li>TFDT Box (Track Fragment Base Media Decode Time Box)<ul>
+<li>Length of Box, x = length of Box Content, 4byte, <div align="right">x[3] ... x[0]</div></li>
+<li>Name of Box, "tfdt", 4byte, <div align="right">'t' 'f' 'd' 't'</div></li>
+<li>version and flags, x = 0x01000000, 4byte, <div align="right">0x01 0x00 0x00 0x00</div></li>
+<li>base media decode time, x = 330*sequence, 8byte, <div align="right">x[7] ... x[0]</div></li>
+</ul>
+</li>
+<li>TRUN Box (Track Fragment Run Box)<ul>
+<li>Length of Box, x = length of Box Content, 4byte, <div align="right">x[3] ... x[0]</div></li>
+<li>Name of Box, "trun", 4byte, <div align="right">'t' 'r' 'u' 'n'</div></li>
+<li>version and flags, x = 0x00000305, 4byte, <div align="right">0x00 0x00 0x01 0x31</div></li>
+<li>sample count, x = 1, 4byte, <div align="right">0x00 0x00 0x00 0x01</div></li>
+<li>data offset, x = 0x70, 4byte, <div align="right">0x00 0x00 0x00 0x70</div></li>
+<li>first sample flags (i-frame or not), x = 0x02000000 or x = 0x01010000 , 4byte, <div align="right">0x20 0x00 0x00 0x00 or 0x01 0x01 0x00 0x00</div></li>
+<li>sample duration, x = 330, 4byte, <div align="right">0x00 0x00 0x01 0x4a</div></li>
+<li>sample size, x = 4+lengthData, 4byte, <div align="right">x[3] ... x[0]</div></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="mdat-box-media-data-box">MDAT Box (Media Data Box)<a class="headerlink" href="#mdat-box-media-data-box" title="Permanent link">#</a></h2>
+<p>The Media Box holds an Media Sample. In this Project this is a NAL Unit.</p>
+<ul>
+<li>MDAT Box (Media Data Box)<ul>
+<li>Length of Box, x = length of Box Content, 4byte, <div align="right">x[3] ... x[0]</div></li>
+<li>Name of Box, "mdat", 4byte, <div align="right">'m' 'd' 'a' 't'</div></li>
+<li>data length, x = lengthData, 4byte, <div align="right">x[3] ... x[0]</div></li>
+<li>data, x = data, nbyte, <div align="right">x[0] ... x[n]</div></li>
+</ul>
+</li>
+</ul>
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../../Camera%20and%20Driver/v4l2/" class="md-footer__link md-footer__link--prev" aria-label="Previous: V4L2" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              V4L2
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../h264/" class="md-footer__link md-footer__link--next" aria-label="Next: H.264" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              H.264
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2022 Maximilian Koch and Christian Wappler
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.instant"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../../assets/javascripts/workers/search.bd0b6b67.min.js"}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.8aa65030.min.js"></script>
+      
+    
+  </body>
+</html>
